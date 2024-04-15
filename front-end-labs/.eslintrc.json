@@ -1,0 +1,7 @@
+{
+	"extends": "@speedingplanet/eslint-config",
+	"env": {
+		"mocha": true,
+		"node": true
+	}
+}
