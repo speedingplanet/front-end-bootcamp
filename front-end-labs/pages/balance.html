@@ -1,21 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Balance</title>
-</head>
-<body>
-	<h1>Balance</h1>
-	<nav>
-		<ul>
-			<li><a href="/pages/send-receive.html">Send/Receive</a></li>
-			<li><a href="/pages/account-settings.html">Account settings</a></li>
-			<li><a href="/pages/balance.html">Balance summary & recent user history</a></li>
-			<li><a href="/pages/search.html">Search</a></li>
-			<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
-			<li><a href="/index.html">Home</a></li>
-		</ul>
-	</nav>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Balance</title>
+	</head>
+
+	<!-- 
+Use these transations, which have all the same payor
+
+8,wvancastele6i,mloveguardhr,2022-09-06,51.37,sed tristique
+91,wvancastele6i,ddunabie5j,2023-07-23,10.77,nec nisi vulputate
+235,wvancastele6i,rbottell93,2024-02-26,79.09,eu tincidunt
+494,wvancastele6i,mwallend6,2023-06-12,38.05,nunc donec quis orci eget orci vehicula condimentum curabitur
+765,wvancastele6i,pbann7c,2022-06-01,89.99,turpis donec posuere metus vitae ipsum aliquam non mauris
+-->
+
+	<body>
+		<h1>Balance</h1>
+		<nav>
+			<ul>
+				<li><a href="/pages/send-receive.html">Send/Receive</a></li>
+				<li><a href="/pages/account-settings.html">Account settings</a></li>
+				<li><a href="/pages/balance.html">Balance summary & recent user history</a></li>
+				<li><a href="/pages/search.html">Search</a></li>
+				<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
+				<li><a href="/index.html">Home</a></li>
+			</ul>
+		</nav>
+		<section>
+			<h2>Balance</h2>
+			<p>Current balance: $500.00</p>
+		</section>
+		<section>
+			<h2>Recent transactions</h2>
+
+			<!-- table>(thead>tr>th*4)+tbody>tr*5>td*4 -->
+			<table>
+				<thead>
+					<tr>
+						<th>Payee</th>
+						<th>Date</th>
+						<th>Amount</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>mloveguardhr</td>
+						<td>2022-09-06</td>
+						<td>51.37</td>
+						<td>sed tristique</td>
+					</tr>
+					<tr>
+						<td>ddunabie5j</td>
+						<td>2023-07-23</td>
+						<td>10.77</td>
+						<td>nec nisi vulputate</td>
+					</tr>
+					<tr>
+						<td>rbottell93</td>
+						<td>2024-02-26</td>
+						<td>79.09</td>
+						<td>eu tincidunt</td>
+					</tr>
+					<tr>
+						<td>mwallend6</td>
+						<td>2023-06-12</td>
+						<td>38.05</td>
+						<td>nunc donec quis orci eget orci vehicula condimentum curabitur</td>
+					</tr>
+					<tr>
+						<td>pbann7c</td>
+						<td>2022-06-01</td>
+						<td>89.99</td>
+						<td>turpis donec posuere metus vitae ipsum aliquam non mauris</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</body>
 </html>
