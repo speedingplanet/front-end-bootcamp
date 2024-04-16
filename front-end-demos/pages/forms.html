@@ -31,7 +31,40 @@
 		<!-- method defaults to GET -->
 		<!-- action points back to the same URL, i.e. the form submits data to itself -->
 		<form>
-			<!-- div>label+input:text -->
+			<!-- <label for="first-name">Enter your first name:</label> -->
+			<!-- 
+				Just a label and a text field. 
+				The label is associated with the text field by wrapping the text field
+			 -->
+			<label>
+				Enter your first name:
+				<input
+					type="text"
+					name="firstName"
+					id="first-name"
+					placeholder="Enter your name here"
+				/>
+			</label>
+
+			<!-- 
+				Label and a text field in a set of divs. Since the label cannot wrap the text field
+				we use the "for" attribute to associate the label with the text field.
+			 -->
+			<div>
+				<div>
+					<label for="last-name">Enter your last name:</label>
+				</div>
+				<div>
+					<input
+						type="text"
+						name="lastName"
+						id="last-name"
+						maxlength="100"
+					/>
+				</div>
+			</div>
+
+			<!-- div.input-container>(div>label)+div>input:text -->
 			<div class="input-container">
 				<div><label for="text-input-id">Text input</label></div>
 				<!-- Almost always want a name, might need an id if you're using JavaScript -->
@@ -50,6 +83,35 @@
 						type="number"
 						name="number-input-name"
 						id="number-input-id"
+						step="5"
+						min="5"
+						max="100"
+						value="0"
+					/>
+				</div>
+			</div>
+			<div class="input-container">
+				<div><label for="number-input-id">Decimal input</label></div>
+				<div>
+					<input
+						type="number"
+						name="decimal-input-name"
+						id="decimal-input-id"
+						step="0.01"
+						min="1.00"
+						max="3.00"
+					/>
+				</div>
+			</div>
+			<div class="input-container">
+				<div><label for="number-input-id">Decimal (string) input</label></div>
+				<div>
+					<input
+						type="string"
+						inputmode="numeric"
+						name="decimal-string-input-name"
+						id="decimal-string-input-id"
+						pattern="\d+\.\d{2}"
 					/>
 				</div>
 			</div>
@@ -156,6 +218,12 @@
 
 			<div>
 				<p>Pick some pizza toppings (grouped)</p>
+				<!-- 
+					Grouped checkboxes send values like this 
+					topping=peppers&topping=sausage&topping=pineapple
+
+					Most servers will convert this into an array of values
+				-->
 				<input
 					type="checkbox"
 					name="topping"
@@ -194,6 +262,7 @@
 					name="car-make"
 					id="car-make"
 				>
+					<option value="">Please select a manufacturer</option>
 					<option value="ford">Ford</option>
 					<option value="honda">Honda</option>
 					<option value="hyundai">Hyundai</option>
@@ -207,7 +276,7 @@
 				<label for="fruit">Select some fruit</label>
 				<select
 					multiple
-					size="5"
+					size="2"
 					name="fruit"
 					id="fruit"
 				>
