@@ -21,7 +21,41 @@
 			</ul>
 		</nav>
 		<main>
-			<!-- This is the part where send/receive or account settings or whatever would show up -->
+			<form>
+				<div>
+					<label for="sender">Sender</label>
+					<input
+						type="text"
+						name="sender"
+						id="sender"
+					/>
+				</div>
+				<div>
+					<label for="recipient">Recipient</label>
+					<input
+						type="text"
+						name="recipient"
+						id="recipient"
+					/>
+				</div>
+				<div>
+					<label for="amount">Amount</label>
+					<input
+						type="numeric"
+						name="amount"
+						id="amount"
+					/>
+				</div>
+				<div>
+					<label for="reason">Reason</label>
+					<input
+						type="text"
+						name="reason"
+						id="reason"
+					/>
+				</div>
+				<div><button type="submit">Send</button></div>
+			</form>
 		</main>
 	</body>
 </html>
