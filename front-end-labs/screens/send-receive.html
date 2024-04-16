@@ -22,28 +22,23 @@
 			<form>
 				<div id="labels"><label for="sender">Sender</label></div>
 				<div>
-					<select
+					<input
 						name="sender"
 						id="sender"
-					>
-						<option value="">Select an account</option>
-						<option value="checking">Checking</option>
-						<option value="savings">Savings</option>
-						<option value="wallet01">Apple Wallet</option>
-					</select>
+						type="text"
+						required
+						value="KK"
+					/>
 				</div>
 				<div><label for="recipient">Recipient</label></div>
 				<div>
-					<select
+					<input
 						name="recipient"
 						id="recipient"
-					>
-						<option value="">Select your recipient</option>
-						<option value="elon">Elon Musk</option>
-						<option value="tim">Tim Cook</option>
-						<option value="sasan">Sasan Goodarzi</option>
-						<option value="bezos">Jeff Bezos</option>
-					</select>
+						type="text"
+						required
+						minlength="4"
+					/>
 				</div>
 				<div><label for="amount">Amount</label></div>
 				<div>
@@ -51,11 +46,11 @@
 						type="number"
 						id="amount"
 						name="amount"
-						min="10.00"
-						max="10000.00"
+						min="0.01"
+						max="1000.00"
 						step="0.01"
-						placeholder="10.00"
-						value="10.00"
+						placeholder="0.01"
+						required
 					/>
 				</div>
 				<div><label for="reason">Reason</label></div>
@@ -65,6 +60,7 @@
 						id="reason"
 						name="reason"
 						placeholder="reason"
+						maxlength="255"
 					/>
 				</div>
 				<button type="submit">Send</button>
