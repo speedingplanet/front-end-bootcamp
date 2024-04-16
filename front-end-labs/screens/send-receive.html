@@ -18,5 +18,57 @@
 			<div id="links"><a href="/screens/split-the-bill.html">Split the bill</a></div>
 			<div id="links"><a href="/index.html">Home</a></div>
 		</nav>
+		<main>
+			<form>
+				<div id="labels"><label for="sender">Sender</label></div>
+				<div>
+					<select
+						name="sender"
+						id="sender"
+					>
+						<option value="">Select an account</option>
+						<option value="checking">Checking</option>
+						<option value="savings">Savings</option>
+						<option value="wallet01">Apple Wallet</option>
+					</select>
+				</div>
+				<div><label for="recipient">Recipient</label></div>
+				<div>
+					<select
+						name="recipient"
+						id="recipient"
+					>
+						<option value="">Select your recipient</option>
+						<option value="elon">Elon Musk</option>
+						<option value="tim">Tim Cook</option>
+						<option value="sasan">Sasan Goodarzi</option>
+						<option value="bezos">Jeff Bezos</option>
+					</select>
+				</div>
+				<div><label for="amount">Amount</label></div>
+				<div>
+					<input
+						type="number"
+						id="amount"
+						name="amount"
+						min="10.00"
+						max="10000.00"
+						step="0.01"
+						placeholder="10.00"
+						value="10.00"
+					/>
+				</div>
+				<div><label for="reason">Reason</label></div>
+				<div>
+					<input
+						type="text"
+						id="reason"
+						name="reason"
+						placeholder="reason"
+					/>
+				</div>
+				<button type="submit">Send</button>
+			</form>
+		</main>
 	</body>
 </html>
