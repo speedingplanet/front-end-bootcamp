@@ -28,6 +28,7 @@
 						type="text"
 						name="sender"
 						id="sender"
+						value="Current User"
 					/>
 				</div>
 				<div>
@@ -36,14 +37,20 @@
 						type="text"
 						name="recipient"
 						id="recipient"
+						minlength="4"
+						required
 					/>
 				</div>
 				<div>
 					<label for="amount">Amount</label>
 					<input
-						type="numeric"
+						type="number"
 						name="amount"
 						id="amount"
+						min="0.01"
+						max="1000"
+						step="0.01"
+						required
 					/>
 				</div>
 				<div>
@@ -52,6 +59,8 @@
 						type="text"
 						name="reason"
 						id="reason"
+						maxlength="255"
+						required
 					/>
 				</div>
 				<div><button type="submit">Send</button></div>
