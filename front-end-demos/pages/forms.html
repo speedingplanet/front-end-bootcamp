@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -17,7 +17,7 @@
 				max-width: 25vw;
 			}
 
-			.input-container>div {
+			.input-container > div {
 				flex: 1;
 			}
 		</style>
@@ -72,37 +72,128 @@
 			<div>
 				<p>Pick an ice cream flavor</p>
 				<!-- All radios in a set should have the same "name" attribute, but different values -->
-				<label><input type="radio" name="flavor" value="chocolate" id="flavor-chocolate">Chocolate</label>
-				<label><input type="radio" name="flavor" value="vanilla" id="flavor-vanilla">Vanilla</label>
-				<label><input type="radio" name="flavor" value="strawberry" id="flavor-strawberry">Strawberry</label>
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="chocolate"
+						id="flavor-chocolate"
+					/>
+					Chocolate
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="vanilla"
+						id="flavor-vanilla"
+					/>
+					Vanilla
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="strawberry"
+						id="flavor-strawberry"
+					/>
+					Strawberry
+				</label>
 			</div>
 
 			<div>
 				<p>Pick some pizza attributes (individual)</p>
 				<!-- Default value attribute for checkboxes is the word "on" -->
-				<input type="checkbox" name="topping-peppers" id="topping-peppers"><label for="topping-peppers">Peppers</label>
-				<input type="checkbox" name="topping-sausage" id="topping-sausage"><label for="topping-sausage">Sausage</label>
-				<input type="checkbox" name="topping-mushrooms" id="topping-mushrooms"><label for="topping-mushrooms">Mushrooms</label>
-				<input type="checkbox" name="sauce-regular" id="sauce-regular"><label for="sauce-regular">Regular sauce</label>
-				<input type="checkbox" name="sauce-spicy" id="sauce-spicy"><label for="sauce-spicy">Spicy sauce</label>
-				<input type="checkbox" name="crust-regular" id="crust-regular"><label for="crust-regular">Regular crust</label>
-				<input type="checkbox" name="crust-thin" id="crust-thin"><label for="crust-thin">thin crust</label>
-				<input type="checkbox" name="crust-sicilian" id="crust-sicilian"><label for="crust-sicilian">sicilian crust</label>
+				<input
+					type="checkbox"
+					name="topping-peppers"
+					id="topping-peppers"
+				/>
+				<label for="topping-peppers">Peppers</label>
+				<input
+					type="checkbox"
+					name="topping-sausage"
+					id="topping-sausage"
+				/>
+				<label for="topping-sausage">Sausage</label>
+				<input
+					type="checkbox"
+					name="topping-mushrooms"
+					id="topping-mushrooms"
+				/>
+				<label for="topping-mushrooms">Mushrooms</label>
+				<input
+					type="checkbox"
+					name="sauce-regular"
+					id="sauce-regular"
+				/>
+				<label for="sauce-regular">Regular sauce</label>
+				<input
+					type="checkbox"
+					name="sauce-spicy"
+					id="sauce-spicy"
+				/>
+				<label for="sauce-spicy">Spicy sauce</label>
+				<input
+					type="checkbox"
+					name="crust-regular"
+					id="crust-regular"
+				/>
+				<label for="crust-regular">Regular crust</label>
+				<input
+					type="checkbox"
+					name="crust-thin"
+					id="crust-thin"
+				/>
+				<label for="crust-thin">thin crust</label>
+				<input
+					type="checkbox"
+					name="crust-sicilian"
+					id="crust-sicilian"
+				/>
+				<label for="crust-sicilian">sicilian crust</label>
 			</div>
 
 			<div>
 				<p>Pick some pizza toppings (grouped)</p>
-				<input type="checkbox" name="topping" value="peppers" id="combined-topping-peppers"><label for="combined-topping-peppers">Peppers</label>
-				<input type="checkbox" name="topping" value="sausage" id="combined-topping-sausage"><label for="combined-topping-sausage">Sausage</label>
-				<input type="checkbox" name="topping" value="pineapple" id="combined-topping-pineapple"><label for="combined-topping-pineapple">Pineapple</label>
-				<input type="checkbox" name="topping" value="mushrooms" id="combined-topping-mushrooms"><label for="combined-topping-mushrooms">Mushrooms</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="peppers"
+					id="combined-topping-peppers"
+				/>
+				<label for="combined-topping-peppers">Peppers</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="sausage"
+					id="combined-topping-sausage"
+				/>
+				<label for="combined-topping-sausage">Sausage</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="pineapple"
+					id="combined-topping-pineapple"
+				/>
+				<label for="combined-topping-pineapple">Pineapple</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="mushrooms"
+					id="combined-topping-mushrooms"
+				/>
+				<label for="combined-topping-mushrooms">Mushrooms</label>
 			</div>
 
 			<div>
 				<p>Select list</p>
 				<!-- label[for] points to input[id] -->
 				<label for="car-make">Select a car manufacturer</label>
-				<select name="car-make" id="car-make">
+				<select
+					name="car-make"
+					id="car-make"
+				>
 					<option value="ford">Ford</option>
 					<option value="honda">Honda</option>
 					<option value="hyundai">Hyundai</option>
@@ -110,11 +201,16 @@
 					<option value="gmc">GMC</option>
 				</select>
 			</div>
-			<div style="margin-bottom:20px">
+			<div style="margin-bottom: 20px">
 				<p>Multiple select list</p>
 				<!-- label[for] points to input[id] -->
 				<label for="fruit">Select some fruit</label>
-				<select multiple size="5" name="fruit" id="fruit">
+				<select
+					multiple
+					size="5"
+					name="fruit"
+					id="fruit"
+				>
 					<option>Apples</option>
 					<option>Bananas</option>
 					<option>Pears</option>
@@ -125,7 +221,13 @@
 
 			<div>
 				<label for="life-story">Enter your life story below</label>
-				<textarea name="life-story" id="life-story" cols="30" rows="10" maxlength="1000"></textarea>
+				<textarea
+					name="life-story"
+					id="life-story"
+					cols="30"
+					rows="10"
+					maxlength="1000"
+				></textarea>
 			</div>
 			<div>
 				<!-- Easier to style with CSS, easier to work with -->
@@ -137,9 +239,12 @@
 			<div>
 				<!-- Not as easy to style with CSS, kind of a pain in the neck -->
 				<p>Buttons as input types</p>
-				<input type="submit">
-				<input type="reset">
-				<input type="button" value="Generic">
+				<input type="submit" />
+				<input type="reset" />
+				<input
+					type="button"
+					value="Generic"
+				/>
 			</div>
 		</form>
 	</body>
