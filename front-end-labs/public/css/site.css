@@ -127,7 +127,6 @@ Custom styles below here
 */
 
 body {
-	/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
 	font-weight: normal;
 	padding: 2vh 2vw;
@@ -148,7 +147,7 @@ ul.no-bullets {
 
 .navbar-list li {
 	text-align: center;
-	color: #3a6bbf;
+	color: #3a6bbf;	
 	padding: 8px;
 	border-radius: 10px;
 	flex:1;
