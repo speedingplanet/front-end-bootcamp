@@ -11,28 +11,55 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<link
+			rel="stylesheet"
+			href="/css/site.css"
+		/>
 		<title>ZipPay App</title>
 	</head>
 	<body>
-		<h1>The ZipPay app</h1>
-		<!-- 
-Each of these should be a link to a different page
-
-Send/Receivesend-receive.html
-Account settingsaccount-settings.html
-Balance summary & recent user historybalance.html
-Searchsearch.html
-Split the billsplit-the-bill.html
-		 -->
-		<!-- nav>ul>li*5>a -->
-		<nav>
+		<header class="page-header">
+			<h1>The ZipPay app</h1>
+		</header>
+		<nav class="navbar-list">
 			<ul>
-				<li><a href="/pages/send-receive.html">Send/Receive</a></li>
-				<li><a href="/pages/account-settings.html">Account settings</a></li>
-				<li><a href="/pages/balance.html">Balance summary & recent user history</a></li>
-				<li><a href="/pages/search.html">Search</a></li>
-				<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
+				<li>
+					<a href="/pages/send-receive.html">
+						<span class="material-icons">currency_exchange</span>
+						<br />
+						Send/Receive
+					</a>
+				</li>
+				<li>
+					<a href="/pages/account-settings.html">
+						<span class="material-icons">settings</span>
+						<br />
+						Account settings
+					</a>
+				</li>
+				<li>
+					<a href="/pages/balance.html">
+						<span class="material-icons">savings</span>
+						<br />
+						Balance
+					</a>
+				</li>
+				<li>
+					<a href="/pages/search.html">
+						<span class="material-icons">search</span>
+						<br />
+						Search
+					</a>
+				</li>
+				<li>
+					<a href="/pages/split-the-bill.html">
+						<span class="material-icons">call_split</span>
+						<br />
+						Split the bill
+					</a>
+				</li>
 			</ul>
 		</nav>
+		<main></main>
 	</body>
 </html>
