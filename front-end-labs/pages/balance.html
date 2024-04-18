@@ -7,6 +7,51 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Balance</title>
+		<style>
+			table {
+				/* border-spacing: 6px; */
+				/* This ignores border-spacing */
+				border-collapse: collapse;
+			}
+
+			thead tr {
+				text-align: left;
+			}
+			
+			th {
+				border-bottom: 3px black solid;
+			}
+
+			th, td {
+				/* padding: top/bottom left/right */
+				padding: 5px 8px;
+			}
+
+			tbody tr:nth-child(odd) {
+				background-color: yellow;
+			}
+
+			tbody tr:nth-child(even) {
+				background-color: aliceblue;
+			}
+
+			td:nth-child(3) {
+				color: red;
+			}
+
+			tr:nth-child(3n + 2) {
+				text-decoration: underline;
+			}
+
+			td:first-child {
+				font-weight: bold
+			}
+
+			/* :last-child(td) */
+			td:last-child {
+				font-style: italic
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Balance</h1>
@@ -28,7 +73,7 @@
 			<h2>Recent transactions</h2>
 
 			<!-- table>(thead>tr>th*4)+tbody>tr*5>td*4 -->
-			<table border="1">
+			<table>
 				<thead>
 					<tr>
 						<th>Recipient</th>
