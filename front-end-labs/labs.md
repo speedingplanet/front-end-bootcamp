@@ -91,18 +91,28 @@ Remember that the structure of a table, generally, is
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Create a file `pages/navbar.html`. We will use this as our baseline. It can be a basic HTML page. 
-2. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work. 
+1. Create a file `pages/navbar.html`. We will use this as our baseline. It can be a basic HTML page.
+2. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
 
-  - If you use an unordered list, the `ul` is the container and the `li` elements are the children. 
-  - If you use `div`s, the `nav` element is the container and the `div`s are the children
-  - You can always copy and paste the navbar from one of the existing pages into `pages/navbar.html`. 
+- If you use an unordered list, the `ul` is the container and the `li` elements are the children.
+- If you use `div`s, the `nav` element is the container and the `div`s are the children
+- You can always copy and paste the navbar from one of the existing pages into `pages/navbar.html`.
 
 3. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
 4. Set the container up as a flexbox
 5. Set up the children with a `flex` config
 
-Check out the results! If you like them, copy and paste them into the other pages. 
+Check out the results! If you like them, copy and paste them into the other pages.
 
-## Payments Grid: Grid Layout
+## Navbar: Putting it all together.
 
+Take a look at data/navbar-design.png: ![Design for our Navbar](data/navbar-design.png).
+
+What would we need to build out something like this in pages/navbar.html? Some suggestions:
+
+1. Font from Google (take a look at front-end-demos/pages/css/fonts.html for an example)
+2. Icons also from Google (front-end-demos/pages/css/icons.html to see an example of this)
+3. Flexbox layout for the content
+4. Font size and coloring as well
+5. Spacing between elements
+6. And when you hover over an icon, it has a different background color
