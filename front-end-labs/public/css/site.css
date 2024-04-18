@@ -154,6 +154,7 @@ ul.no-bullets {
 .navbar-list li:hover {
 	background-color: #3a6bbf;
 	color: #bffaf8;
+	transition: all 150ms linear;
 }
 
 .navbar-list a {
