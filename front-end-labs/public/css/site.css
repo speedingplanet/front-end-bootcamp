@@ -125,6 +125,11 @@ body {
 	padding: 2vh 2vw;
 }
 
+/* Don't use visited link colors */
+a:visited {
+	color: inherit
+}
+
 ul.no-bullets {
 	list-style-type: none;
 	padding: 0;
@@ -140,14 +145,15 @@ ul.no-bullets {
 
 .navbar-list li {
 	text-align: center;
-	color: #3a6bbf;	
+	color: #3a6bbf;
 	padding: 8px;
 	border-radius: 10px;
 	flex:1;
 }
 
 .navbar-list li:hover {
-	background-color: #bffaf8;
+	background-color: #3a6bbf;
+	color: #bffaf8;
 }
 
 .navbar-list a {
