@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Fonts</title>
+		<link
+			rel="stylesheet"
+			href="/css/site.css"
+		/>
+		<style>
+			html {
+				font-size: 12pt;
+			}
+
+			.font-family-1 {
+				/* Obscure/unique -----> general */
+				/* Known as a "font stack" */
+				font-family: Helvetica, Arial, sans-serif;
+			}
+
+			.font-family-2 {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			.font-family-3 {
+				font-family: 'Fira Code', 'JetBrains Mono', 'iA Writer Mono S', 'Courier New', Courier,
+					monospace;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Fonts in CSS</h1>
+
+		<ul>
+			<li class="font-family-1">Font family 1</li>
+			<li class="font-family-2">Font family 2</li>
+			<li class="font-family-3">Font family 3</li>
+			<li>
+				Font weight:
+				<span style="font-weight: bold">bold</span>
+				, lighter, numbers
+			</li>
+			<li>
+				Font sizes, absolute:
+				<span style="font-size: 24pt">Big</span>
+				<span style="font-size: 8pt">Little</span>
+				<span style="font-size: larger">Relatively bigger</span>
+			</li>
+			<li>
+				Font sizes, relative to root:
+				<span style="font-size: 2rem">Big</span>
+				<span style="font-size: 0.5rem">Little</span>
+				<span style="font-size: 75%">Relatively smaller</span>
+			</li>
+			<li style="font-size: 18pt">
+				Font sizes, relative to parent:
+				<span style="font-size: 2em">Big</span>
+				<span style="font-size: 0.5em">Little</span>
+				<span style="font-size: 75%">Relatively smaller</span>
+			</li>
+
+			<li>
+				Text decoration
+				<span style="text-decoration: underline">Underline</span>
+				<span style="text-decoration: overline">Overline</span>
+				<span style="text-decoration: dashed underline">Dashed</span>
+				<span style="text-decoration: dotted overline">Dotted Overline</span>
+			</li>
+		</ul>
+
+		<section>
+			<h2>Text alignment</h2>
+			<!-- div[style="text-align:left"]*4 -->
+			<div style="text-align: left">Left: Lorem ipsum dolor sit amet consectetur</div>
+			<div style="text-align: right">Right: Lorem ipsum dolor sit amet consectetur</div>
+			<div style="text-align: center">Center: Lorem ipsum dolor sit amet consectetur</div>
+			<div style="text-align: justify">
+				Justify: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, iusto ipsa explicabo
+				porro repudiandae culpa. Obcaecati excepturi sed consequatur porro facere, asperiores, ipsam
+				nemo perspiciatis repellat nobis explicabo! Sint, natus. Debitis, sapiente nulla eum rerum
+				maiores facere ducimus nobis iste, amet officia voluptates, quo non dicta est hic repellat.
+				Et at fuga id! Illum nihil necessitatibus fugiat nisi perspiciatis earum! Dignissimos unde
+				excepturi dolores natus a voluptatem harum tenetur quae aperiam, rerum maxime, aut voluptas
+				ipsa fugit id eius consequatur, officia at laudantium. Fugit sed id consequatur minima
+				voluptatum aperiam. Esse doloremque error provident accusamus, tempore non vitae molestias?
+				Eveniet voluptatum dicta esse ut adipisci temporibus quaerat aut odit placeat, labore
+				laboriosam deserunt atque quia, ratione cum numquam architecto minus.
+			</div>
+		</section>
+	</body>
+</html>
