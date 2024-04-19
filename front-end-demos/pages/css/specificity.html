@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -22,50 +22,72 @@
 				border: 2px solid black;
 			}
 
-			.box:nth-child(odd) {
-				background-color: yellow;
-			}
-
 			.box {
 				background-color: green;
+			}
+
+			#box-container #third-box {
+				background-color: orange;
 			}
 
 			#third-box {
 				background-color: cadetblue;
 			}
 
-			/* Specificity: 0, 0, 4 */
-			body div div p {
-				font-family: 'Courier New', Courier, monospace;
+			.box:first-child:has(p) {
+				background-color: aqua;
 			}
-			
-			/* Specificity: 0, 1, 1 */
-			p:last-child {
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+			.box:nth-child(odd) {
+				background-color: yellow;
 			}
 
 			.container div:last-child {
 				background-color: violet !important;
 			}
 
+			/* Specificity: 0, 0, 4 */
+			/*
+			body div div p {
+				font-family: 'Courier New', Courier, monospace;
+			}
+			*/
+
+			/* Specificity: 0, 1, 1 */
+			/*
+			p:last-child {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+			*/
 		</style>
+
+		
 	</head>
 	<body>
 		<h1>CSS Specificity</h1>
-		<div class="container">
+		<div
+			class="container"
+			id="box-container"
+		>
 			<div class="box">
 				<p>Box #1</p>
 			</div>
 			<div class="box">
 				<p>Box #2</p>
 			</div>
-			<div class="box" id="third-box">
+			<div
+				class="box"
+				id="third-box"
+			>
 				<p>Box #3</p>
 			</div>
 			<div class="box">
 				<p>Box #4</p>
 			</div>
-			<div class="box" style="background-color: chartreuse;">
+			<div
+				class="box"
+				style="background-color: chartreuse"
+			>
 				<p>Box #5</p>
 			</div>
 		</div>
