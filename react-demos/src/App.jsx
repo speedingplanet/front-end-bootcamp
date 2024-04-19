@@ -18,6 +18,7 @@ import PropsChildren from './PropsChildren.jsx';
 import ApolloManager from './apollo/ApolloManager.jsx';
 
 import './App.css';
+import EventHandling from './event-handling/EventHandling.jsx';
 
 function App() {
 	return (
@@ -32,6 +33,9 @@ function App() {
 				<div className="row">
 					<div className="col-3">
 						<ul className="list-unstyled">
+							<li>
+								<NavLink to="event-handling">Event Handling</NavLink>
+							</li>
 							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
 							</li>
@@ -92,6 +96,10 @@ function App() {
 					</div>
 					<div className="col">
 						<Routes>
+							<Route
+								path="/event-handling"
+								element={<EventHandling />}
+							/>
 							<Route
 								path="/form-data/*"
 								element={<FormDataManager />}
