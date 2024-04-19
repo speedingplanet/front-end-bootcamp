@@ -8,7 +8,7 @@ function AsyncAwait() {
 		async function getData() {
 			let url = 'http://localhost:8000/countries';
 			/*
-			Normally, async-await should be in a try-catch block, but we will 
+			Normally, async-await should be in a try-catch block, but we will
 			catch any errors externally to this function.
 			*/
 			let response = await fetch(url);
