@@ -5,51 +5,51 @@ Material Icons
 */
 
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/css/material-icons.woff2) format('woff2');
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/css/material-icons.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Material Icons Outlined';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/css/material-icons-outlined.woff2) format('woff2');
+	font-family: 'Material Icons Outlined';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/css/material-icons-outlined.woff2) format('woff2');
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-	font-feature-settings: "liga";
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }
 
 .material-icons-outlined {
-  font-family: 'Material Icons Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-	font-feature-settings: "liga";
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
+	font-family: 'Material Icons Outlined';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }
 
 /*
@@ -59,13 +59,14 @@ Custom styles below here
 */
 
 .zippay-main {
-	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+		source-sans-pro, sans-serif;
 	font-weight: normal;
 }
 
 /* Don't use visited link colors */
 a:visited {
-	color: inherit
+	color: inherit;
 }
 
 .navbar-list ul {
@@ -81,7 +82,7 @@ a:visited {
 	color: #3a6bbf;
 	padding: 8px;
 	border-radius: 10px;
-	flex:1;
+	flex: 1;
 }
 
 .navbar-list li:hover {
@@ -95,5 +96,5 @@ a:visited {
 }
 
 .page-header > h1 {
-	text-align: center
+	text-align: center;
 }

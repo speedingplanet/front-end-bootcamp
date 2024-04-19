@@ -18,7 +18,9 @@ function IterativeContentManager() {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-example">Grid example</NavLink>
+							<NavLink to="/iterative-content/grid-example">
+								Grid example
+							</NavLink>
 						</li>
 						<li>
 							<NavLink to="/iterative-content/grid-refactored">
@@ -26,7 +28,9 @@ function IterativeContentManager() {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-sorted">Grid with sorting</NavLink>
+							<NavLink to="/iterative-content/grid-sorted">
+								Grid with sorting
+							</NavLink>
 						</li>
 						<li>
 							<NavLink to="/iterative-content/grid-remote">

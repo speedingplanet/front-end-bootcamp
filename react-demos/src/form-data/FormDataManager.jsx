@@ -34,7 +34,9 @@ function FormDataManager() {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/context-reducer">Context and reducer</NavLink>
+							<NavLink to="/form-data/context-reducer">
+								Context and reducer
+							</NavLink>
 						</li>
 					</ul>
 				</div>
