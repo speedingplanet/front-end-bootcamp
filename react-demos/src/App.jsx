@@ -19,6 +19,7 @@ import ApolloManager from './apollo/ApolloManager.jsx';
 
 import './App.css';
 import EventHandling from './event-handling/EventHandling.jsx';
+import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
 
 function App() {
 	return (
@@ -35,6 +36,9 @@ function App() {
 						<ul className="list-unstyled">
 							<li>
 								<NavLink to="event-handling">Event Handling</NavLink>
+							</li>
+							<li>
+								<NavLink to="conditional-display">Conditional Display</NavLink>
 							</li>
 							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
@@ -99,6 +103,10 @@ function App() {
 							<Route
 								path="/event-handling"
 								element={<EventHandling />}
+							/>
+							<Route
+								path="/conditional-display"
+								element={<ConditionalDisplay />}
 							/>
 							<Route
 								path="/form-data/*"
