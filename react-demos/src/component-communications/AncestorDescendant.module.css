@@ -1,0 +1,13 @@
+.centerLine {
+	background: linear-gradient(#000, #000) no-repeat center/2px 100%;
+}
+
+.ancestor {
+	border: 2px solid black;
+	padding: 10px;
+}
+
+.gen {
+	border: 2px green dotted;
+	padding: 10px;
+}
