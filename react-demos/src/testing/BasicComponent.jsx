@@ -24,6 +24,12 @@ function BasicComponent() {
 				<li>Bananas</li>
 				<li>Peaches</li>
 				<li data-testid="oranges">Oranges</li>
+				<li>Grapes</li>
+				<li>Green Grapes</li>
+				<li>Plantains</li>
+				<li>
+					<span style={{ color: 'green' }}>Green</span> Plantains
+				</li>
 				<li>{favorite}</li>
 			</ul>
 		</div>
