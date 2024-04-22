@@ -21,6 +21,7 @@ import ApolloManager from './apollo/ApolloManager.jsx';
 import './App.css';
 import EventHandling from './event-handling/EventHandling.jsx';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
+import ComponentCommunicationsManager from './component-communications/ComponentCommunicationsManager.jsx';
 
 function App() {
 	return (
@@ -43,6 +44,9 @@ function App() {
 							</li>
 							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
+							</li>
+							<li>
+								<NavLink to="comp-comm">Component communications</NavLink>
 							</li>
 							<li>
 								<NavLink to="iterative-content">Iterative content</NavLink>
@@ -117,6 +121,10 @@ function App() {
 							<Route
 								path="/form-data/*"
 								element={<FormDataManager />}
+							/>
+							<Route
+								path="/comp-comm/*"
+								element={<ComponentCommunicationsManager />}
 							/>
 							<Route
 								path="/iterative-content/*"
