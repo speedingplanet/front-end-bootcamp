@@ -29,7 +29,6 @@ function handleError(error) {
 		message = 'Canceled request';
 		isCancel = true;
 	} else if (error.response) {
-		// eslint-disable-next-line max-len
 		console.error(
 			`Server error: ${error.response.status} [${error.response.statusText}]`,
 		);

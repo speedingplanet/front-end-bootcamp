@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { useContext } from 'react';
 
 const DemoContext = React.createContext({
@@ -71,7 +72,7 @@ function LeftThree() {
 		<div>
 			<h5>LeftThree</h5>
 			<DemoContext.Consumer>
-				{({ message, sendMessage }) => {
+				{({ sendMessage }) => {
 					return (
 						<button
 							className="btn btn-primary"
