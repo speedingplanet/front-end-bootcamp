@@ -58,19 +58,16 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
-/*
-  8. Create a root stacking context
-*/
-#root,
-#__next {
-	isolation: isolate;
-}
 
 /*
 ######################################################################
 Custom styles below here
 ######################################################################
 */
+
+body {
+	padding: min(1%, 5px) min(2%, 10px);
+}
 
 ul.no-bullets {
 	list-style-type: none;

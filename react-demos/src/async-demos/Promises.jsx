@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 function Promises() {
-	let url = 'http://localhost:8000/countries';
 	const [countries, setCountries] = useState([]);
 
 	// One-time data request
 	useEffect(() => {
+		let url = 'http://localhost:8000/countries';
 		// fetch() returns a Promise
 		fetch(url)
 			.then((response) => {

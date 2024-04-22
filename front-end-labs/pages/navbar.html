@@ -8,33 +8,45 @@
 		/>
 		<title>Navbar</title>
 		<style>
-			.navbar-container {}
+			/* Placeholder */
+			.navbar-container {
+				border: 4px red solid;
+				display: flex;
+			}
 
-			.navbar-item {}
+			.navbar-item {
+				border: 2px black dashed;
+				flex: 1;
+				text-align: center;
+			}
+
+			ul.navbar-container {
+				list-style-type: none;
+				padding: 0;
+			}
 		</style>
 	</head>
 	<body>
 		<h1>ZipPay Navbar</h1>
 
 		<nav>
-			<ul>
-				<li><a href="/pages/send-receive.html">Send/Receive</a></li>
-				<li><a href="/pages/account-settings.html">Account settings</a></li>
-				<li><a href="/pages/balance.html">Balance summary & recent user history</a></li>
-				<li><a href="/pages/search.html">Search</a></li>
-				<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
-				<li><a href="/index.html">Home</a></li>
+			<ul class="navbar-container">
+				<li class="navbar-item"><a href="/pages/send-receive.html">Send/Receive</a></li>
+				<li class="navbar-item"><a href="/pages/account-settings.html">Account settings</a></li>
+				<li class="navbar-item"><a href="/pages/balance.html">Balance summary & recent user history</a></li>
+				<li class="navbar-item"><a href="/pages/search.html">Search</a></li>
+				<li class="navbar-item"><a href="/pages/split-the-bill.html">Split the bill</a></li>
+				<li class="navbar-item"><a href="/index.html">Home</a></li>
 			</ul>
 		</nav>
-
-		<nav>
-				<div><a href="/pages/send-receive.html">Send/Receive</a></div>
-				<div><a href="/pages/account-settings.html">Account settings</a></div>
-				<div><a href="/pages/balance.html">Balance summary & recent user history</a></div>
-				<div><a href="/pages/search.html">Search</a></div>
-				<div><a href="/pages/split-the-bill.html">Split the bill</a></div>
-				<div><a href="/index.html">Home</a></div>
+		<hr />
+		<nav class="navbar-container">
+			<div class="navbar-item"><a href="/pages/send-receive.html">Send/Receive</a></div>
+			<div class="navbar-item"><a href="/pages/account-settings.html">Account settings</a></div>
+			<div class="navbar-item"><a href="/pages/balance.html">Balance summary & recent user history</a></div>
+			<div class="navbar-item"><a href="/pages/search.html">Search</a></div>
+			<div class="navbar-item"><a href="/pages/split-the-bill.html">Split the bill</a></div>
+			<div class="navbar-item"><a href="/index.html">Home</a></div>
 		</nav>
-
 	</body>
 </html>
