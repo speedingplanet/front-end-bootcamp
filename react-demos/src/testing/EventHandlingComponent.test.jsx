@@ -32,5 +32,19 @@ it('should test whether a button was clicked multiple times', async () => {
 	screen.getByText('You clicked on the button 2 times');
 });
 
-it('should test whether text was entered', () => {});
+it('should test whether text was entered', async () => {
+	render(<EventHandlingComponent />);
+	let formField = screen.getByLabelText(/type something/i);
+	let output = screen.getByTestId('textFieldOutput');
+
+	let user = userEvent.setup();
+
+	let testValue = 'Good-bye';
+
+	// user.type(destination, value)
+	await user.type(formField, testValue);
+
+	expect(output).toHaveTextContent(testValue);
+});
+
 it('should test whether a div was hovered over', () => {});

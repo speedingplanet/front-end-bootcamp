@@ -1,10 +1,16 @@
 .ehComponent {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 10px;
 }
 
 .ehComponent header {
 	grid-column: 1 / -1;
+}
+
+.ehComponent div:has(h3) {
+	grid-column: 1 / span 2;
+	border-bottom: 2px gray solid;
 }
 
 .mouseOver {

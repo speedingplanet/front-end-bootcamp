@@ -48,6 +48,8 @@ function EventHandlingComponent() {
 			</header>
 			<div>
 				<h3>Button</h3>
+			</div>
+			<div>
 				<p>
 					Click this button:{' '}
 					<button
@@ -63,6 +65,8 @@ function EventHandlingComponent() {
 			</div>
 			<div>
 				<h3>Text field</h3>
+			</div>
+			<div style={{ paddingRight: '15px' }}>
 				<p>
 					<label htmlFor="eh-text-field">
 						Type something into this form field
@@ -77,7 +81,7 @@ function EventHandlingComponent() {
 				</p>
 			</div>
 			<div>
-				<p>
+				<p data-testid="textFieldOutput">
 					{state.textFieldMessage
 						? state.textFieldMessage
 						: 'No text entered yet'}
@@ -85,6 +89,8 @@ function EventHandlingComponent() {
 			</div>
 			<div>
 				<h3>Mouse over</h3>
+			</div>
+			<div>
 				<div
 					className={classes.mouseOver}
 					onMouseEnter={handleMouseEnter}
