@@ -17,7 +17,9 @@ import AsyncManager from './async-demos/AsyncManager.jsx';
 import PropsChildren from './PropsChildren.jsx';
 import ApolloManager from './apollo/ApolloManager.jsx';
 
-import './App.css'
+import './App.css';
+import EventHandling from './event-handling/EventHandling.jsx';
+import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
 
 function App() {
 	return (
@@ -32,6 +34,12 @@ function App() {
 				<div className="row">
 					<div className="col-3">
 						<ul className="list-unstyled">
+							<li>
+								<NavLink to="event-handling">Event Handling</NavLink>
+							</li>
+							<li>
+								<NavLink to="conditional-display">Conditional Display</NavLink>
+							</li>
 							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
 							</li>
@@ -59,7 +67,9 @@ function App() {
 								<NavLink to="context-demo">Context API</NavLink>
 							</li>
 							<li>
-								<NavLink to="higher-order-component">Higher Order Component</NavLink>
+								<NavLink to="higher-order-component">
+									Higher Order Component
+								</NavLink>
 							</li>
 							<li>
 								<NavLink to="memoization">Memoization</NavLink>
@@ -90,6 +100,14 @@ function App() {
 					</div>
 					<div className="col">
 						<Routes>
+							<Route
+								path="/event-handling"
+								element={<EventHandling />}
+							/>
+							<Route
+								path="/conditional-display"
+								element={<ConditionalDisplay />}
+							/>
 							<Route
 								path="/form-data/*"
 								element={<FormDataManager />}

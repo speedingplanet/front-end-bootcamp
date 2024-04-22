@@ -15,7 +15,7 @@ test('Smoke test (test)', () => {
 it('should render the BasicComponent component', () => {
 	render(<BasicComponent />);
 
-	/* 
+	/*
 	Find an element by its text, error/failure if not found
 	screen.getByText('Apples')
 	expect().not -> Negates the next matcher
