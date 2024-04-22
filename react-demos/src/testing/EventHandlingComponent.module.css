@@ -1,0 +1,12 @@
+.ehComponent {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.ehComponent header {
+	grid-column: 1 / -1;
+}
+
+.mouseOver {
+	border: 2px solid green;
+}

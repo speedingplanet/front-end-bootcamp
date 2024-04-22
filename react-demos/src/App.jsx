@@ -11,6 +11,7 @@ import ReduxCounterBP from './redux-counter-best/ReduxContainer.jsx';
 import ReduxToolkitCounter from './redux-counter-tk/ReduxContainer.jsx';
 import VisibilityDemo from './visibility-tests/VisibilityDemo.jsx';
 import BasicComponent from './testing/BasicComponent';
+import EventHandlingComponent from './testing/EventHandlingComponent';
 import FormDataManager from './form-data/FormDataManager';
 import IterativeContentManager from './iterative-content/IterativeContentManager';
 import AsyncManager from './async-demos/AsyncManager.jsx';
@@ -96,6 +97,11 @@ function App() {
 							<li>
 								<NavLink to="testable-component">Testable component</NavLink>
 							</li>
+							<li>
+								<NavLink to="eh-testable-component">
+									Testable component with event handling
+								</NavLink>
+							</li>
 						</ul>
 					</div>
 					<div className="col">
@@ -167,6 +173,10 @@ function App() {
 							<Route
 								path="/testable-component"
 								element={<BasicComponent />}
+							/>
+							<Route
+								path="/eh-testable-component"
+								element={<EventHandlingComponent />}
 							/>
 							<Route
 								path="/visibility-demo"
