@@ -62,11 +62,23 @@ Custom styles below here
 	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
 		source-sans-pro, sans-serif;
 	font-weight: normal;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 /* Don't use visited link colors */
 a:visited {
 	color: inherit;
+}
+
+.page-header,
+.navbar-list {
+	flex: 0 0 auto;
+}
+
+.page-header > h1 {
+	text-align: center;
 }
 
 .navbar-list ul {
@@ -93,8 +105,4 @@ a:visited {
 
 .navbar-list a {
 	text-decoration: none;
-}
-
-.page-header > h1 {
-	text-align: center;
 }
