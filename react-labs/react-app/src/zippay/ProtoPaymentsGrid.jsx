@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProtoPaymentsGrid.css';
 
 /*
 {"id":1,"payorId":"kvecardg","payeeId":"adickha","datePaid":"2022-07-08","amount":10.06,"reason":"📚 Course support"},
@@ -10,7 +11,7 @@ import React from 'react';
 
 function ProtoPaymentsGrid() {
 	return (
-		<section>
+		<section className="pgContainer">
 			{/* Headers */}
 			<div>Sender</div>
 			<div>Recipient</div>
