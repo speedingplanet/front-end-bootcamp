@@ -10,18 +10,18 @@ function ParentChild() {
 }
 
 function Parent() {
-	let [childMessage, setChildMessage] = useState('');
+	let [displayMessage, setDisplayMessage] = useState('');
 
 	function handleSendMessage(message) {
-		setChildMessage(message);
+		setDisplayMessage(message);
 	}
 
 	return (
 		<div style={{ border: '2px solid black', padding: '10px' }}>
 			<h3>Parent component</h3>
 			<div style={{ minHeight: '2em' }}>
-				{childMessage ? (
-					<p>Message received: {childMessage}</p>
+				{displayMessage ? (
+					<p>Message received: {displayMessage}</p>
 				) : (
 					<p>No messages yet.</p>
 				)}

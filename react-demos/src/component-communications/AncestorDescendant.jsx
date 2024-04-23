@@ -39,7 +39,10 @@ function Gen1(props) {
 	return (
 		<div style={{ border: '2px green dotted', padding: '10px' }}>
 			<p>First Generation</p>
-			<Gen2 {...props} />
+			<Gen2
+				{...props}
+				anotherProperty={5}
+			/>
 		</div>
 	);
 }
@@ -54,10 +57,11 @@ function Gen2(props) {
 }
 
 function Gen3(props) {
+	const { anotherProperty, ...remainingProps } = props;
 	return (
 		<div style={{ border: '2px green dotted', padding: '10px' }}>
 			<p>Third Generation</p>
-			<Gen4 {...props} />
+			<Gen4 {...remainingProps} />
 		</div>
 	);
 }
@@ -83,7 +87,7 @@ function Descendant({ ancestorMessage, onSendMessage }) {
 
 	return (
 		<div style={{ border: '2px dashed red', padding: '10px' }}>
-			<h4>Child</h4>
+			<h4>Descendant</h4>
 			<p>This is a value prop, ancestorMessage: {ancestorMessage}</p>
 			<div className="mt-3">
 				<label
