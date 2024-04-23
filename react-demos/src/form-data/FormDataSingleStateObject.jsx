@@ -15,6 +15,9 @@ function FormDataSingleStateObject() {
 		let field = event.currentTarget.name;
 		let value = event.currentTarget.value;
 
+		// Shorter, though not clearer, version of the below
+		// setFormState({ ...formState, [field]: value });
+
 		let nextState = { ...formState };
 		nextState[field] = value;
 

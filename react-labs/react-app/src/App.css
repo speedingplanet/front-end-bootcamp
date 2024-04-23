@@ -1,10 +1,33 @@
+main {
+	display: flex;
+	flex-direction: column;
+	/* Lock scrolling */
+	overflow: hidden;
+	height: 99vh;
+}
+
+.flatnav {
+	flex: 0 0 auto;
+}
+
 .flatnav ul {
 	list-style-type: none;
-	padding: 0;
+	padding: 0 0 4px 0;
+	line-height: 1;
+	font-family: sans-serif;
+	font-size: 75%;
+	border-bottom: 2px solid gray;
+	width: 100%;
 	display: flex;
 	gap: 1em;
 }
 
+.active {
+	font-weight: bold;
+}
+
 main {
 	padding: min(10px, 1vh) min(5px, 1vw);
+	display: flex;
+	flex-direction: column;
 }

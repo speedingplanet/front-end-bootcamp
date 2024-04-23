@@ -11,6 +11,7 @@ import ReduxCounterBP from './redux-counter-best/ReduxContainer.jsx';
 import ReduxToolkitCounter from './redux-counter-tk/ReduxContainer.jsx';
 import VisibilityDemo from './visibility-tests/VisibilityDemo.jsx';
 import BasicComponent from './testing/BasicComponent';
+import EventHandlingComponent from './testing/EventHandlingComponent';
 import FormDataManager from './form-data/FormDataManager';
 import IterativeContentManager from './iterative-content/IterativeContentManager';
 import AsyncManager from './async-demos/AsyncManager.jsx';
@@ -20,6 +21,7 @@ import ApolloManager from './apollo/ApolloManager.jsx';
 import './App.css';
 import EventHandling from './event-handling/EventHandling.jsx';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
+import ComponentCommunicationsManager from './component-communications/ComponentCommunicationsManager.jsx';
 
 function App() {
 	return (
@@ -42,6 +44,9 @@ function App() {
 							</li>
 							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
+							</li>
+							<li>
+								<NavLink to="comp-comm">Component communications</NavLink>
 							</li>
 							<li>
 								<NavLink to="iterative-content">Iterative content</NavLink>
@@ -96,6 +101,11 @@ function App() {
 							<li>
 								<NavLink to="testable-component">Testable component</NavLink>
 							</li>
+							<li>
+								<NavLink to="eh-testable-component">
+									Testable component with event handling
+								</NavLink>
+							</li>
 						</ul>
 					</div>
 					<div className="col">
@@ -111,6 +121,10 @@ function App() {
 							<Route
 								path="/form-data/*"
 								element={<FormDataManager />}
+							/>
+							<Route
+								path="/comp-comm/*"
+								element={<ComponentCommunicationsManager />}
 							/>
 							<Route
 								path="/iterative-content/*"
@@ -167,6 +181,10 @@ function App() {
 							<Route
 								path="/testable-component"
 								element={<BasicComponent />}
+							/>
+							<Route
+								path="/eh-testable-component"
+								element={<EventHandlingComponent />}
 							/>
 							<Route
 								path="/visibility-demo"

@@ -4,7 +4,6 @@ import FormDataControlledComponents from './FormDataControlledComponents';
 import FormDataUtilityHandler from './FormDataUtilityHandler';
 import FormDataEventObject from './FormDataEventObject';
 import FormDataSingleStateObject from './FormDataSingleStateObject';
-import FormWithContext from './form-context/FormWithContext';
 import './form-data.css';
 
 function FormDataManager() {
@@ -33,11 +32,6 @@ function FormDataManager() {
 								Single state object
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to="/form-data/context-reducer">
-								Context and reducer
-							</NavLink>
-						</li>
 					</ul>
 				</div>
 				<div className="col">
@@ -57,10 +51,6 @@ function FormDataManager() {
 						<Route
 							path="single-state-object"
 							element={<FormDataSingleStateObject />}
-						/>
-						<Route
-							path="context-reducer"
-							element={<FormWithContext />}
 						/>
 					</Routes>
 				</div>

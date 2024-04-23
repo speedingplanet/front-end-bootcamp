@@ -30,8 +30,8 @@ Save and make sure it works by having `npm run test` running in a terminal
 
 Add a test to ensure that the display is doing math correctly
 
-Use the `container` feature with `querySelector` against the eleement with the
-class "result" to check the results.
+What's the best solution for this? Could you use the `screen` object? Or 
+would you use the `container` property? Or maybe a test ID? 
 
 Or get to that information a different way, if you're feeling creative.
 

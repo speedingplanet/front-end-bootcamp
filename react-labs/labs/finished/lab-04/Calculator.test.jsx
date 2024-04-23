@@ -1,10 +1,13 @@
-// @ts-check
 import React from 'react';
-import { expect, test } from 'vitest';
+import { expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/vitest';
 import Calculator from './Calculator';
+
+it('Smoke test', () => {
+	expect(1 + 1).toBe(2);
+});
 
 /*
 ###################################################################
@@ -21,11 +24,17 @@ https://testing-library.com/docs/queries/about/#textmatch
 
 Save and make sure it works by having `npm run test` running in a terminal
 */
-test('Loads and displays Calculator', () => {
+
+it('should correctly render Calculator', () => {
 	render(<Calculator />);
 
-	expect(screen.getByLabelText(/Choose/)).not.toBeNull();
-	expect(screen.getByLabelText(/Choose/)).toBeInTheDocument();
+	expect(screen.getByText('Choose an operator:')).not.toBeNull();
+
+	// Actually gets a different element, which we'll see soon.
+	expect(screen.getByLabelText('Choose an operator:')).not.toBeNull();
+
+	expect(screen.getByLabelText(/operator/)).not.toBeNull();
+	expect(screen.getByLabelText('operator:', { exact: false })).not.toBeNull();
 });
 
 /*
@@ -37,10 +46,13 @@ Write a test to make sure that the equation is not displayed initially
 
 You probably want the `toBeVisible` matcher called on your `expect`
 */
-test('Does not display any equation at start', () => {
-	render(<Calculator />);
 
-	expect(screen.queryByText(/5/)).not.toBeVisible();
+it('should not display the equation initially', () => {
+	render(<Calculator />);
+	let lValueElement = screen.queryByText('5');
+	expect(lValueElement).not.toBeNull();
+	expect(lValueElement).toBeInTheDocument();
+	expect(lValueElement).not.toBeVisible();
 });
 
 /*
@@ -61,11 +73,34 @@ and be sure to `await` userEvent calls
 
 Several different ways you could find out if the equation is displayed.
 */
-test('Displays equation after selecting an operator', async () => {
-	const { container } = render(<Calculator />);
 
-	await userEvent.selectOptions(screen.getByLabelText(/Choose/), '+');
-	expect(screen.queryByText(/^5/)).toBeVisible();
+it('should display the results after choosing an operator', async () => {
+	render(<Calculator />);
+	// Verify our assumptions
 
-	expect(container.querySelector('.result')?.textContent).toBe('15');
+	// Calculator display is not shown
+	let lValueElement = screen.queryByText('5');
+	expect(lValueElement).not.toBeNull();
+	expect(lValueElement).toBeInTheDocument();
+	expect(lValueElement).not.toBeVisible();
+
+	// Get a reference to the operator select list
+	let selectList = screen.getByLabelText(/operator/i);
+
+	// Verify that the blank option is selected
+	expect(selectList).toHaveValue('');
+
+	// Select an operator
+	let user = userEvent.setup();
+
+	// Select by value (text match NOT available, no RegExps, no {exact: false})
+	// await user.selectOptions(selectList, '+');
+	await user.selectOptions(selectList, '+ Addition');
+
+	// Check to see if CalculatorDisplay is visible
+	expect(lValueElement).toBeVisible();
+
+	// Maybe check the results
+	expect(screen.queryByText('+')).not.toBeNull();
+	expect(screen.queryByText('15')).not.toBeNull();
 });

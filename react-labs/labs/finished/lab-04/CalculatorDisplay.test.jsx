@@ -1,6 +1,5 @@
-// @ts-check
 import React from 'react';
-import { expect, test } from 'vitest';
+import { expect, it, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import CalculatorDisplay from './CalculatorDisplay';
@@ -16,24 +15,30 @@ test('Smoke test', () => {
 
 Write a test that loads and displays CalculatorDisplay
 
-`render` to render CalculatorDisplay (pass whatever values you'd like for attributes)
-
-Try expecting that something with the text '+' is not null, or 
-in the document.
+`render` to render CalculatorDisplay 
+Pass whatever values you'd like for attributes, but DO make sure to pass 
+some values, or there will be no content to check.
 
 Save and make sure it works by having `npm run test` running in a terminal
 */
-test('Loads and displays CalculatorDisplay', () => {
+
+it('should render CalculatorDisplay', () => {
+	let testLValue = 15;
+	let testRValue = 7;
+	let testOperator = '+';
+
 	render(
 		<CalculatorDisplay
-			lValue={2}
-			rValue={3}
-			operator="+"
+			lValue={testLValue}
+			rValue={testRValue}
+			operator={testOperator}
 		/>,
 	);
 
-	expect(screen.getByText('+')).not.toBeNull();
-	expect(screen.getByText('+')).toBeInTheDocument();
+	expect(screen.getByText(testLValue)).toBeInTheDocument();
+	expect(screen.getByText(testOperator)).toBeInTheDocument();
+	expect(screen.getByText(testRValue)).toBeInTheDocument();
+	expect(screen.getByText('=')).toBeInTheDocument();
 });
 
 /*
@@ -43,21 +48,27 @@ test('Loads and displays CalculatorDisplay', () => {
 
 Add a test to ensure that the display is doing math correctly
 
-Use the `container` feature with `querySelector` against the eleement with the
-class "result" to check the results.
+What's the best solution for this? Could you use the `screen` object? Or 
+would you use the `container` property? Or maybe a test ID? 
 
 Or get to that information a different way, if you're feeling creative.
 
 Go to Calculator.test.jsx for Part 3
 */
-test('Adds correctly', () => {
-	const { container } = render(
+
+it('CalculatorDisplay should do math correctly', () => {
+	let testLValue = 15;
+	let testRValue = 7;
+	let testOperator = '+';
+	let testResult = testLValue + testRValue;
+
+	render(
 		<CalculatorDisplay
-			lValue={2}
-			rValue={3}
-			operator="+"
+			lValue={testLValue}
+			rValue={testRValue}
+			operator={testOperator}
 		/>,
 	);
 
-	expect(container.querySelector('.result')?.textContent).toBe('5');
+	expect(screen.getByText(testResult)).toBeInTheDocument();
 });

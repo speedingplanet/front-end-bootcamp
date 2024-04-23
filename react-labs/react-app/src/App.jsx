@@ -22,7 +22,6 @@ function App() {
 						</li>
 					</ul>
 				</nav>
-				<hr style={{ marginTop: '5px' }} />
 				<Routes>
 					<Route
 						path="/"
