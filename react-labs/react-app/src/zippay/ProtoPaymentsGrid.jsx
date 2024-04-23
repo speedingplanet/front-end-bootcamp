@@ -5,7 +5,6 @@ import { payments } from '../../data/payments.json';
 function ProtoPaymentsGrid() {
 	return (
 		<section className="pgContainer">
-			{/* Headers */}
 			<div className="pgHeader">
 				<div>Sender</div>
 				<div>Recipient</div>
