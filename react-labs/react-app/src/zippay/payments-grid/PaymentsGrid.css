@@ -1,0 +1,61 @@
+/* Placeholder */
+.pgContainer {
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+		source-sans-pro, sans-serif;
+	display: grid;
+	/* Equally distributed columns, always */
+	/* grid-template-columns: repeat(5, 1fr); */
+
+	/* Last column is as wide as its widest content */
+	/* grid-template-columns: repeat(4, 1fr) max-content; */
+
+	/* Dynamic column count */
+	grid-template-columns: repeat(var(--columns), 1fr);
+	height: 100%;
+}
+
+.pgHeader,
+.pgRow {
+	grid-column: span 5;
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+.pgHeader {
+	border-bottom: 2px gray inset;
+	margin-bottom: 5px;
+}
+
+/*
+	Alternate implementation of sticky column headers
+	Also requires "overflow-y: scroll at .pgHeader
+	And removing the pgBody element
+*/
+
+.pgHeader.sticky {
+	top: 0;
+	position: sticky;
+	background-color: white;
+}
+
+.pgHeader > div {
+	font-weight: bold;
+}
+
+.pgBody {
+	grid-column: span 5;
+	display: grid;
+	grid-template-columns: subgrid;
+	overflow-y: scroll;
+}
+
+/* Targeting entire rows */
+.pgRow:nth-child(odd) {
+	background-color: gray;
+	color: white;
+}
+
+/* Targeting columns */
+.pgRow > div:nth-child(odd) {
+	font-style: italic;
+}

@@ -1,13 +1,14 @@
 import React from 'react';
 
-function PaymentsGridHeader() {
+function PaymentsGridHeader({ columns }) {
 	return (
 		<div className="pgHeader">
-			<div>Sender</div>
-			<div>Recipient</div>
-			<div>Date</div>
-			<div>Amount</div>
-			<div>Reason</div>
+			{columns.map((column) => {
+				if (column.visible) {
+					return <div key={column.field}>{column.label}</div>;
+				}
+				return null;
+			})}
 		</div>
 	);
 }
