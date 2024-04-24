@@ -40,6 +40,7 @@
 
 .pgHeader > div {
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .pgBody {
