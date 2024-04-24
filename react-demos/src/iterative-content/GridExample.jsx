@@ -18,6 +18,8 @@ let columns = [
 ];
 
 function GridExample() {
+	// Pass `--columns` in the style attribute to dynamically set the number of
+	// columns in the grid
 	return (
 		<section style={{ '--columns': columns.length }}>
 			<h3>Countries and their population</h3>

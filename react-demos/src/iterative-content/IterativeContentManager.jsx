@@ -5,6 +5,7 @@ import GridExample from './GridExample';
 import GridRefactored from './grid-refactored/GridRefactored';
 import GridSorted from './grid-sorted/GridSorted';
 import GridRemote from './grid-remote/GridRemote';
+import GridWithContext from './grid-context/GridWithContext';
 
 function IterativeContentManager() {
 	return (
@@ -33,6 +34,11 @@ function IterativeContentManager() {
 							</NavLink>
 						</li>
 						<li>
+							<NavLink to="/iterative-content/grid-context">
+								Grid with Context
+							</NavLink>
+						</li>
+						<li>
 							<NavLink to="/iterative-content/grid-remote">
 								Grid with remote data
 							</NavLink>
@@ -56,6 +62,10 @@ function IterativeContentManager() {
 						<Route
 							path="grid-sorted"
 							element={<GridSorted />}
+						/>
+						<Route
+							path="grid-context"
+							element={<GridWithContext />}
 						/>
 						<Route
 							path="grid-remote"

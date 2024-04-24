@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GridContext } from './grid-context.js';
 
-function GridBodyRow({ columns, country }) {
+function GridBodyRow({ country }) {
+	let columns = useContext(GridContext);
 	return (
 		<>
 			{columns.map((column) => {

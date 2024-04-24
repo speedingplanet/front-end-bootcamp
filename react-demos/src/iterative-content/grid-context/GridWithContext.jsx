@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { orderBy } from 'lodash';
 import { countries } from '../../data/countries-table.json';
+import { GridContext } from './grid-context.js';
+import GridHeaderRow from './GridHeaderRowContext';
+import GridBody from './GridBodyContext';
 import '../GridExample.css';
-import GridHeaderRow from './GridHeaderRowSorted';
-import GridBody from './GridBodySorted';
+
+let initialSortConfig = {
+	sortField: '',
+	sortDirection: 'asc',
+};
 
 let formatter = new Intl.NumberFormat();
 
@@ -24,12 +30,7 @@ let columns = [
 	},
 ];
 
-let initialSortConfig = {
-	sortField: '',
-	sortDirection: 'asc',
-};
-
-function GridSorted() {
+function GridWithContext() {
 	let [sortConfig, setSortConfig] = useState(initialSortConfig);
 
 	function handleHeaderClick(sortField) {
@@ -57,20 +58,20 @@ function GridSorted() {
 
 	return (
 		<section style={{ '--columns': columns.length }}>
-			<h3>Countries Grid with sorting</h3>
-			<div className="countries-grid">
-				<GridHeaderRow
-					columns={columns}
-					onHeaderClick={handleHeaderClick}
-					sortConfig={sortConfig}
-				/>
-				<GridBody
-					columns={columns}
-					countries={sortedCountries}
-				/>
-			</div>
+			<GridContext.Provider value={columns}>
+				<h3>Countries Grid with sorting</h3>
+				<div className="countries-grid">
+					{/* No longer need to provide columns here */}
+					<GridHeaderRow
+						onHeaderClick={handleHeaderClick}
+						sortConfig={sortConfig}
+					/>
+					{/* No longer need to provide columns here */}
+					<GridBody countries={sortedCountries} />
+				</div>
+			</GridContext.Provider>{' '}
 		</section>
 	);
 }
 
-export default GridSorted;
+export default GridWithContext;
