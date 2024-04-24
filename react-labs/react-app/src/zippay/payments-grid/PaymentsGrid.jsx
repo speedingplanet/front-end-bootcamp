@@ -49,11 +49,18 @@ function PaymentsGrid() {
 		// TODO: figure out what the sortDirection value should be
 		// if the current sort field and the last sort field ARE NOT the same: sort ascending
 		// if the current sort field and the last sort field ARE the same...
-		// flip the direction asc -> desc or desc -> asc
+		// if the previous sort direction was 'asc', make it 'desc'
+		// if the previous sort direction was 'desc', make it ''
+		// if the previous sort direction was '', make it 'asc'
 
 		let nextSortDirection = 'asc';
 		if (field === sortConfig.sortField && sortConfig.sortDirection === 'asc') {
 			nextSortDirection = 'desc';
+		} else if (
+			field === sortConfig.sortField &&
+			sortConfig.sortDirection === 'desc'
+		) {
+			nextSortDirection = '';
 		}
 
 		setSortConfig({
@@ -62,11 +69,10 @@ function PaymentsGrid() {
 		});
 	}
 
-	let sortedPayments = orderBy(
-		payments,
-		sortConfig.sortField,
-		sortConfig.sortDirection,
-	);
+	let sortedPayments =
+		sortConfig.sortDirection === ''
+			? payments
+			: orderBy(payments, sortConfig.sortField, sortConfig.sortDirection);
 
 	return (
 		<section
@@ -81,6 +87,7 @@ function PaymentsGrid() {
 			<PaymentsGridHeader
 				columns={columns}
 				selectHeader={handleSelectHeader}
+				sortConfig={sortConfig}
 			/>
 			<PaymentsGridBody
 				payments={sortedPayments}

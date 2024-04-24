@@ -1,6 +1,7 @@
 import React from 'react';
+import SortIndicator from './SortIndicator';
 
-function PaymentsGridHeader({ columns, selectHeader }) {
+function PaymentsGridHeader({ columns, selectHeader, sortConfig }) {
 	function handleHeaderClick(field) {
 		selectHeader(field);
 	}
@@ -15,6 +16,11 @@ function PaymentsGridHeader({ columns, selectHeader }) {
 							key={column.field}
 						>
 							{column.label}
+							&nbsp;
+							<SortIndicator
+								sortConfig={sortConfig}
+								field={column.field}
+							/>
 						</div>
 					);
 				}
