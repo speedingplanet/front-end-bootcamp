@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { payments } from '../../../data/payments.json';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
@@ -20,30 +20,46 @@ columns: [
 ]
 */
 
-function PaymentsGrid() {
-	let columns = [
-		{ label: 'Payment ID', field: 'id', visible: false },
-		{ label: 'Sender', field: 'payorId', visible: true },
-		{ label: 'Recipient', field: 'payeeId', visible: true },
-		{ label: 'Date', field: 'datePaid', visible: true },
-		{ label: 'Amount', field: 'amount', visible: true },
-		{ label: 'Reason', field: 'reason', visible: true },
-	];
+let columns = [
+	{ label: 'Payment ID', field: 'id', visible: false },
+	{ label: 'Sender', field: 'payorId', visible: true },
+	{ label: 'Recipient', field: 'payeeId', visible: true },
+	{ label: 'Date', field: 'datePaid', visible: true },
+	{ label: 'Amount', field: 'amount', visible: true },
+	{ label: 'Reason', field: 'reason', visible: true },
+];
 
-	// There are about fifty ways to do this.
-	let columnCount = 0;
-	columns.forEach((column) => {
-		if (column.visible) {
-			columnCount++;
-		}
+// There are about fifty ways to do this.
+let columnCount = 0;
+columns.forEach((column) => {
+	if (column.visible) {
+		columnCount++;
+	}
+});
+
+function PaymentsGrid() {
+	const [sortConfig, setSortConfig] = useState({
+		sortField: '',
+		sortDirection: '',
 	});
+
+	function handleSelectHeader(field) {
+		console.log(`Sort field should be ${field}`);
+		setSortConfig({
+			sortField: field,
+		});
+	}
 
 	return (
 		<section
 			className="pgContainer"
 			style={{ '--columns': columnCount }}
 		>
-			<PaymentsGridHeader columns={columns} />
+			<p>Sort field is {sortConfig.sortField}</p>
+			<PaymentsGridHeader
+				columns={columns}
+				selectHeader={handleSelectHeader}
+			/>
 			<PaymentsGridBody
 				payments={payments}
 				columns={columns}
