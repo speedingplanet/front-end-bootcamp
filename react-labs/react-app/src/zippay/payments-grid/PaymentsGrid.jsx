@@ -44,7 +44,10 @@ function PaymentsGrid() {
 			style={{ '--columns': columnCount }}
 		>
 			<PaymentsGridHeader columns={columns} />
-			{/* <PaymentsGridBody payments={payments} /> */}
+			<PaymentsGridBody
+				payments={payments}
+				columns={columns}
+			/>
 		</section>
 	);
 }
