@@ -3,6 +3,7 @@ import { payments } from '../../../data/payments.json';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
 import './PaymentsGrid.css';
+import { orderBy } from 'lodash';
 
 /*
 How can we say: 
@@ -50,24 +51,39 @@ function PaymentsGrid() {
 		// if the current sort field and the last sort field ARE the same...
 		// flip the direction asc -> desc or desc -> asc
 
+		let nextSortDirection = 'asc';
+		if (field === sortConfig.sortField && sortConfig.sortDirection === 'asc') {
+			nextSortDirection = 'desc';
+		}
+
 		setSortConfig({
-			...sortConfig,
 			sortField: field,
+			sortDirection: nextSortDirection,
 		});
 	}
+
+	let sortedPayments = orderBy(
+		payments,
+		sortConfig.sortField,
+		sortConfig.sortDirection,
+	);
 
 	return (
 		<section
 			className="pgContainer"
 			style={{ '--columns': columnCount }}
 		>
-			<p>Sort field is {sortConfig.sortField}</p>
+			<p>
+				Sort field is {sortConfig.sortField}
+				<br />
+				sort direction is {sortConfig.sortDirection}
+			</p>
 			<PaymentsGridHeader
 				columns={columns}
 				selectHeader={handleSelectHeader}
 			/>
 			<PaymentsGridBody
-				payments={payments}
+				payments={sortedPayments}
 				columns={columns}
 			/>
 		</section>
