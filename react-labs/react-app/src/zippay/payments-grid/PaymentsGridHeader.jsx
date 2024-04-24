@@ -1,13 +1,17 @@
 import React from 'react';
 
 function PaymentsGridHeader({ columns, selectHeader }) {
+	function handleHeaderClick(field) {
+		selectHeader(field);
+	}
+
 	return (
 		<div className="pgHeader">
 			{columns.map((column) => {
 				if (column.visible) {
 					return (
 						<div
-							onClick={() => selectHeader(column.field)}
+							onClick={() => handleHeaderClick(column.field)}
 							key={column.field}
 						>
 							{column.label}

@@ -45,7 +45,13 @@ function PaymentsGrid() {
 
 	function handleSelectHeader(field) {
 		console.log(`Sort field should be ${field}`);
+		// TODO: figure out what the sortDirection value should be
+		// if the current sort field and the last sort field ARE NOT the same: sort ascending
+		// if the current sort field and the last sort field ARE the same...
+		// flip the direction asc -> desc or desc -> asc
+
 		setSortConfig({
+			...sortConfig,
 			sortField: field,
 		});
 	}
