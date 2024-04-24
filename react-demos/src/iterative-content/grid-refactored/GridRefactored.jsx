@@ -4,6 +4,8 @@ import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRow';
 import GridBody from './GridBody';
 
+let formatter = new Intl.NumberFormat();
+
 let columns = [
 	{
 		field: 'country',
@@ -12,10 +14,12 @@ let columns = [
 	{
 		field: 'pop2022',
 		label: 'Population (2022)',
+		formatter: (v) => formatter.format(v),
 	},
 	{
 		field: 'area',
 		label: 'Size (km^2)',
+		formatter: (v) => formatter.format(v),
 	},
 ];
 

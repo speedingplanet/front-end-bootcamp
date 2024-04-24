@@ -3,9 +3,14 @@ import React from 'react';
 function GridBodyRow({ columns, country }) {
 	return (
 		<>
-			{columns.map((column) => (
-				<div key={column.field}>{country[column.field]}</div>
-			))}
+			{columns.map((column) => {
+				let value = country[column.field];
+				if (column.formatter) {
+					value = column.formatter(value);
+				}
+
+				return <div key={column.field}>{value}</div>;
+			})}
 		</>
 	);
 }
