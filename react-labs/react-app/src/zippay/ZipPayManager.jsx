@@ -8,7 +8,6 @@ function ZipPayManager() {
 	return (
 		<section className="zippay-main">
 			<Navbar></Navbar>
-			{/* <ProtoPaymentsGrid /> */}
 			<PaymentsGrid />
 		</section>
 	);

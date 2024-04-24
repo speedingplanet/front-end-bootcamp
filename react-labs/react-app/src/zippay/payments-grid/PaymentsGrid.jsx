@@ -90,8 +90,8 @@ function PaymentsGrid() {
 				sortConfig={sortConfig}
 			/>
 			<PaymentsGridBody
-				payments={sortedPayments}
 				columns={columns}
+				payments={sortedPayments}
 			/>
 		</section>
 	);
