@@ -4,6 +4,7 @@ import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
 import './PaymentsGrid.css';
 import { orderBy } from 'lodash';
+import { NavLink } from 'react-router-dom';
 
 /*
 How can we say: 
@@ -23,8 +24,18 @@ columns: [
 
 let columns = [
 	{ label: 'Payment ID', field: 'id', visible: false },
-	{ label: 'Sender', field: 'payorId', visible: true },
-	{ label: 'Recipient', field: 'payeeId', visible: true },
+	{
+		label: 'Sender',
+		field: 'payorId',
+		visible: true,
+		renderer: (userId) => <NavLink to={`../user/${userId}`}>{userId}</NavLink>,
+	},
+	{
+		label: 'Recipient',
+		field: 'payeeId',
+		visible: true,
+		renderer: (userId) => <NavLink to={`../user/${userId}`}>{userId}</NavLink>,
+	},
 	{ label: 'Date', field: 'datePaid', visible: true },
 	{ label: 'Amount', field: 'amount', visible: true },
 	{ label: 'Reason', field: 'reason', visible: true },
@@ -79,11 +90,6 @@ function PaymentsGrid() {
 			className="pgContainer"
 			style={{ '--columns': columnCount }}
 		>
-			<p>
-				Sort field is {sortConfig.sortField}
-				<br />
-				sort direction is {sortConfig.sortDirection}
-			</p>
 			<PaymentsGridHeader
 				columns={columns}
 				selectHeader={handleSelectHeader}
