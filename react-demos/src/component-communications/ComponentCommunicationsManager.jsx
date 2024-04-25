@@ -12,22 +12,16 @@ function ComponentCommunicationsManager() {
 				<div className="col-3 cc-manager">
 					<ul className="list-unstyled">
 						<li>
-							<NavLink to="/comp-comm/parent-child">Parent-Child</NavLink>
+							<NavLink to="parent-child">Parent-Child</NavLink>
 						</li>
 						<li>
-							<NavLink to="/comp-comm/ancestor-descendant">
-								Ancestor-Descendant
-							</NavLink>
+							<NavLink to="ancestor-descendant">Ancestor-Descendant</NavLink>
 						</li>
 						<li>
-							<NavLink to="/comp-comm/branch-to-branch">
-								Branch-to-branch
-							</NavLink>
+							<NavLink to="branch-to-branch">Branch-to-branch</NavLink>
 						</li>
 						<li>
-							<NavLink to="/comp-comm/branching-context">
-								Branches and Context
-							</NavLink>
+							<NavLink to="branching-context">Branches and Context</NavLink>
 						</li>
 					</ul>
 				</div>

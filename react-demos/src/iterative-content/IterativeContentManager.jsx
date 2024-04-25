@@ -14,34 +14,22 @@ function IterativeContentManager() {
 				<div className="col-3">
 					<ul className="list-unstyled">
 						<li>
-							<NavLink to="/iterative-content/minimal-example">
-								Minimal example
-							</NavLink>
+							<NavLink to="minimal-example">Minimal example</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-example">
-								Grid example
-							</NavLink>
+							<NavLink to="grid-example">Grid example</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-refactored">
-								Grid example refactored
-							</NavLink>
+							<NavLink to="grid-refactored">Grid example refactored</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-sorted">
-								Grid with sorting
-							</NavLink>
+							<NavLink to="grid-sorted">Grid with sorting</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-context">
-								Grid with Context
-							</NavLink>
+							<NavLink to="grid-context">Grid with Context</NavLink>
 						</li>
 						<li>
-							<NavLink to="/iterative-content/grid-remote">
-								Grid with remote data
-							</NavLink>
+							<NavLink to="grid-remote">Grid with remote data</NavLink>
 						</li>
 					</ul>
 				</div>

@@ -10,10 +10,10 @@ function AsyncManager() {
 				<div className="col-3">
 					<ul className="list-unstyled">
 						<li>
-							<NavLink to="/async-demos/promises">Promises</NavLink>
+							<NavLink to="promises">Promises</NavLink>
 						</li>
 						<li>
-							<NavLink to="/async-demos/async-await">Async-await</NavLink>
+							<NavLink to="async-await">Async-await</NavLink>
 						</li>
 					</ul>
 				</div>

@@ -13,24 +13,22 @@ function FormDataManager() {
 				<div className="col-3 form-data-manager">
 					<ul className="list-unstyled">
 						<li>
-							<NavLink to="/form-data/controlled-components">
+							<NavLink to="controlled-components">
 								Controlled Components
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/utility-event-handler">
+							<NavLink to="utility-event-handler">
 								Controlled Components with a utility event handler
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/event-object">
+							<NavLink to="event-object">
 								Uses only the event object to carry updates
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/single-state-object">
-								Single state object
-							</NavLink>
+							<NavLink to="single-state-object">Single state object</NavLink>
 						</li>
 					</ul>
 				</div>
