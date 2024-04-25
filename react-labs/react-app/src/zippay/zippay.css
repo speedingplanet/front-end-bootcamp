@@ -68,7 +68,8 @@ Custom styles below here
 }
 
 /* Don't use visited link colors */
-a:visited {
+a:visited,
+a:active {
 	color: inherit;
 }
 
