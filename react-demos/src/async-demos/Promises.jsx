@@ -16,7 +16,6 @@ function Promises() {
 				}
 			})
 			.then((results) => {
-				console.log('Countries array:', results);
 				setCountries(results);
 			})
 			.catch((error) => {
