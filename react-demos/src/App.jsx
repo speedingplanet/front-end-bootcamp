@@ -22,6 +22,7 @@ import './App.css';
 import EventHandling from './event-handling/EventHandling.jsx';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
 import ComponentCommunicationsManager from './component-communications/ComponentCommunicationsManager.jsx';
+import RoutingManager from './routing/RoutingManager.jsx';
 
 function App() {
 	return (
@@ -61,6 +62,9 @@ function App() {
 							</li>
 							<li>
 								<NavLink to="apollo">Apollo Demos</NavLink>
+							</li>
+							<li>
+								<NavLink to="routing">Routing</NavLink>
 							</li>
 							<li>
 								<NavLink to="cancel-promise">Cancel Promises (axios)</NavLink>
@@ -141,6 +145,10 @@ function App() {
 							<Route
 								path="/apollo/*"
 								element={<ApolloManager />}
+							/>
+							<Route
+								path="/routing/*"
+								element={<RoutingManager />}
 							/>
 							<Route
 								path="/cancel-promise"
