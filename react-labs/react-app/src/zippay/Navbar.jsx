@@ -10,39 +10,39 @@ function Navbar() {
 			<nav className="navbar-list">
 				<ul>
 					<li>
-						<NavLink to="/zippay/send-receive">
+						<NavLink to="send-receive">
 							<span className="material-icons">currency_exchange</span>
 							<br />
 							Send/Receive
 						</NavLink>
 					</li>
 					<li>
-						<a href="#placeholder">
+						<NavLink to="split-the-bill">
 							<span className="material-icons">call_split</span>
 							<br />
 							Split the bill
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/zippay/payments-grid">
+						<NavLink to="payments-grid">
 							<span className="material-icons">savings</span>
 							<br />
 							Balance
 						</NavLink>
 					</li>
 					<li>
-						<a href="#placeholder">
+						<NavLink to="account-settings">
 							<span className="material-icons">settings</span>
 							<br />
 							Account settings
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<a href="#placeholder">
+						<NavLink to="search">
 							<span className="material-icons">search</span>
 							<br />
 							Search
-						</a>
+						</NavLink>
 					</li>
 				</ul>
 			</nav>
