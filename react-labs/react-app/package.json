@@ -11,7 +11,7 @@
 		"begin": "node scripts/setup.js begin",
 		"finish": "node scripts/setup.js finish",
 		"preview": "vite preview",
-		"rest-server": "json-server --port 8000 ./src/data/students.json",
+		"rest-server": "json-server --port 8000 ./src/data/server.json",
 		"test": "vitest",
 		"test:once": "vitest run"
 	},
@@ -19,6 +19,7 @@
 		"@apollo/client": "^3.9.11",
 		"@reduxjs/toolkit": "^2.2.3",
 		"@testing-library/user-event": "^14.5.2",
+		"date-fns": "^3.6.0",
 		"fs-extra": "^11.2.0",
 		"json-server": "^1.0.0-alpha.23",
 		"lodash": "^4.17.21",
@@ -35,6 +36,7 @@
 		"@types/react-dom": "^18.2.22",
 		"@vitejs/plugin-react": "^4.2.1",
 		"jsdom": "^24.0.0",
+		"prettier": "^3.2.5",
 		"vite": "^5.2.0"
 	}
 }

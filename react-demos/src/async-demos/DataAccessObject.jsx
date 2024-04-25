@@ -1,32 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { dao } from './countries-dao';
 
-function AsyncAwait() {
+function DataAccessObject() {
 	const [countries, setCountries] = useState([]);
 
-	// One-time data request
+	// Re-usable data access library
 	useEffect(() => {
-		async function getData() {
-			let url = 'http://localhost:8000/countries';
+		async function fetchData() {
 			try {
-				let response = await fetch(url);
-				if (response.ok) {
-					let results = await response.json();
-					setCountries(results);
-				} else {
-					throw new Error(`Bad response: ${response.status}`);
-				}
+				let fetchedCountries = await dao.getData();
+				setCountries(fetchedCountries);
 			} catch (error) {
-				console.error('async-await: Could not fetch data:', error);
+				console.error('dao: Could not fetch data:', error);
 			}
 		}
 
-		getData();
+		fetchData();
 	}, []);
 
 	return (
 		<div className="row">
 			<div className="col">
-				<h3>Async with async-await</h3>
+				<h3>Async with a Data Access Object (DAO)</h3>
 				<table className="table table-striped">
 					<thead>
 						<tr>
@@ -48,4 +43,4 @@ function AsyncAwait() {
 	);
 }
 
-export default AsyncAwait;
+export default DataAccessObject;
