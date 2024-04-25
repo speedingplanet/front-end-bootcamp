@@ -114,3 +114,62 @@ a:active {
 		url(../assets/cursor_final.png) 4 12,
 		auto;
 }
+
+/*
+{
+	"id": 1,
+	"firstName": "Marcela",
+	"lastName": "Collyns",
+	"email": "mcollyns0@europa.eu",
+	"userId": "mcollyns0",
+	"city": "Los Angeles",
+	"province": "California",
+	"postalCode": "90015"
+},
+*/
+
+.user-details {
+	border: 4px gray inset;
+	width: 45vw;
+	display: grid;
+	grid-template-columns: 120px repeat(3, 1fr);
+	grid-template-rows: min-content repeat(3, 1.5em);
+	grid-template-areas:
+		'icon . . .'
+		'icon name name name'
+		'icon email email email'
+		'icon address address address'
+		'username . . .';
+}
+
+.user-details .icon {
+	grid-area: icon;
+}
+
+.user-details .icon,
+.user-details .userName {
+	border-right: lightgray 2px solid;
+	margin-right: 5px;
+}
+
+.user-details .icon img {
+	width: 120px;
+	height: 120px;
+}
+
+.user-details .fullName {
+	grid-area: name;
+}
+
+.user-details .email {
+	grid-area: email;
+}
+
+.user-details .address {
+	grid-area: address;
+}
+
+.user-details .userName {
+	grid-area: username;
+	text-align: center;
+}
