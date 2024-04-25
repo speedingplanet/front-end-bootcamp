@@ -91,6 +91,10 @@ a:active {
 }
 
 .navbar-list li {
+	/* cursor: pointer; */
+	cursor:
+		url(../assets/cursor_final.png) 4 12,
+		auto;
 	text-align: center;
 	color: #3a6bbf;
 	padding: 8px;
@@ -106,4 +110,7 @@ a:active {
 
 .navbar-list a {
 	text-decoration: none;
+	cursor:
+		url(../assets/cursor_final.png) 4 12,
+		auto;
 }

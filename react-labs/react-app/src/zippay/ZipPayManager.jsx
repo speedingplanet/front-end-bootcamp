@@ -7,6 +7,7 @@ import SendReceive from './SendReceive';
 import SplitBill from './SplitBill';
 import AccountSettings from './AccountSettings';
 import ZipPaySearch from './ZipPaySearch';
+import UserDetailsRouter from './UserDetailsRouter';
 
 function ZipPayManager() {
 	return (
@@ -32,6 +33,10 @@ function ZipPayManager() {
 				<Route
 					path="search"
 					element={<ZipPaySearch />}
+				/>
+				<Route
+					path="user/:userId"
+					element={<UserDetailsRouter />}
 				/>
 			</Routes>
 		</section>
