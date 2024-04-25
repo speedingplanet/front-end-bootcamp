@@ -1,14 +1,24 @@
 import React from 'react';
 import Navbar from './Navbar';
 import './zippay.css';
-// import ProtoPaymentsGrid from './ProtoPaymentsGrid';
 import PaymentsGrid from './payments-grid/PaymentsGrid';
+import { Route, Routes } from 'react-router-dom';
+import SendReceive from './SendReceive';
 
 function ZipPayManager() {
 	return (
 		<section className="zippay-main">
 			<Navbar></Navbar>
-			<PaymentsGrid />
+			<Routes>
+				<Route
+					path="payments-grid"
+					element={<PaymentsGrid />}
+				/>
+				<Route
+					path="send-receive"
+					element={<SendReceive />}
+				/>
+			</Routes>
 		</section>
 	);
 }

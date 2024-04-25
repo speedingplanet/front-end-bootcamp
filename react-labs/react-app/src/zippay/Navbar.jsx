@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 	return (
@@ -9,11 +10,11 @@ function Navbar() {
 			<nav className="navbar-list">
 				<ul>
 					<li>
-						<a href="#placeholder">
+						<NavLink to="/zippay/send-receive">
 							<span className="material-icons">currency_exchange</span>
 							<br />
 							Send/Receive
-						</a>
+						</NavLink>
 					</li>
 					<li>
 						<a href="#placeholder">
@@ -23,11 +24,11 @@ function Navbar() {
 						</a>
 					</li>
 					<li>
-						<a href="#placeholder">
+						<NavLink to="/zippay/payments-grid">
 							<span className="material-icons">savings</span>
 							<br />
 							Balance
-						</a>
+						</NavLink>
 					</li>
 					<li>
 						<a href="#placeholder">
