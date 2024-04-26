@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { orderBy } from 'lodash';
-import { countries } from '../../data/countries-table.json';
+import { countries } from '../../../data/countries-table.json';
 import { GridContext } from './grid-context.js';
 import GridHeaderRow from './GridHeaderRowContext';
 import GridBody from './GridBodyContext';
@@ -59,7 +59,7 @@ function GridWithContext() {
 	return (
 		<section style={{ '--columns': columns.length }}>
 			<GridContext.Provider value={columns}>
-				<h3>Countries Grid with sorting</h3>
+				<h3>Countries Grid with sorting using Context</h3>
 				<div className="countries-grid">
 					{/* No longer need to provide columns here */}
 					<GridHeaderRow

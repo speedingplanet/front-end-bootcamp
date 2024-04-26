@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Available through Vite, NOT standard JS
-import { countries } from '../data/countries-table.json';
+import { countries } from '../../data/countries-table.json';
 
 function IterativeContent() {
 	let formatter = new Intl.NumberFormat();

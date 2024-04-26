@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { orderBy } from 'lodash';
-import { countries } from '../../data/countries-table.json';
+import { countries } from '../../../data/countries-table.json';
 import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRowSorted';
 import GridBody from './GridBodySorted';
