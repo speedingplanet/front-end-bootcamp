@@ -36,7 +36,11 @@ let columns = [
 		visible: true,
 		renderer: (userId) => <NavLink to={`../user/${userId}`}>{userId}</NavLink>,
 	},
-	{ label: 'Date', field: 'datePaid', visible: true },
+	{
+		label: 'Date',
+		field: 'datePaid',
+		visible: true,
+	},
 	{ label: 'Amount', field: 'amount', visible: true },
 	{ label: 'Reason', field: 'reason', visible: true },
 ];
