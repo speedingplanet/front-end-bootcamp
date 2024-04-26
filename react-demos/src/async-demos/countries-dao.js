@@ -1,5 +1,6 @@
+let url = 'http://localhost:8000/countries';
+
 async function getData() {
-	let url = 'http://localhost:8000/countries';
 	try {
 		let response = await fetch(url);
 		if (response.ok) {
@@ -15,7 +16,7 @@ async function getData() {
 
 async function getDataWithCallback(callback) {
 	try {
-		let results = getData();
+		let results = await getData();
 		callback(results);
 	} catch (error) {
 		console.error('async-await: Could not fetch data:', error);

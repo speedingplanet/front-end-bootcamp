@@ -1,11 +1,9 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
 	name: 'counter',
 	initialState: {
-		value: 0,
-		status: null,
-		error: null,
+		value: 5,
 	},
 	reducers: {
 		increment: (state) => {
@@ -15,10 +13,13 @@ const counterSlice = createSlice({
 			state.value -= 1;
 		},
 		incrementByAmount: (state, action) => {
+			console.log('Called incrementByAmount');
 			state.value += action.payload;
 		},
 	},
 });
+
+export const countSelector = (state) => state.counter.value;
 
 export const { increment, decrement } = counterSlice.actions;
 export default counterSlice.reducer;

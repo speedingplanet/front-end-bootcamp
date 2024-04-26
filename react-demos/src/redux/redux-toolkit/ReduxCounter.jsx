@@ -1,10 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Counter from './Counter';
-import { increment, decrement } from './counter-slice';
+import { increment, decrement, countSelector } from './counter-slice';
 
 export default function ReduxCounter() {
-	// Maybe ReduxCounter shouldn't know about state structure...?
-	const count = useSelector((state) => state.counter.value);
+	let count = useSelector(countSelector);
 	const dispatch = useDispatch();
 
 	return (

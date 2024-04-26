@@ -10,6 +10,8 @@ function DataAccessObject() {
 			try {
 				let fetchedCountries = await dao.getData();
 				setCountries(fetchedCountries);
+
+				// await dao.getDataWithCallback(setCountries);
 			} catch (error) {
 				console.error('dao: Could not fetch data:', error);
 			}

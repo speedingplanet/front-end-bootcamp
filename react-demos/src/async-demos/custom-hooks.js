@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const useApi = () => {
 	const [data, setData] = useState([]);
-	const [url, setUrl] = useState('http://localhost:8000/countries');
+	const [url, setUrl] = useState('http://localhost:8000/countries?_delay=5000');
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 
