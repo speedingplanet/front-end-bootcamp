@@ -7,7 +7,7 @@ import {
 } from './payments-grid-slice';
 import SortIndicator from './SortIndicator';
 
-function PaymentsGridHeader({ columns, sortConfig }) {
+function PaymentsGridHeader({ columns }) {
 	let dispatch = useDispatch();
 	let sortField = useSelector(sortFieldSelector);
 	let sortDirection = useSelector(sortDirectionSelector);
