@@ -49,3 +49,21 @@ Hands user info to UserDetails
     - useEffect(() => {}, [])
   - If you're using useEffect and async-await, look at the async-await demo. You have to define the async function first and then call it. This is different with promises.
   - Test it by loading up PaymentsGrid and seeing if you have data!
+
+## Working with Redux
+
+A checklist for implementing Redux. This assumes that we know what state looks like and what we want to be able to do with it.
+
+1. What does our state look like?
+2. What do we want to change about it?
+3. Create a slice with reducers
+4. Configure a store, with the reducer `createSlice` returns
+5. Wrap the appropriate ancestor component in a `<Provider>` which has access to the store
+6. Implement Redux-enabled components
+
+### Enabling Redux for components
+
+1. Identify props (inputs)
+2. Identify events (output)
+3. Map events to dispatches (component -> Redux)
+4. Map props to selectors (Redux -> component)
