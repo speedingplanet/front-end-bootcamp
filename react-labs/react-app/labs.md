@@ -67,3 +67,17 @@ A checklist for implementing Redux. This assumes that we know what state looks l
 2. Identify events (output)
 3. Map events to dispatches (component -> Redux)
 4. Map props to selectors (Redux -> component)
+
+## Load payments into Redux
+
+- It's asynchronous, so you will want to refer to react-demos/src/redux/redux-toolkit-async/counter-slice.js for reference; specifically "fetchCounter"
+- You could load the payments in a separate slice, or in the payments grid slice, up to you.
+- Set up an "asyncThunk" with createAsyncThunk. It needs a name (maybe "payments/fetch"?) and a function that will fetch the data and return it.
+  - Call it "fetchPayments"
+  - You could fetch the data in-line, or write a DAO to fetch the data, and use it in your slice file. Up to you.
+  - Remember to return the value (the array of payments) from the function!
+- In your slice file, add extraReducers for fetchPayments' three states: pending, fulfilled, and rejected
+  - fulfilled is the important one! You'll need to update the state to include the payments once fetch() retrieves the data
+- Write a selector to retrieve payments
+- Update PaymentsGrid, so it no longer calls useEffect
+  - Instead, it should create a selector (with useSelector) for payments.

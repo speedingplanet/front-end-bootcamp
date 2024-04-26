@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import {
 	sortFieldSelector,
 	sortDirectionSelector,
+	paymentsSelector,
 } from './payments-grid-slice';
-import { payments } from '../../../data/payments.json';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
 import './PaymentsGrid.css';
@@ -45,6 +45,7 @@ columns.forEach((column) => {
 function PaymentsGrid() {
 	let reduxSortField = useSelector(sortFieldSelector);
 	let reduxSortDirection = useSelector(sortDirectionSelector);
+	let payments = useSelector(paymentsSelector);
 
 	let sortedPayments =
 		reduxSortDirection === ''
