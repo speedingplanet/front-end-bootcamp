@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-		"rest-server": "json-server --port 8000 src/data/countries-table.json",
+		"rest-server": "json-server --port 8000 data/server.json",
 		"test": "vitest",
 		"preview": "vite preview"
 	},

@@ -3,6 +3,7 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import OldSingleFileReduxCounter from './OldSingleFileReduxCounter';
 import OldReduxContainer from './old-redux-counter/OldReduxContainer';
 import ReduxContainer from './redux-toolkit/ReduxContainer';
+import ReduxContainerAPI from './redux-toolkit-async/ReduxContainerAPI';
 
 function ReduxManager() {
 	return (
@@ -21,6 +22,11 @@ function ReduxManager() {
 						<li>
 							<NavLink to="redux-toolkit-counter">Redux Toolkit</NavLink>
 						</li>
+						<li>
+							<NavLink to="redux-toolkit-counter-api">
+								Redux Toolkit w/API
+							</NavLink>
+						</li>
 					</ul>
 				</div>
 				<div className="col">
@@ -36,6 +42,10 @@ function ReduxManager() {
 						<Route
 							path="redux-toolkit-counter"
 							element={<ReduxContainer />}
+						/>
+						<Route
+							path="redux-toolkit-counter-api"
+							element={<ReduxContainerAPI />}
 						/>
 					</Routes>
 				</div>
