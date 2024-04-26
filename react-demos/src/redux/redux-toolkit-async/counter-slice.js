@@ -17,8 +17,11 @@ export const saveCounter = createAsyncThunk(
 	'counter/saveCounter',
 	async (value) => {
 		const response = await fetch(url, {
-			method: 'post',
+			method: 'put',
 			body: JSON.stringify({ value }),
+			headers: {
+				'Content-type': 'application/json',
+			},
 		});
 		if (response.ok) {
 			const counter = await response.json();
@@ -50,9 +53,6 @@ const counterSlice = createSlice({
 			.addCase(fetchCounter.pending, (state) => {
 				state.status = 'loading';
 			})
-			.addCase(saveCounter.pending, (state) => {
-				state.status = 'saving';
-			})
 			.addCase(fetchCounter.fulfilled, (state, action) => {
 				state.status = 'success';
 				state.value = action.payload;
@@ -61,8 +61,15 @@ const counterSlice = createSlice({
 				state.status = 'failed';
 				state.error = action.error.message;
 			})
+			.addCase(saveCounter.pending, (state) => {
+				state.status = 'saving';
+			})
 			.addCase(saveCounter.fulfilled, (state) => {
 				state.status = 'success';
+			})
+			.addCase(saveCounter.rejected, (state, action) => {
+				state.status = 'failed';
+				state.error = action.error.message;
 			});
 	},
 });
