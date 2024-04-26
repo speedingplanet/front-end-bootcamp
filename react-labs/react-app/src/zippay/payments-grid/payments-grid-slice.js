@@ -23,5 +23,9 @@ const gridSlice = createSlice({
 	},
 });
 
+export const sortFieldSelector = (state) => state.paymentsGrid.sortField;
+export const sortDirectionSelector = (state) =>
+	state.paymentsGrid.sortDirection;
+
 export const { updateSortField } = gridSlice.actions;
 export default gridSlice.reducer;

@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	updateSortField,
+	sortFieldSelector,
+	sortDirectionSelector,
+} from './payments-grid-slice';
 import { payments } from '../../../data/payments.json';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
@@ -53,41 +59,29 @@ columns.forEach((column) => {
 	}
 });
 
+/*
+PaymentsGrid needs from Redux
+sortDirection
+sortField
+
+PaymentsGrid tells Redux
+PaymentsGridHeader.selectHeader sends a change that should be received by Redux
+
+*/
 function PaymentsGrid() {
-	const [sortConfig, setSortConfig] = useState({
-		sortField: '',
-		sortDirection: '',
-	});
+	let dispatch = useDispatch();
+	let reduxSortField = useSelector(sortFieldSelector);
+	let reduxSortDirection = useSelector(sortDirectionSelector);
 
 	function handleSelectHeader(field) {
 		console.log(`Sort field should be ${field}`);
-		// TODO: figure out what the sortDirection value should be
-		// if the current sort field and the last sort field ARE NOT the same: sort ascending
-		// if the current sort field and the last sort field ARE the same...
-		// if the previous sort direction was 'asc', make it 'desc'
-		// if the previous sort direction was 'desc', make it ''
-		// if the previous sort direction was '', make it 'asc'
-
-		let nextSortDirection = 'asc';
-		if (field === sortConfig.sortField && sortConfig.sortDirection === 'asc') {
-			nextSortDirection = 'desc';
-		} else if (
-			field === sortConfig.sortField &&
-			sortConfig.sortDirection === 'desc'
-		) {
-			nextSortDirection = '';
-		}
-
-		setSortConfig({
-			sortField: field,
-			sortDirection: nextSortDirection,
-		});
+		dispatch(updateSortField(field));
 	}
 
 	let sortedPayments =
-		sortConfig.sortDirection === ''
+		reduxSortDirection === ''
 			? payments
-			: orderBy(payments, sortConfig.sortField, sortConfig.sortDirection);
+			: orderBy(payments, reduxSortField, reduxSortDirection);
 
 	return (
 		<section
@@ -97,7 +91,10 @@ function PaymentsGrid() {
 			<PaymentsGridHeader
 				columns={columns}
 				selectHeader={handleSelectHeader}
-				sortConfig={sortConfig}
+				sortConfig={{
+					sortField: reduxSortField,
+					sortDirection: reduxSortDirection,
+				}}
 			/>
 			<PaymentsGridBody
 				columns={columns}
