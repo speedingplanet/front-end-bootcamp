@@ -6,9 +6,6 @@ import ContextDemo from './context-demo/ContextDemo.jsx';
 import HigherOrderComponent from './higher-order-component/HigherOrderComponent.jsx';
 import Memoization from './memo-demo/Memoization.jsx';
 import DynamicComponents from './dynamic-components/DynamicComponents.jsx';
-import ReduxCounter from './redux-counter/ReduxCounter.jsx';
-import ReduxCounterBP from './redux-counter-best/ReduxContainer.jsx';
-import ReduxToolkitCounter from './redux-counter-tk/ReduxContainer.jsx';
 import VisibilityDemo from './visibility-tests/VisibilityDemo.jsx';
 import BasicComponent from './testing/BasicComponent';
 import EventHandlingComponent from './testing/EventHandlingComponent';
@@ -23,6 +20,7 @@ import EventHandling from './event-handling/EventHandling.jsx';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
 import ComponentCommunicationsManager from './component-communications/ComponentCommunicationsManager.jsx';
 import RoutingManager from './routing/RoutingManager.jsx';
+import ReduxManager from './redux/ReduxManager.jsx';
 
 function App() {
 	return (
@@ -87,17 +85,7 @@ function App() {
 								<NavLink to="dynamic-components">DynamicComponents</NavLink>
 							</li>
 							<li>
-								<NavLink to="redux-counter">Redux Counter</NavLink>
-							</li>
-							<li>
-								<NavLink to="redux-counter-best-practices">
-									Redux Counter (best practices)
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="redux-toolkit-counter">
-									Redux Counter (using the toolkit)
-								</NavLink>
+								<NavLink to="redux">Redux Demos</NavLink>
 							</li>
 							<li>
 								<NavLink to="visibility-demo">Visbility Demo</NavLink>
@@ -175,16 +163,8 @@ function App() {
 								element={<DynamicComponents />}
 							/>
 							<Route
-								path="/redux-counter"
-								element={<ReduxCounter />}
-							/>
-							<Route
-								path="/redux-counter-best-practices"
-								element={<ReduxCounterBP />}
-							/>
-							<Route
-								path="/redux-toolkit-counter"
-								element={<ReduxToolkitCounter />}
+								path="/redux/*"
+								element={<ReduxManager />}
 							/>
 							<Route
 								path="/testable-component"

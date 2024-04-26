@@ -85,7 +85,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
-export default function ReduxContainer() {
+export default function OldSingleFileReduxCounter() {
 	return (
 		<Provider store={store}>
 			<ConnectedCounter />
