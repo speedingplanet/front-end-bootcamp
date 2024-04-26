@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './counter-slice';
+import { store } from './store.js';
 import ReduxCounter from './ReduxCounter';
 
 export default function ReduxContainer() {

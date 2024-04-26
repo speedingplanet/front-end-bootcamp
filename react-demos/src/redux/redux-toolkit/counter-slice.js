@@ -1,18 +1,22 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
-// import logger from 'redux-logger';
+import { createSlice } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
 	name: 'counter',
-	initialState: 0,
+	initialState: {
+		value: 0,
+	},
 	reducers: {
-		increment: (state) => state + 1,
-		decrement: (state) => state - 1,
+		increment: (state) => {
+			state.value += 1;
+		},
+		decrement: (state) => {
+			state.value -= 1;
+		},
+		incrementByAmount: (state, action) => {
+			state.value += action.payload;
+		},
 	},
 });
 
-export const store = configureStore({
-	reducer: counterSlice.reducer,
-});
-
-const { actions } = counterSlice;
-export const { increment, decrement } = actions;
+export const { increment, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
