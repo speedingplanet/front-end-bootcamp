@@ -5,7 +5,7 @@ function RoutingParamDetails() {
 	const params = useParams();
 	return (
 		<div>
-			<p>You clicked on the route with the param id: {params.paramId}</p>
+			<p>You clicked on the route with the param id: {params.xyz}</p>
 		</div>
 	);
 }

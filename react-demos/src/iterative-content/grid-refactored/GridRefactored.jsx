@@ -1,5 +1,5 @@
 import React from 'react';
-import { countries } from '../../data/countries-table.json';
+import { countries } from '../../../data/countries-table.json';
 import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRow';
 import GridBody from './GridBody';

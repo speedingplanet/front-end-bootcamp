@@ -23,7 +23,7 @@ function RoutingParameters() {
 				<div className="col">
 					<Routes>
 						<Route
-							path="params/:paramId"
+							path="params/:xyz"
 							element={<RoutingParamDetails />}
 						/>
 					</Routes>

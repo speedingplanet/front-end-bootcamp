@@ -8,8 +8,12 @@ function ProgrammaticNavigation() {
 		navigate(-1);
 	}
 
-	function handleParamsButton() {
-		navigate('../../event-handling');
+	function handleEHButton() {
+		// Relative reference
+		// navigate('../../event-handling');
+
+		// Absolute reference
+		navigate('/event-handling');
 	}
 
 	return (
@@ -27,7 +31,7 @@ function ProgrammaticNavigation() {
 				Click this button to go to the event handling demo:{' '}
 				<button
 					className="btn btn-warning"
-					onClick={handleParamsButton}
+					onClick={handleEHButton}
 				>
 					Event Handling
 				</button>

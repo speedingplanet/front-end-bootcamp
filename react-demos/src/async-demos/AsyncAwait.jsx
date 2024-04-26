@@ -5,8 +5,8 @@ function AsyncAwait() {
 
 	// One-time data request
 	useEffect(() => {
+		let url = `http://localhost:8000/countries`;
 		async function getData() {
-			let url = 'http://localhost:8000/countries';
 			try {
 				let response = await fetch(url);
 				if (response.ok) {
