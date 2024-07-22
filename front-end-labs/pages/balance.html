@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Balance</title>
+		<style>
+			table {
+				/* border-spacing: 6px; */
+				/* This ignores border-spacing */
+				border-collapse: collapse;
+			}
+
+			thead tr {
+				text-align: left;
+			}
+			
+			th {
+				border-bottom: 3px black solid;
+			}
+
+			th, td {
+				/* padding: top/bottom left/right */
+				padding: 5px 8px;
+			}
+
+			tbody tr:nth-child(odd) {
+				background-color: yellow;
+			}
+
+			tbody tr:nth-child(even) {
+				background-color: aliceblue;
+			}
+
+			td:nth-child(3) {
+				color: red;
+			}
+
+			tr:nth-child(3n + 2) {
+				text-decoration: underline;
+			}
+
+			td:first-child {
+				font-weight: bold
+			}
+
+			/* :last-child(td) */
+			td:last-child {
+				font-style: italic
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Balance</h1>
+		<nav>
+			<ul>
+				<li><a href="/pages/send-receive.html">Send/Receive</a></li>
+				<li><a href="/pages/account-settings.html">Account settings</a></li>
+				<li><a href="/pages/balance.html">Balance summary & recent user history</a></li>
+				<li><a href="/pages/search.html">Search</a></li>
+				<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
+				<li><a href="/index.html">Home</a></li>
+			</ul>
+		</nav>
+		<section>
+			<h2>Balance</h2>
+			<p>Current balance: $500.00</p>
+		</section>
+		<section>
+			<h2>Recent transactions</h2>
+
+			<!-- table>(thead>tr>th*4)+tbody>tr*5>td*4 -->
+			<table>
+				<thead>
+					<tr>
+						<th>Recipient</th>
+						<th>Payment Date</th>
+						<th>Amount</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>mloveguardhr</td>
+						<td>2022-09-06</td>
+						<td>51.37</td>
+						<td>sed tristique</td>
+					</tr>
+					<tr>
+						<td>ddunabie5j</td>
+						<td>2023-07-23</td>
+						<td>10.77</td>
+						<td>nec nisi vulputate</td>
+					</tr>
+					<tr>
+						<td>rbottell93</td>
+						<td>2024-02-26</td>
+						<td>79.09</td>
+						<td>eu tincidunt</td>
+					</tr>
+					<tr>
+						<td>mwallend6</td>
+						<td>2023-06-12</td>
+						<td>38.05</td>
+						<td>nunc donec quis orci eget orci vehicula condimentum curabitur</td>
+					</tr>
+					<tr>
+						<td>pbann7c</td>
+						<td>2022-06-01</td>
+						<td>89.99</td>
+						<td>turpis donec posuere metus vitae ipsum aliquam non mauris</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</body>
+</html>
