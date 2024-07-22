@@ -1,48 +1,86 @@
 # Front-end Labs
 
-## Send/Receive Payments: Add Form
+## HTML Exercises
 
-The Send/Receive Payments `pages/send-receive.html` page is a placeholder. Let's make that better!
+### Zippay App: Home page
 
-1. Below the `nav` element, add a `main` element.
-2. In the `main` element, add a `form`. No need for an `action` attribute
-3. For each of the below, add a `label` and the appropriate form field (usually an `input` element). Consider wrapping each label+input combo in its own `div`.
+When we execute `npm run dev` in this folder we are greeted by a blank page. This is, to say the least, confusing! Let's have a proper home / landing page.
 
-- Sender
-- Recipient
-- Amount
-- Reason
+Working in `index.html`:
 
-4. Add a submit button labeled "Send".
-5. Check out the form in the browser. Don't worry about the layout, which we will fix soon.
+- Add the basic strcture of an HTML document. Maybe use Emmet shortcuts to help?
+- In the `body` of the HTML document, add an `h1` element
+  - The content of the element should be `The ZipPay app`.
+- Add an `hr` element below it.
+- Below the `hr` element, add a paragraph with some placeholder text, maybe lorem ipsum or just "Content will eventually go here."
+- All set! Take a look at http://localhost:5173, or whatever port your server opened on, to see the results.
 
-## Send/Receive Payements: Improve form
+### Home Page: Navbar with Text
 
-Let's make the form a little bit better. We will add some validations to the form. After each of the validations, try submitting the form to see if the validation is successful.
+You may have noticed that we have a `pages/` folder full of placeholder HTML file. Let's build a navigational list, a navbar, to link to those pages
 
-1. The sender should default to the current user. We don't have that information right now, so you can set the default value to "Current User"
-1. The recipient can't be empty. All of our usernames are at least four characters long. Validate this field
-1. The amount must be positive, have only two decimal places, and be between $0.01 and $1000.00
-1. The Reason can't be longer than 255 characters
+Working in `index.html`:
 
-## Account Settings: Add form
+- Below the `h1` but above the `hr` add a `nav` element.
+- In the `nav` element, add the following lines, separated by `br` tags for line breaks
+  - Send/Receive
+  - Account settings
+  - Balance
+  - Search
+  - Split the bill
+- Check to see that each shows up on a line by itself
+- You're done!
 
-Now that we know forms pretty well, let's add a form all at once. Account settings should have the following:
+### Home Page: Navbar as a list
 
-1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
-2. Same for Last Name
-3. Same for City
-4. Add a State/Province field as a drop-down of US States. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that
-5. Postal Code: Either five digit ZIP or ZIP+4 format. Remember that people live in states where the ZIP code starts with a zero, so you don't want this to be a numeric field
-6. Email: Is there a custom field that could be helpful here?
-7. Telephone: Similar?
-8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
+The navbar lacks semantic meaning. That is, it's just a few lines of text: it could be a poem, a list of pages, or gibberish. We should organize it as a unit.
 
-## Recent Transactions
+Working in `index.html`, remove the `br` tags. Make each line a list item in an unordered list. To be clear, there should be _one_ unordered list, with the _five_ list items under it. When you're done, check your page in the browser to see what it looks like.
+
+Note: Eventually, we will do two things: remove the bullets, and lay out the list horizontally. That will happen when we get to CSS. For now, we are working within the limitations of HTML.
+
+### Home Page: Navbar with Links
+
+Our navbar is a little bit limited, in that it does not take the user anywhere. Let's change that.
+
+Working in `index.html`:
+
+- Turn each list item into a link, as follows:
+  - Send/Receive: pages/send-receive.html
+  - Account settings: pages/account-settings.html
+  - Balance: pages/balance.html
+  - Search: pages/search.html
+  - Split the bill: pages/split-the-bill
+- You will not be deleting the list items! The links should go _inside_ the list items
+- Check to see that the links work and go to the appropriate pages
+
+### Home Page: Semantic updates
+
+The home page needs a little bit more organization:
+
+- The `h1` should be inside a `header`
+- We already have the navbar inside a `nav` so we can leave that as-is
+- Below the `nav`, add a `main` element. This will be where the main content of the pages goes.
+  - Within `main`, add an `h2` with the content "ZipPay Home"
+- Below the `main`, add a `footer` with the following information:
+  - "Copyright 2024, ZipPay, incorporated."
+  - Put an `hr` above this (but still inside the footer) to separate it from the rest of the page.
+- Check your page to see that the layout works.
+
+### Balance: Recent Transactions
 
 We want to add a "Recent Transactions" section to the "Balance" page `pages/balance.html`. We will use an HTML table to list recent transactions.
 
-Here's the data set:
+First, we should take care of the basics with respect to layout:
+
+- Copy the header, navbar, and footer over from `index.html`. Place them appropriately within the `body` of the HTML document
+- In `main`, add or change the `h2` to read `Balance`
+- Below that `h2`, add two `section`s:
+  - One with a paragraph that says "Current Balance"
+  - The other with an `h3` that says "Recent Transactions"
+- Check that the page layout looks the way you would expect it to.
+
+Onto the details... Here's the data set:
 
 ```csv
 id,payorId,payeeId,datePaid,amount,reason
@@ -87,7 +125,56 @@ Remember that the structure of a table, generally, is
 </table>
 ```
 
-## Navbar: Flexbox Layout
+You will need a table headers section, with the column headers, and then a table row for each of the rows of data.
+
+### Send/Receive Payments: Add Form
+
+The Send/Receive Payments `pages/send-receive.html` page is a placeholder. Let's make that better!
+
+First, layout, same as with `pages/balance.html`:
+
+- Copy the header, navbar, and footer over from `index.html`. Place them appropriately within the `body` of the HTML document
+- In `main`, add or change the `h2` to read `Send/Receive Payments`
+- Check that the page layout looks the way you would expect it to.
+
+Onto the form:
+
+1. In the `main` element, add a `form`. No need for an `action` attribute
+2. For each of the below, add a `label` and the appropriate form field (usually an `input` element). Consider wrapping each label+input combo in its own `div`.
+
+- Account
+- Recipient
+- Amount
+- Reason
+
+3. Add a submit button labeled "Send".
+4. Check out the form in the browser. Don't worry about the layout, which we will fix soon.
+
+### Send/Receive Payements: Improve form with validations
+
+Let's make the form a little bit better. We will add some validations to the form. After each of the validations, try submitting the form to see if the validation is successful.
+
+1. The "Account" should default to the current user's default account. We don't have that information right now, so you can set the default value to "Default account"
+1. The Recipient can't be empty. All of our usernames are at least four characters long. Validate this field
+1. The Amount must be positive, have only two decimal places, and be between $0.01 and $1000.00
+1. The Reason can't be longer than 255 characters
+
+### Account Settings: Add form
+
+Now that we know forms pretty well, let's add a form all at once. Account settings should have the following:
+
+1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
+2. Same for Last Name
+3. Same for City
+4. Add a State/Province field as a drop-down of US States. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that
+5. Postal Code: Either five digit ZIP or ZIP+4 format. Remember that people live in states where the ZIP code starts with a zero, so you don't want this to be a numeric field
+6. Email: Is there a custom field that could be helpful here?
+7. Telephone: Similar?
+8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
+
+## CSS Exercises
+
+### Navbar: Flexbox Layout
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
