@@ -50,7 +50,7 @@ Working in `index.html`:
   - Account settings: pages/account-settings.html
   - Balance: pages/balance.html
   - Search: pages/search.html
-  - Split the bill: pages/split-the-bill
+  - Split the bill: pages/split-the-bill.html
 - You will not be deleting the list items! The links should go _inside_ the list items
 - Check to see that the links work and go to the appropriate pages
 
@@ -166,8 +166,8 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
 2. Same for Last Name
 3. Same for City
-4. Add a State/Province field as a drop-down of US States. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that
-5. Postal Code: Either five digit ZIP or ZIP+4 format. Remember that people live in states where the ZIP code starts with a zero, so you don't want this to be a numeric field
+4. Add a State/Province field as a drop-down of US states and Canadian provinces. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that. Add on Canadian provinces as well.
+5. Postal Code: This could be challenging
 6. Email: Is there a custom field that could be helpful here?
 7. Telephone: Similar?
 8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
