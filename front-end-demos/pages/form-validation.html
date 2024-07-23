@@ -19,8 +19,20 @@
 					minlength="5"
 					maxlength="20"
 					required
-					pattern="[A-Z][a-z]+"
+					pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
 				/>
+				<!-- pattern takes advantage of Unicode character classes
+				 Older version
+				 pattern="[A-Z][a-z]+"
+
+				Short, unicode-aware
+				pattern="\p{Lu}\p{L}+"
+				Lu is a [L]etter [u]ppercase
+				L is a [L]etter (upper or lowercase) 
+
+				A more verbose, unicode-aware form would be 
+				pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
+				-->
 				<p>
 					It's required, has a minimum length of 5, a maximum length of 20, and must match a pattern
 					of a capital letter followed by 1 or more lowercase letters
