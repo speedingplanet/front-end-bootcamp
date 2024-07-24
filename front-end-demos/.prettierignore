@@ -1,3 +1,9 @@
 pages/html-experiments.html
 pages/void-vs-self-closing.html
 pages/whitespace.html
+node_modules
+public/css
+dist
+.vscode
+package.json
+package-lock.json
