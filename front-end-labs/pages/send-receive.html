@@ -9,10 +9,91 @@
 		<title>Send/Receive Payments</title>
 	</head>
 	<body>
-		<h1>Send/Receive Payments</h1>
-		<!--  Navbar should go here -->
+		<header>
+			<h1>ZipPay App</h1>
+			<hr />
+		</header>
+		<nav>
+			<ul>
+				<li><a href="/pages/send-receive.html">Send/Receive</a></li>
+				<li><a href="/pages/account-settings.html">Account settings</a></li>
+				<li><a href="/pages/balance.html">Balance</a></li>
+				<li><a href="/pages/search.html">Search</a></li>
+				<li><a href="/pages/split-the-bill.html">Split the bill</a></li>
+			</ul>
+		</nav>
 		<main>
-			<!-- Send/receive payments form goes here -->
+			<h2>Send/Receive</h2>
+			<form>
+				<!--
+				<section>
+				<div>
+					<label for="account">Account:</label>
+					<input
+						type="text"
+						required
+						name="account"
+						id="account"
+						value="Default Account"
+					/>
+				</div>
+				<div>
+					<label for="recipient">Recipient:</label>
+					<input
+						type="text"
+						required
+						minlength="4"
+						name="recipient"
+						id="recipient"
+					/>
+				</div>
+				<div>
+					<label for="amount">Amount:</label>
+					<input
+						type="number"
+						required
+						name="amount"
+						id="amount"
+						min="1"
+						max="1000"
+						step=".01"
+					/>
+				</div>
+				<div>
+					<label for="reason">Reason:</label>
+					<input
+						type="text"
+						required
+						name="reason"
+						maxlngth="255"
+						id="reason"
+					/>
+				</div>
+				</section>
+				-->
+				<section>
+					<h3>Alternate form style</h3>
+						<div><label for="account">Account: </label>
+							<select name="account" id="account">
+								<option value="default" selected>Default Account</option>
+								<option value="0">Other accounts</option>
+								<option value="0">would appear</option>
+								<option value="0">here</option>
+							</select>
+						<div><label for="recipient">Recipient: </label><input type="text" required minlength="4" name="recipient" id="recipient"></div>
+						<div><label for="amount">Amount: </label><input type="number" required name="amount" id="amount" min="1" max="1000" step=".01"></div>
+						<div><label for="reason" style="vertical-align: top;">Reason: </label><textarea required name="reason" maxlngth="255" id="reason" rows="5" cols="24"></textarea></div>
+				</section>
+				<div>
+					<button type="submit">Send</button>
+					&nbsp;
+					<button type="reset">Reset</button>
+				</div>
+			</form>
 		</main>
+		<footer>
+			<hr />
+			<p>Copyright &copy; 2024, ZipPay, Incorporated</p>
+		</footer>
 	</body>
 </html>
