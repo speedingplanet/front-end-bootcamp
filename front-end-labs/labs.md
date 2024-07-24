@@ -178,18 +178,36 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Create a file `pages/navbar.html`. We will use this as our baseline. It can be a basic HTML page.
-2. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
+1. Open the file `pages/navbar.html`. We will use this as our baseline. It can be a basic HTML page.
+2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- pages/navbar.html`
+3. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
 
 - If you use an unordered list, the `ul` is the container and the `li` elements are the children.
 - If you use `div`s, the `nav` element is the container and the `div`s are the children
 - You can always copy and paste the navbar from one of the existing pages into `pages/navbar.html`.
 
-3. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
-4. Set the container up as a flexbox
-5. Set up the children with a `flex` config
+4. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
+5. Set the container up as a flexbox
+6. Set up the children with a `flex` config
 
-Check out the results! If you like them, copy and paste them into the other pages.
+Check out the results!
+
+### Send/Receive or Account Settings: Grid Layout
+
+The Send/Receive and Account Settings forms have the functionality we need, but does have any sort of useful or pleasing layout. 
+
+1. Pick either pages/account-settings.html, or pages/send-receive.html
+2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- pages/account-settings.html`
+3. Organize the HTML of the form you have chosen so that it will work with a grid. Some questions:
+  - Does each form element have to be in a div?
+  - Does each label have to be in a div? 
+  - Do we wrap the form element plus the label into a container div, or leave them as-is? 
+  - Do you see any other particular gotchas?
+4. Design a CSS grid for the form. There are many paths to success here. 
+A suggestion: think of the grid as two columns, the left column could hold the labels
+The right column could hold the form fields. But there are many possible variations
+and you should do what makes sense to you!
+5. See if the grid layout is working in your browser!
 
 ## Navbar: Putting it all together.
 
