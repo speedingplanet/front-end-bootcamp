@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@speedingplanet/eslint-config": "^0.0.6",
+    "@speedingplanet/eslint-config": "^0.0.7",
     "prettier": "^3.2.5",
     "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "vitest": "^2.0.4"
   }
 }
