@@ -9,6 +9,7 @@
 		"format": "prettier . --write",
 		"format:check": "prettier . --check",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+		"lint:fix": "eslint . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"rest-server": "json-server --port 8000 src/data/countries-table.json",
 		"test": "vitest"

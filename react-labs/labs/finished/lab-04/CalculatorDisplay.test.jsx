@@ -43,7 +43,7 @@ test('Loads and displays CalculatorDisplay', () => {
 
 Add a test to ensure that the display is doing math correctly
 
-Use the `container` feature with `querySelector` against the eleement with the
+Use the `container` feature with `querySelector` against the element with the
 class "result" to check the results.
 
 Or get to that information a different way, if you're feeling creative.

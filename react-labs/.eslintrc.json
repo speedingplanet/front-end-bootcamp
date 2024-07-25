@@ -17,6 +17,7 @@
 	"plugins": ["react-refresh"],
 	"rules": {
 		"indent": ["warn", "tab", { "SwitchCase": 1 }],
+		"no-trailing-spaces": ["warn", { "ignoreComments": true }],
 		"no-unused-vars": ["warn", { "varsIgnorePattern": "React" }],
 		"react/jsx-no-target-blank": "off",
 		"react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
