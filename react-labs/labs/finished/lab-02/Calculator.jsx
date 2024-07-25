@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CalculatorDisplay from './CalculatorDisplay';
 
 /*
-Select an operator from a drop-down. Pass the selected operator 
+Select an operator from a drop-down. Pass the selected operator
 into CalculatorDisplay.
 
 Use the useState hook to initialize the operator
@@ -20,7 +20,7 @@ Add a <select> list above CalculatorDisplay. The options should be
 Don't forget to update the `onChange` and `value` attributes of the select list
 to make it a controlled component (controlled by `handleSwitch` above)
 
-Pass the value you used for the operator in your useState hook into 
+Pass the value you used for the operator in your useState hook into
 CalculatorDisplay as the `operator` property
 */
 

@@ -13,7 +13,7 @@ import Calculator from './Calculator';
 
 Write a test that loads and displays Calculator
 
-`render` to render Calculator 
+`render` to render Calculator
 
 You could use `getByLabelText` to see if you could find the label for the drop-down
 Don't forget that it takes a TextMatch argument, not just a string
@@ -48,7 +48,7 @@ test('Does not display any equation at start', () => {
 # Part 5
 ###################################################################
 
-Write a test to make sure that the equation IS displayed after choosing an 
+Write a test to make sure that the equation IS displayed after choosing an
 operator
 
 You will need to use `userEvent` with `selectOptions` to trigger a select event

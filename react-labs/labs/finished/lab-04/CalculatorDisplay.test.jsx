@@ -18,7 +18,7 @@ Write a test that loads and displays CalculatorDisplay
 
 `render` to render CalculatorDisplay (pass whatever values you'd like for attributes)
 
-Try expecting that something with the text '+' is not null, or 
+Try expecting that something with the text '+' is not null, or
 in the document.
 
 Save and make sure it works by having `npm run test` running in a terminal
