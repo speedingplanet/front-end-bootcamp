@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-	test,
-	describe,
-	beforeEach,
-	afterEach,
-	beforeAll,
-	afterAll,
-} from 'vitest';
+import { test, describe, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 import { render } from '@testing-library/react';
 import BasicComponent from './BasicComponent';
 
 describe('Testing BasicComponent', () => {
 	beforeAll(() => {
-		console.log(
-			'beforeAll: runs once for its containing describe _before_ all other code',
-		);
+		console.log('beforeAll: runs once for its containing describe _before_ all other code');
 	});
 
 	beforeEach(() => {
@@ -27,9 +18,7 @@ describe('Testing BasicComponent', () => {
 	});
 
 	afterAll(() => {
-		console.log(
-			'afterAll: runs once for its containing describe _after_ all other code',
-		);
+		console.log('afterAll: runs once for its containing describe _after_ all other code');
 	});
 
 	test('First test', () => {

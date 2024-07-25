@@ -27,10 +27,7 @@ const reducer = (state = initialState, action) => {
 	}
 };
 
-const store = createStore(
-	reducer,
-	composeWithDevTools(applyMiddleware(logger)),
-);
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger)));
 
 function Counter({ value, increment, decrement }) {
 	return (

@@ -11,9 +11,7 @@ const __dirname = path.dirname(__filename);
 let labsLocalPrefix = '../src/labs';
 let labManager = 'LabManager.jsx';
 
-let labManagerExists = await fs.exists(
-	path.resolve(__dirname, labsLocalPrefix, labManager),
-);
+let labManagerExists = await fs.exists(path.resolve(__dirname, labsLocalPrefix, labManager));
 
 if (!labManagerExists) {
 	console.warn('No labs found. Please run `npm run begin <lab number>`');

@@ -40,10 +40,7 @@ function DisplayName({ name }) {
 
 const HigherOrderComponentContext = React.createContext({ name: 'John' });
 
-const DisplayNameWithContext = withContext(
-	DisplayName,
-	HigherOrderComponentContext,
-);
+const DisplayNameWithContext = withContext(DisplayName, HigherOrderComponentContext);
 
 export default function HigherOrderComponent() {
 	return (

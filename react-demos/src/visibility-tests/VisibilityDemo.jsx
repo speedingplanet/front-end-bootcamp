@@ -35,9 +35,7 @@ function VisibilityDemo() {
 					</div>
 					<button
 						className="btn btn-sm btn-primary"
-						onClick={() =>
-							setVisible(visible === 'visible' ? 'hidden' : 'visible')
-						}
+						onClick={() => setVisible(visible === 'visible' ? 'hidden' : 'visible')}
 					>
 						Toggle Visibility
 					</button>
@@ -52,9 +50,7 @@ function VisibilityDemo() {
 					</div>
 					<button
 						className="btn btn-sm btn-primary"
-						onClick={() =>
-							setDisplayValue(displayValue === 'block' ? 'none' : 'block')
-						}
+						onClick={() => setDisplayValue(displayValue === 'block' ? 'none' : 'block')}
 					>
 						Toggle Display
 					</button>

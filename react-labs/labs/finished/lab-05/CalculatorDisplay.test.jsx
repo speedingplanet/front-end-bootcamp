@@ -15,7 +15,7 @@ test('Loads and displays CalculatorDisplay', () => {
 			lValue={2}
 			rValue={3}
 			operator="+"
-		/>,
+		/>
 	);
 
 	expect(screen.getByText('+')).not.toBeNull();
@@ -28,7 +28,7 @@ test('Adds correctly', () => {
 			lValue={2}
 			rValue={3}
 			operator="+"
-		/>,
+		/>
 	);
 
 	expect(container.querySelector('.result')?.textContent).toBe('5');

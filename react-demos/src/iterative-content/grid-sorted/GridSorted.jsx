@@ -30,10 +30,7 @@ function GridSorted() {
 
 	function handleHeaderClick(sortField) {
 		let sortDirection = 'asc';
-		if (
-			sortConfig.sortField === sortField &&
-			sortConfig.sortDirection === 'asc'
-		) {
+		if (sortConfig.sortField === sortField && sortConfig.sortDirection === 'asc') {
 			sortDirection = 'desc';
 		}
 
@@ -45,11 +42,7 @@ function GridSorted() {
 		setSortConfig(nextSortConfig);
 	}
 
-	let sortedCountries = orderBy(
-		countries,
-		sortConfig.sortField,
-		sortConfig.sortDirection,
-	);
+	let sortedCountries = orderBy(countries, sortConfig.sortField, sortConfig.sortDirection);
 
 	return (
 		<section style={{ '--columns': columns.length }}>

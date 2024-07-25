@@ -12,9 +12,10 @@ function EventHandling() {
 	*/
 	let [counter, setCounter] = useState(10);
 	let [yesNoValue, setYesNoValue] = useState();
+	let [message, setMessage] = useState('');
 
 	function handleClick() {
-		console.log('You clicked on the button!');
+		setMessage('You clicked on the button!');
 	}
 
 	return (
@@ -33,10 +34,10 @@ function EventHandling() {
 					</button>
 				</p>
 				<p>
-					In-line handler:{' '}
+					In-line handler:
 					<button
 						className="btn btn-secondary"
-						onClick={() => console.log('In-line button')}
+						onClick={() => setMessage('You clicked on the in-line button')}
 					>
 						Click
 					</button>
@@ -81,10 +82,13 @@ function EventHandling() {
 							className="btn btn-danger"
 							onClick={() => setYesNoValue('no')}
 						>
-							Cause Trouble
+							Flip to No
 						</button>
 					</p>
 				</div>
+			</div>
+			<div className="col">
+				<p>{message}</p>
 			</div>
 		</section>
 	);

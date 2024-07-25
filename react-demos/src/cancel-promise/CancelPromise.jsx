@@ -23,9 +23,8 @@ function CancelPromise() {
 	return (
 		<div>
 			<p>
-				Click the "Start" button below to kick off a slow request. Then click
-				the "Cancel" button to cancel the request. Change the duration of the
-				request in the duration field.
+				Click the "Start" button below to kick off a slow request. Then click the "Cancel" button to
+				cancel the request. Change the duration of the request in the duration field.
 			</p>
 			<form>
 				<div className="form-group">

@@ -24,35 +24,32 @@ function ConditionalDisplay() {
 
 	return (
 		<section className="row">
-			<div className="col-3">
+			<div className="col">
 				<ul>
 					<li
 						className="clickable"
 						onClick={() => setShowBox1(!showBox1)}
 					>
-						Toggle Box 1
+						Toggle Box 1 (hidden attribute)
 					</li>
 					<li
 						className="clickable"
 						onClick={handleToggleBox2}
 					>
-						Toggle Box 2
+						Toggle Box 2 (CSS display)
 					</li>
 					<li
 						className="clickable"
-						onClick={() =>
-							setShowBox3(showBox3 === 'visible' ? 'hidden' : 'visible')
-						}
+						onClick={() => setShowBox3(showBox3 === 'visible' ? 'hidden' : 'visible')}
 					>
-						Toggle Box 3
+						Toggle Box 3 (CSS visibility)
 					</li>
 					<li
 						className="clickable"
 						onClick={() => setShowBox4(!showBox4)}
 					>
-						Toggle Box 4
+						Toggle Box 4 (JSX ternary)
 					</li>
-					<li>Toggle Box 5</li>
 				</ul>
 			</div>
 			<div className="col">
@@ -76,7 +73,6 @@ function ConditionalDisplay() {
 						Three
 					</div>
 					{showBox4 ? <div className="cd-box">Four</div> : ''}
-					<div className="cd-box">Five</div>
 				</div>
 			</div>
 		</section>
