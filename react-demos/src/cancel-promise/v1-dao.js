@@ -29,9 +29,7 @@ function handleError(error) {
 		message = 'Canceled request';
 		isCancel = true;
 	} else if (error.response) {
-		console.error(
-			`Server error: ${error.response.status} [${error.response.statusText}]`,
-		);
+		console.error(`Server error: ${error.response.status} [${error.response.statusText}]`);
 		if (error.response.status >= 500) {
 			message = 'Server error';
 		} else {
@@ -105,9 +103,7 @@ const defaultUpdateOptions = { upsert: false };
 // Standard methods
 const addPerson = (person, options = {}) => {
 	if (_.has(person, 'id')) {
-		return rejectPromise(
-			'A Person with an id should not be added, but updated.',
-		);
+		return rejectPromise('A Person with an id should not be added, but updated.');
 	}
 
 	let axiosOptions = getAxiosOptions(options);
@@ -132,11 +128,7 @@ const removePerson = async (person, options = {}) => {
 	let axiosOptions = getAxiosOptions(options);
 
 	return axios
-		.patch(
-			`${baseUrl}/${person.id}`,
-			{ ...person, active: false },
-			axiosOptions,
-		)
+		.patch(`${baseUrl}/${person.id}`, { ...person, active: false }, axiosOptions)
 		.then((response) => response.data)
 		.catch(handleError);
 };
@@ -154,9 +146,7 @@ const updatePerson = async (person, options) => {
 	}
 
 	if (!personExists && options.upsert) {
-		console.warn(
-			`Person #${person.id} did not exist. Wiping ID and inserting.`,
-		);
+		console.warn(`Person #${person.id} did not exist. Wiping ID and inserting.`);
 		delete person.id;
 		return addPerson(person);
 	}

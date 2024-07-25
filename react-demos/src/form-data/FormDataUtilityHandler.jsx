@@ -40,9 +40,7 @@ function FormDataUtilityHandler() {
 								name="first-name"
 								id="first-name"
 								value={firstName}
-								onChange={(event) =>
-									handleFormUpdate('firstName', event.currentTarget.value)
-								}
+								onChange={(event) => handleFormUpdate('firstName', event.currentTarget.value)}
 							/>
 						</div>
 						{/* Last Name */}
@@ -55,9 +53,7 @@ function FormDataUtilityHandler() {
 								name="last-name"
 								id="last-name"
 								value={lastName}
-								onChange={(event) =>
-									handleFormUpdate('lastName', event.currentTarget.value)
-								}
+								onChange={(event) => handleFormUpdate('lastName', event.currentTarget.value)}
 							/>
 						</div>
 						{/* City */}
@@ -70,9 +66,7 @@ function FormDataUtilityHandler() {
 								name="city"
 								id="city"
 								value={city}
-								onChange={(event) =>
-									handleFormUpdate('city', event.currentTarget.value)
-								}
+								onChange={(event) => handleFormUpdate('city', event.currentTarget.value)}
 							/>
 						</div>
 						{/* State */}
@@ -85,9 +79,7 @@ function FormDataUtilityHandler() {
 								name="state"
 								id="state"
 								value={state}
-								onChange={(event) =>
-									handleFormUpdate('state', event.currentTarget.value)
-								}
+								onChange={(event) => handleFormUpdate('state', event.currentTarget.value)}
 							/>
 						</div>
 					</form>

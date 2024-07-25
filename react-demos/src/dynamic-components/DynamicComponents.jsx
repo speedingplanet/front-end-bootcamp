@@ -24,15 +24,11 @@ export default function DynamicComponents() {
 		<div className="row">
 			<div className="col">
 				<ul>
-					<li onClick={() => setCustomComponent('ChildComponent')}>
-						'ChildComponent'
-					</li>
+					<li onClick={() => setCustomComponent('ChildComponent')}>'ChildComponent'</li>
 					<li onClick={() => setCustomComponent('WithPropsComponent')}>
 						WithPropsComponent (no props)
 					</li>
-					<li onClick={() => setCustomComponent(ChildComponent)}>
-						ChildComponent
-					</li>
+					<li onClick={() => setCustomComponent(ChildComponent)}>ChildComponent</li>
 				</ul>
 			</div>
 			<div className="col">

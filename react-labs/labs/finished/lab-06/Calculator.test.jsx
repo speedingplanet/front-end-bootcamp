@@ -9,13 +9,13 @@ import Calculator from './Calculator';
 Two sets of changes: one architectural, and one test-based
 
 Architectural:
-Wrap the set of tests below in a `describe` block. 
+Wrap the set of tests below in a `describe` block.
 Use `beforeEach` to render the `Calculator` component before each test
 Remove the call to `render(<Calculator />)` from each individual test
 
 Test-based:
 Go through each of the two skipped tests. Make the following changes:
-1) CalculatorDisplay's root element now has a test id of 'calculator-display', 
+1) CalculatorDisplay's root element now has a test id of 'calculator-display',
 	 so there's no reason to use the `container` anymore
 2) Similarly, the .result div under CalculatorDisplay also has a test id
    of 'calculator-result'
@@ -23,8 +23,8 @@ Go through each of the two skipped tests. Make the following changes:
 Rewrite the test 'Does not display any equation at start' to use the test id.
 Rewrite the test 'Displays equation after selecting an operator' to use the test id.
 
-Add a test to set the numeric values, select an operator, and then validate that 
-CalculatorDisplay shows the equation and has the correct results. 
+Add a test to set the numeric values, select an operator, and then validate that
+CalculatorDisplay shows the equation and has the correct results.
 
 */
 
@@ -56,8 +56,6 @@ describe('Testing Calculator', () => {
 		await userEvent.selectOptions(screen.getByLabelText(/Choose/), '+');
 
 		expect(screen.getByTestId('calculator-display')).toBeVisible();
-		expect(screen.getByTestId('calculator-result')).toHaveTextContent(
-			testLValue + testRValue,
-		);
+		expect(screen.getByTestId('calculator-result')).toHaveTextContent(testLValue + testRValue);
 	});
 });

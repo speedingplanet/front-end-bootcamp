@@ -14,9 +14,7 @@ function FormDataManager() {
 				<div className="col-3 form-data-manager">
 					<ul className="list-unstyled">
 						<li>
-							<NavLink to="/form-data/controlled-components">
-								Controlled Components
-							</NavLink>
+							<NavLink to="/form-data/controlled-components">Controlled Components</NavLink>
 						</li>
 						<li>
 							<NavLink to="/form-data/utility-event-handler">
@@ -29,14 +27,10 @@ function FormDataManager() {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/single-state-object">
-								Single state object
-							</NavLink>
+							<NavLink to="/form-data/single-state-object">Single state object</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/context-reducer">
-								Context and reducer
-							</NavLink>
+							<NavLink to="/form-data/context-reducer">Context and reducer</NavLink>
 						</li>
 					</ul>
 				</div>

@@ -5,7 +5,7 @@ import './CalculatorDisplay.css';
  *
  * @param {{lValue: number, rValue: number, operator: '+' | '-' | '*' | '/'}} props
  * @returns
- * 
+ *
 Fill in CalculatorDisplay. It should take three props:
 	- lValue: the left operand, a number
 	- rValue: the right operand, a number

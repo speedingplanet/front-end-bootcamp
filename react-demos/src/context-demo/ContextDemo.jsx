@@ -155,9 +155,7 @@ function RightThree() {
 			<h5>RightThree</h5>
 			<DemoContext.Consumer>
 				{/* {({ message }) => <span>Current message: {message}</span>} */}
-				{(contextObject) => (
-					<span>Current message: {contextObject.message}</span>
-				)}
+				{(contextObject) => <span>Current message: {contextObject.message}</span>}
 			</DemoContext.Consumer>
 		</div>
 	);

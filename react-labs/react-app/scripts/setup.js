@@ -57,12 +57,7 @@ async function backup() {
  */
 async function begin(labNumber) {
 	let labDir = `lab-${labNumber}`;
-	let labsFrom = path.resolve(
-		__dirname,
-		labsParentPrefix,
-		beginFolderName,
-		labDir,
-	);
+	let labsFrom = path.resolve(__dirname, labsParentPrefix, beginFolderName, labDir);
 	try {
 		let labsFromExists = await fs.exists(labsFrom);
 		if (!labsFromExists) throw new Error(`Could not find lab ${labNumber}`);
@@ -81,12 +76,7 @@ async function begin(labNumber) {
  */
 async function finish(labNumber) {
 	let labDir = `lab-${labNumber}`;
-	let labsFrom = path.resolve(
-		__dirname,
-		labsParentPrefix,
-		finishedFolderName,
-		labDir,
-	);
+	let labsFrom = path.resolve(__dirname, labsParentPrefix, finishedFolderName, labDir);
 	try {
 		let labsFromExists = await fs.exists(labsFrom);
 		if (!labsFromExists) throw new Error(`Could not find lab ${labNumber}`);
@@ -110,7 +100,7 @@ async function save(labNumber, beginFinish) {
 		__dirname,
 		labsParentPrefix,
 		beginFinish === 'begin' ? beginFolderName : finishedFolderName,
-		labDir,
+		labDir
 	);
 	let labsFrom = path.resolve(__dirname, labsLocalPrefix);
 	try {

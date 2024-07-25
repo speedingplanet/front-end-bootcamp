@@ -1,9 +1,6 @@
 import React from 'react';
 import { expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/vitest';
-import Calculator from './Calculator';
 
 test('Smoke test', () => {
 	expect(1 + 1).toBe(2);
@@ -16,7 +13,7 @@ test('Smoke test', () => {
 
 Write a test that loads and displays Calculator
 
-`render` to render Calculator 
+`render` to render Calculator
 
 You could use `getByLabelText` to see if you could find the label for the drop-down
 Don't forget that it takes a TextMatch argument, not just a string
@@ -40,7 +37,7 @@ You probably want the `toBeVisible` matcher called on your `expect`
 # Part 5
 ###################################################################
 
-Write a test to make sure that the equation IS displayed after choosing an 
+Write a test to make sure that the equation IS displayed after choosing an
 operator
 
 You will need to use `userEvent` with `selectOptions` to trigger a select event

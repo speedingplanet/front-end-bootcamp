@@ -34,9 +34,7 @@ function GridExample() {
 				</div>
 				<div className="countries-grid-body">
 					{countries.map((country) =>
-						columns.map((column) => (
-							<div key={country.id}>{country[column.field]}</div>
-						)),
+						columns.map((column) => <div key={country.id}>{country[column.field]}</div>)
 					)}
 				</div>
 			</div>

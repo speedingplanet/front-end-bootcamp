@@ -67,9 +67,7 @@ function App() {
 								<NavLink to="context-demo">Context API</NavLink>
 							</li>
 							<li>
-								<NavLink to="higher-order-component">
-									Higher Order Component
-								</NavLink>
+								<NavLink to="higher-order-component">Higher Order Component</NavLink>
 							</li>
 							<li>
 								<NavLink to="memoization">Memoization</NavLink>
@@ -81,14 +79,10 @@ function App() {
 								<NavLink to="redux-counter">Redux Counter</NavLink>
 							</li>
 							<li>
-								<NavLink to="redux-counter-best-practices">
-									Redux Counter (best practices)
-								</NavLink>
+								<NavLink to="redux-counter-best-practices">Redux Counter (best practices)</NavLink>
 							</li>
 							<li>
-								<NavLink to="redux-toolkit-counter">
-									Redux Counter (using the toolkit)
-								</NavLink>
+								<NavLink to="redux-toolkit-counter">Redux Counter (using the toolkit)</NavLink>
 							</li>
 							<li>
 								<NavLink to="visibility-demo">Visbility Demo</NavLink>

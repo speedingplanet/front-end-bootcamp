@@ -5,18 +5,18 @@ import CalculatorDisplay from './CalculatorDisplay';
 /*
 Change the use of state from three separate state values to one state object:
 
-Create variable, `initialState`, which has the properties "operator", 
+Create variable, `initialState`, which has the properties "operator",
 "lValue", and "rValue"
 
-Replace the three `useState` calls with one, using `initialState` 
+Replace the three `useState` calls with one, using `initialState`
 as the initial state
 
 Notice how all three form fields:
 - Have a name value that corresponds to the name of a state property
 - Are controlled components
 
-Replace the three separate event handlers with one unified 
-event handler: `handleFormUpdate`. 
+Replace the three separate event handlers with one unified
+event handler: `handleFormUpdate`.
 
 In `handleFormUpdate`, get the name and the value of the `currentTarget`
 and use that to update the state. You will need to pass an entire object
