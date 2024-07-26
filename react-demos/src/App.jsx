@@ -41,6 +41,12 @@ function App() {
 								<NavLink to="conditional-display">Conditional Display</NavLink>
 							</li>
 							<li>
+								<NavLink to="visibility-demo">Visbility Demo</NavLink>
+							</li>
+							<li>
+								<NavLink to="testable-component">Testable component</NavLink>
+							</li>
+							<li>
 								<NavLink to="form-data">Form Data examples</NavLink>
 							</li>
 							<li>
@@ -83,12 +89,6 @@ function App() {
 							</li>
 							<li>
 								<NavLink to="redux-toolkit-counter">Redux Counter (using the toolkit)</NavLink>
-							</li>
-							<li>
-								<NavLink to="visibility-demo">Visbility Demo</NavLink>
-							</li>
-							<li>
-								<NavLink to="testable-component">Testable component</NavLink>
 							</li>
 						</ul>
 					</div>
