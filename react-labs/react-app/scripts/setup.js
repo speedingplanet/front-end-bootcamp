@@ -12,7 +12,7 @@ let beginFolderName = 'begin';
 let finishedFolderName = 'finished';
 let labsParentPrefix = '../../labs';
 let labsLocalPrefix = '../src/labs';
-let labManager = 'LabManager.jsx';
+let labManager = 'LabManager.tsx';
 
 // Should be YYYY-MM-DDTHH-mm-SS-MS without a timezone
 let today = new Date().toISOString().replace(/[-:.]/g, '-').slice(0, 23);

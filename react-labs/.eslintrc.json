@@ -2,23 +2,24 @@
 	"env": {
 		"browser": true,
 		"node": true,
-		"es2022": true
+		"es2024": true
 	},
 	"extends": [
-		"standard",
-		"@speedingplanet/eslint-config",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
 		"plugin:react-hooks/recommended"
 	],
-	"ignorePatterns": ["node_modules", "dist", "generated", "backups"],
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+	"plugins": ["@typescript-eslint", "react-refresh"],
+	"root": true,
+	"ignorePatterns": ["node_modules", "dist", "generated", "backups"],
 	"settings": { "react": { "version": "18.2" } },
-	"plugins": ["react-refresh"],
 	"rules": {
-		"indent": ["warn", "tab", { "SwitchCase": 1 }],
-		"no-trailing-spaces": ["warn", { "ignoreComments": true }],
-		"no-unused-vars": ["warn", { "varsIgnorePattern": "React" }],
+		"@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "React" }],
+		"prefer-const": "off",
 		"react/jsx-no-target-blank": "off",
 		"react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
 		"react/prop-types": "off",

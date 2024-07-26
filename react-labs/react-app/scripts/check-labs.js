@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 let labsLocalPrefix = '../src/labs';
-let labManager = 'LabManager.jsx';
+let labManager = 'LabManager.tsx';
 
 let labManagerExists = await fs.exists(path.resolve(__dirname, labsLocalPrefix, labManager));
 
