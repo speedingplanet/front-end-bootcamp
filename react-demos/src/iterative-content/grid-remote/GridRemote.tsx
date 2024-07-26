@@ -3,8 +3,9 @@ import { orderBy } from 'lodash';
 import '../GridExample.css';
 import GridHeaderRow from '../grid-sorted/GridHeaderRowSorted';
 import GridBody from '../grid-sorted/GridBodySorted';
+import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../..';
 
-let columns = [
+let columns: GridColumn<Country>[] = [
 	{
 		field: 'country',
 		label: 'Country',
@@ -19,7 +20,7 @@ let columns = [
 	},
 ];
 
-let initialSortConfig = {
+let initialSortConfig: SortConfig<Country> = {
 	sortField: '',
 	sortDirection: 'asc',
 };
@@ -45,13 +46,13 @@ function GridRemote() {
 			});
 	}, []);
 
-	function handleHeaderClick(sortField) {
-		let sortDirection = 'asc';
+	function handleHeaderClick(sortField: keyof Country) {
+		let sortDirection: SortDirection = 'asc';
 		if (sortConfig.sortField === sortField && sortConfig.sortDirection === 'asc') {
 			sortDirection = 'desc';
 		}
 
-		let nextSortConfig = {
+		let nextSortConfig: SortConfig<Country> = {
 			sortField,
 			sortDirection,
 		};
@@ -62,8 +63,14 @@ function GridRemote() {
 	if (countries.length > 0) {
 		let sortedCountries = orderBy(countries, sortConfig.sortField, sortConfig.sortDirection);
 
+		// Due to over-aggressive CSS type checking
+		// See here: https://github.com/frenic/csstype/issues/63#issuecomment-982133385
+		const columnsToCSS: CSSProperties = {
+			'--columns': columns.length,
+		};
+
 		return (
-			<section style={{ '--columns': columns.length }}>
+			<section style={columnsToCSS}>
 				<h3>Countries Grid with remote data</h3>
 				<div className="countries-grid">
 					<GridHeaderRow

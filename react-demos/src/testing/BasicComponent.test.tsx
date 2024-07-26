@@ -49,7 +49,7 @@ it('should allow access to the underlying DOM', () => {
 
 	let secondListItem = container.querySelector('li:nth-child(2)');
 	expect(secondListItem).not.toBeNull();
-	expect(secondListItem.textContent).toEqual('Bananas');
+	expect(secondListItem!.textContent).toEqual('Bananas');
 });
 
 it('should allow access via a test id', () => {

@@ -1,21 +1,17 @@
 import React from 'react';
 import { expect, describe, beforeEach, test } from 'vitest';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import VisibilityDemo from './VisibilityDemo';
 
 describe('Visibility tests', () => {
-	let queryByTestId, getByText;
-
 	beforeEach(() => {
-		let queries = render(<VisibilityDemo />);
-		queryByTestId = queries.queryByTestId;
-		getByText = queries.getByText;
+		render(<VisibilityDemo />);
 	});
 
 	test('Toggle DOM absence', () => {
-		const button = getByText('Toggle DOM');
-		const box = queryByTestId('DOM');
+		const button = screen.getByText('Toggle DOM');
+		const box = screen.queryByTestId('DOM');
 		// Verify that the box is in the DOM
 		expect(box).toBeInTheDocument();
 
@@ -24,8 +20,8 @@ describe('Visibility tests', () => {
 	});
 
 	test('Toggle Visibility', () => {
-		const button = getByText('Toggle Visibility');
-		const box = queryByTestId('visibility');
+		const button = screen.getByText('Toggle Visibility');
+		const box = screen.queryByTestId('visibility');
 		// Verify that the box is in the DOM
 		expect(box).toBeInTheDocument();
 		expect(box).toBeVisible();
@@ -36,8 +32,8 @@ describe('Visibility tests', () => {
 	});
 
 	test('Toggle Display', () => {
-		const button = getByText('Toggle Display');
-		const box = queryByTestId('display');
+		const button = screen.getByText('Toggle Display');
+		const box = screen.queryByTestId('display');
 		// Verify that the box is in the DOM
 		expect(box).toBeInTheDocument();
 		expect(box).toBeVisible();
@@ -48,8 +44,8 @@ describe('Visibility tests', () => {
 	});
 
 	test('Toggle Opacity', () => {
-		const button = getByText('Toggle Opacity');
-		const box = queryByTestId('opacity');
+		const button = screen.getByText('Toggle Opacity');
+		const box = screen.queryByTestId('opacity');
 		// Verify that the box is in the DOM
 		expect(box).toBeInTheDocument();
 		expect(box).toBeVisible();
@@ -60,8 +56,8 @@ describe('Visibility tests', () => {
 	});
 
 	test('Toggle Hidden', () => {
-		const button = getByText('Toggle Hidden');
-		const box = queryByTestId('hidden');
+		const button = screen.getByText('Toggle Hidden');
+		const box = screen.queryByTestId('hidden');
 		// Verify that the box is in the DOM
 		expect(box).toBeInTheDocument();
 		expect(box).toBeVisible();

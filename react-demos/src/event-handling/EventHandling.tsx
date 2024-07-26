@@ -11,7 +11,7 @@ function EventHandling() {
 	let setCounter = array[1];
 	*/
 	let [counter, setCounter] = useState(10);
-	let [yesNoValue, setYesNoValue] = useState();
+	let [yesNoValue, setYesNoValue] = useState('');
 	let [message, setMessage] = useState('');
 
 	function handleClick() {

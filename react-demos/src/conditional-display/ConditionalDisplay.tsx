@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import type * as CSS from 'csstype';
 import './ConditionalDisplay.css';
 
 /*
@@ -12,7 +13,7 @@ import './ConditionalDisplay.css';
 function ConditionalDisplay() {
 	let [showBox1, setShowBox1] = useState(false);
 	let [showBox2, setShowBox2] = useState('block');
-	let [showBox3, setShowBox3] = useState('visible');
+	let [showBox3, setShowBox3] = useState<CSS.Property.Visibility>('visible');
 	let [showBox4, setShowBox4] = useState(false);
 
 	function handleToggleBox2() {

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Country } from '..';
 
 function AsyncAwait() {
-	const [countries, setCountries] = useState([]);
+	const [countries, setCountries] = useState<Country[]>([]);
 
 	// One-time data request
 	useEffect(() => {

@@ -19,6 +19,7 @@
 	"settings": { "react": { "version": "18.2" } },
 	"rules": {
 		"@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "React" }],
+		"@typescript-eslint/no-explicit-any": "off",
 		"prefer-const": "off",
 		"react/jsx-no-target-blank": "off",
 		"react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],

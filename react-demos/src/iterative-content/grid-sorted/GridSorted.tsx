@@ -4,8 +4,9 @@ import { countries } from '../../data/countries-table.json';
 import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRowSorted';
 import GridBody from './GridBodySorted';
+import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../..';
 
-let columns = [
+let columns: GridColumn<Country>[] = [
 	{
 		field: 'country',
 		label: 'Country',
@@ -20,7 +21,7 @@ let columns = [
 	},
 ];
 
-let initialSortConfig = {
+let initialSortConfig: SortConfig<Country> = {
 	sortField: '',
 	sortDirection: 'asc',
 };
@@ -28,13 +29,13 @@ let initialSortConfig = {
 function GridSorted() {
 	let [sortConfig, setSortConfig] = useState(initialSortConfig);
 
-	function handleHeaderClick(sortField) {
-		let sortDirection = 'asc';
+	function handleHeaderClick(sortField: keyof Country) {
+		let sortDirection: SortDirection = 'asc';
 		if (sortConfig.sortField === sortField && sortConfig.sortDirection === 'asc') {
 			sortDirection = 'desc';
 		}
 
-		let nextSortConfig = {
+		let nextSortConfig: SortConfig<Country> = {
 			sortField,
 			sortDirection,
 		};
@@ -44,8 +45,14 @@ function GridSorted() {
 
 	let sortedCountries = orderBy(countries, sortConfig.sortField, sortConfig.sortDirection);
 
+	// Due to over-aggressive CSS type checking
+	// See here: https://github.com/frenic/csstype/issues/63#issuecomment-982133385
+	const columnsToCSS: CSSProperties = {
+		'--columns': columns.length,
+	};
+
 	return (
-		<section style={{ '--columns': columns.length }}>
+		<section style={columnsToCSS}>
 			<h3>Countries Grid with sorting</h3>
 			<div className="countries-grid">
 				<GridHeaderRow

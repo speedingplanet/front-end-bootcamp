@@ -6,15 +6,18 @@ import TextInput from './TextInput';
 TODO: Reducer, is this the best solution, better example?
 */
 
+interface FormState {
+	[field: string]: string;
+}
+
 const FormContext = createContext(null);
 
 const initialState = {};
 
 function FormWithContext() {
-	const [formState, setFormState] = useState(initialState);
+	const [formState, setFormState] = useState<FormState>(initialState);
 
-	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleFormUpdate(event) {
+	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
 		let field = event.currentTarget.name;
 		let value = event.currentTarget.value;
 

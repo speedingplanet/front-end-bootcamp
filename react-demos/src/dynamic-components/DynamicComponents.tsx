@@ -4,7 +4,7 @@ function ChildComponent() {
 	return <h3>Child component</h3>;
 }
 
-function WithPropsComponent(props) {
+function WithPropsComponent(props: { name: string }) {
 	return <h3>Hello, {props.name}</h3>;
 }
 
@@ -19,6 +19,7 @@ export default function DynamicComponents() {
 		ChildComponent,
 		WithPropsComponent,
 	};
+
 	let DisplayComponent = components[customComponent] || DefaultComponent;
 	return (
 		<div className="row">

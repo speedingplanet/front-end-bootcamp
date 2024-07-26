@@ -1,6 +1,7 @@
 import React from 'react';
+import { Country, GridColumn } from '../..';
 
-function GridHeaderRow({ columns }) {
+function GridHeaderRow({ columns }: { columns: GridColumn<Country>[] }) {
 	return (
 		<div className="countries-grid-head">
 			{columns.map((column) => (

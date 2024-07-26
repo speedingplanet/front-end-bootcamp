@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function BasicComponent() {
 	const [favorite, setFavorite] = useState('');
 
-	function handleFavorite(event) {
+	function handleFavorite(event: React.ChangeEvent<HTMLInputElement>) {
 		setFavorite(event.currentTarget.value);
 	}
 

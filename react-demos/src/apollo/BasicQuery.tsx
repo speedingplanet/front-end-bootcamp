@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { Country } from '..';
 
 /*
 query NAME_OF_QUERY {
@@ -30,7 +31,7 @@ const GET_COUNTRIES = gql`
 function BasicQuery() {
 	// const { loading, error, data } = useQuery(GET_COUNTRIES);
 	// Send the query with useQuery
-	const response = useQuery(GET_COUNTRIES);
+	const response = useQuery<{ countries: Country[] }>(GET_COUNTRIES);
 
 	// Handle unsuccessful responses
 	// Still loading / slow connection

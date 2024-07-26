@@ -1,7 +1,14 @@
 import React from 'react';
 import SortIndicator from './SortIndicator';
+import { Country, GridColumn, SortConfig } from '../..';
 
-function GridHeaderRow({ columns, onHeaderClick, sortConfig }) {
+interface GridHeaderRowProps {
+	columns: GridColumn<Country>[];
+	onHeaderClick: (field: keyof Country) => void;
+	sortConfig: SortConfig<Country>;
+}
+
+function GridHeaderRow({ columns, onHeaderClick, sortConfig }: GridHeaderRowProps) {
 	return (
 		<div className="countries-grid-head">
 			{columns.map((column) => (

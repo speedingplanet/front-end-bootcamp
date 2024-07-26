@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import CancelPromise from './cancel-promise/CancelPromise';
 import EffectHook from './effect-hook/EffectHook';
-import ContextDemo from './context-demo/ContextDemo';
 import HigherOrderComponent from './higher-order-component/HigherOrderComponent';
 import Memoization from './memo-demo/Memoization';
 import DynamicComponents from './dynamic-components/DynamicComponents';
@@ -64,13 +62,7 @@ function App() {
 								<NavLink to="apollo">Apollo Demos</NavLink>
 							</li>
 							<li>
-								<NavLink to="cancel-promise">Cancel Promises (axios)</NavLink>
-							</li>
-							<li>
 								<NavLink to="effect-hook">Effect Hook</NavLink>
-							</li>
-							<li>
-								<NavLink to="context-demo">Context API</NavLink>
 							</li>
 							<li>
 								<NavLink to="higher-order-component">Higher Order Component</NavLink>
@@ -123,16 +115,8 @@ function App() {
 								element={<ApolloManager />}
 							/>
 							<Route
-								path="/cancel-promise"
-								element={<CancelPromise />}
-							/>
-							<Route
 								path="/effect-hook"
 								element={<EffectHook />}
-							/>
-							<Route
-								path="/context-demo"
-								element={<ContextDemo />}
 							/>
 							<Route
 								path="/higher-order-component"

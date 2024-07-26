@@ -92,7 +92,7 @@ function VisibilityDemo() {
 	);
 }
 
-function Box(props) {
+function Box(props: any) {
 	return (
 		<div
 			className="visibility-box"

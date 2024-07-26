@@ -1,6 +1,12 @@
 import React from 'react';
+import { SortConfig } from '../..';
 
-function SortIndicator({ sortConfig, field }) {
+interface SortIndicatorProps {
+	sortConfig: SortConfig;
+	field: string;
+}
+
+function SortIndicator({ sortConfig, field }: SortIndicatorProps) {
 	if (sortConfig.sortField !== field) {
 		return '';
 	}
