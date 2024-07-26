@@ -12,6 +12,7 @@
 		"lint:fix": "eslint . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"rest-server": "json-server --port 8000 src/data/countries-table.json",
+		"tsc": "tsc -p tsconfig.json",
 		"test": "vitest"
 	},
 	"dependencies": {
