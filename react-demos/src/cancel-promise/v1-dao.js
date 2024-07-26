@@ -69,7 +69,6 @@ function handleError(error) {
 }
 
 function rejectPromise(message, rest) {
-	// eslint-disable-next-line prefer-promise-reject-errors
 	return Promise.reject({ message, ...rest });
 }
 

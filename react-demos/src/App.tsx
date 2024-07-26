@@ -1,25 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import CancelPromise from './cancel-promise/CancelPromise.jsx';
-import EffectHook from './effect-hook/EffectHook.jsx';
-import ContextDemo from './context-demo/ContextDemo.jsx';
-import HigherOrderComponent from './higher-order-component/HigherOrderComponent.jsx';
-import Memoization from './memo-demo/Memoization.jsx';
-import DynamicComponents from './dynamic-components/DynamicComponents.jsx';
-import ReduxCounter from './redux-counter/ReduxCounter.jsx';
-import ReduxCounterBP from './redux-counter-best/ReduxContainer.jsx';
-import ReduxToolkitCounter from './redux-counter-tk/ReduxContainer.jsx';
-import VisibilityDemo from './visibility-tests/VisibilityDemo.jsx';
+import CancelPromise from './cancel-promise/CancelPromise';
+import EffectHook from './effect-hook/EffectHook';
+import ContextDemo from './context-demo/ContextDemo';
+import HigherOrderComponent from './higher-order-component/HigherOrderComponent';
+import Memoization from './memo-demo/Memoization';
+import DynamicComponents from './dynamic-components/DynamicComponents';
+import ReduxCounter from './redux-counter/ReduxCounter';
+import ReduxCounterBP from './redux-counter-best/ReduxContainer';
+import ReduxToolkitCounter from './redux-counter-tk/ReduxContainer';
+import VisibilityDemo from './visibility-tests/VisibilityDemo';
 import BasicComponent from './testing/BasicComponent';
 import FormDataManager from './form-data/FormDataManager';
 import IterativeContentManager from './iterative-content/IterativeContentManager';
-import AsyncManager from './async-demos/AsyncManager.jsx';
-import PropsChildren from './PropsChildren.jsx';
-import ApolloManager from './apollo/ApolloManager.jsx';
+import AsyncManager from './async-demos/AsyncManager';
+import PropsChildren from './PropsChildren';
+import ApolloManager from './apollo/ApolloManager';
 
 import './App.css';
-import EventHandling from './event-handling/EventHandling.jsx';
-import ConditionalDisplay from './conditional-display/ConditionalDisplay.jsx';
+import EventHandling from './event-handling/EventHandling';
+import ConditionalDisplay from './conditional-display/ConditionalDisplay';
 
 function App() {
 	return (
