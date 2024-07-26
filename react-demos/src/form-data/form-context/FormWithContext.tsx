@@ -10,7 +10,7 @@ interface FormState {
 	[field: string]: string;
 }
 
-const FormContext = createContext(null);
+const FormContext = createContext<FormState | null>(null);
 
 const initialState = {};
 

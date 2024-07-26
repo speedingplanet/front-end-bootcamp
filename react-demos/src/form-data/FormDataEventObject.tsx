@@ -7,7 +7,7 @@ function FormDataEventObject() {
 	const [city, setCity] = useState('');
 	const [state, setState] = useState('');
 
-	function handleFormUpdate(event) {
+	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
 		let field = event.currentTarget.name;
 		let value = event.currentTarget.value;
 

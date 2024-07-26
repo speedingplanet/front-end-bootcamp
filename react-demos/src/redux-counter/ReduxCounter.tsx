@@ -3,6 +3,8 @@ import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { connect, Provider } from 'react-redux';
+import { CounterProps, CounterState } from '..';
+import { Action, Dispatch } from '@reduxjs/toolkit';
 
 const initialState = { counter: 1 };
 
@@ -16,7 +18,7 @@ const actions = {
 const addOne = () => ({ type: actions.INCREMENT });
 const subtractOne = () => ({ type: actions.DECREMENT });
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: Action) => {
 	switch (action.type) {
 		case actions.INCREMENT:
 			return { counter: state.counter + 1 };
@@ -29,7 +31,7 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger)));
 
-function Counter({ value, increment, decrement }) {
+function Counter({ value, increment, decrement }: CounterProps) {
 	return (
 		<div className="card">
 			<div className="card-header bg-secondary">Redux-enabled counter</div>
@@ -71,11 +73,11 @@ function Counter({ value, increment, decrement }) {
 	);
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: CounterState) => ({
 	value: state.counter,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
 	increment: () => dispatch(addOne()),
 	decrement: () => dispatch(subtractOne()),
 });

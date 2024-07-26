@@ -1,5 +1,4 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-// import logger from 'redux-logger';
 
 const counterSlice = createSlice({
 	name: 'counter',
@@ -13,6 +12,9 @@ const counterSlice = createSlice({
 export const store = configureStore({
 	reducer: counterSlice.reducer,
 });
+
+export type ReduxTkState = ReturnType<typeof store.getState>;
+export type ReduxTkDispatch = typeof store.dispatch;
 
 const { actions } = counterSlice;
 export const { increment, decrement } = actions;

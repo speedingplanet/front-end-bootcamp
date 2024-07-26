@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import Counter from './Counter';
-import { increment, decrement } from './counter-slice';
+import { increment, decrement, ReduxTkState, ReduxTkDispatch } from './counter-slice';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: ReduxTkState) => ({
 	value: state,
 });
 
@@ -22,7 +22,7 @@ as we do in Counter.js, but rather
 onClick={() => callSomeAction(someValue)}
 So there is no real fix for this particular issue.
 */
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: ReduxTkDispatch) => ({
 	increment: () => dispatch(increment()),
 	decrement: () => dispatch(decrement()),
 });

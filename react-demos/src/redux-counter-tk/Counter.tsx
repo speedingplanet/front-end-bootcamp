@@ -1,6 +1,7 @@
 import React from 'react';
+import { CounterProps } from '..';
 
-export default function Counter({ value, increment, decrement }) {
+export default function Counter({ value, increment, decrement }: CounterProps) {
 	return (
 		<div className="card">
 			<div className="card-header bg-secondary">Redux-enabled counter</div>

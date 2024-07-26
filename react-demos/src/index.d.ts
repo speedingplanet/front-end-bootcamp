@@ -38,3 +38,13 @@ export interface SortConfig<T = any> {
 	sortField: keyof T | '';
 	sortDirection: SortDirection;
 }
+
+export interface CounterProps {
+	value: number;
+	increment: () => void;
+	decrement: () => void;
+}
+
+export interface CounterState {
+	counter: number;
+}

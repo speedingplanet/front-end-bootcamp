@@ -18,7 +18,7 @@ function PropsChildren() {
 	);
 }
 
-function WrapsElements({ children }) {
+function WrapsElements({ children }: React.PropsWithChildren) {
 	return (
 		<div>
 			<p>
@@ -29,7 +29,7 @@ function WrapsElements({ children }) {
 	);
 }
 
-function WrapsText({ children }) {
+function WrapsText({ children }: React.PropsWithChildren) {
 	return (
 		<div>
 			<p>

@@ -11,7 +11,16 @@ import { nanoid } from 'nanoid';
  * }} props
  * @returns {JSX.Element}
  */
-function TextInput({ id, name, value, updateForm, children, ...props }) {
+
+/**
+ * @see {@link https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase#wrappingmirroring-a-html-element}
+ */
+interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
+	updateForm: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+// function TextInput({ id, name, value, updateForm, children, ...props }) {
+function TextInput({ id, name, value, updateForm, children, ...props }: TextInputProps) {
 	let labelText = children || 'Label goes here';
 	if (!id) {
 		id = nanoid();

@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 
 export default function Memoization() {
-	const [matters, setMatters] = useState(0);
-	const [insignificant, setInsignificant] = useState(0);
+	const [matters, setMatters] = useState('');
+	const [insignificant, setInsignificant] = useState('');
 
 	const displayMatters = useMemo(() => {
 		console.log(`The important value is now ${matters}`);

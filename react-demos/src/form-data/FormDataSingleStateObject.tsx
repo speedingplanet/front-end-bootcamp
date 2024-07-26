@@ -8,14 +8,17 @@ const initialState = {
 	state: '',
 };
 
-function FormDataSingleStateObject() {
-	const [formState, setFormState] = useState(initialState);
+export type FormState = typeof initialState;
 
-	function handleFormUpdate(event) {
-		let field = event.currentTarget.name;
+function FormDataSingleStateObject() {
+	const [formState, setFormState] = useState<FormState>(initialState);
+
+	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
+		// If `name` is typed as a string, it will cause errors at `nextState[field]`
+		let field = event.currentTarget.name as keyof FormState;
 		let value = event.currentTarget.value;
 
-		let nextState = { ...formState };
+		let nextState: FormState = { ...formState };
 		nextState[field] = value;
 
 		setFormState(nextState);

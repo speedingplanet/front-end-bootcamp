@@ -1,6 +1,7 @@
 import React from 'react';
+import { FormState } from './FormDataSingleStateObject';
 
-function FormDataDisplay({ firstName, lastName, city, state }) {
+function FormDataDisplay({ firstName, lastName, city, state }: FormState) {
 	return (
 		<div>
 			<p>Form data</p>

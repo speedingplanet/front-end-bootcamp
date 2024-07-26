@@ -7,19 +7,19 @@ function FormDataControlledComponents() {
 	const [city, setCity] = useState('');
 	const [state, setState] = useState('');
 
-	function handleFirstNameChange(event) {
+	function handleFirstNameChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setFirstName(event.currentTarget.value);
 	}
 
-	function handleLastNameChange(event) {
+	function handleLastNameChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setLastName(event.currentTarget.value);
 	}
 
-	function handleCityChange(event) {
+	function handleCityChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setCity(event.currentTarget.value);
 	}
 
-	function handleStateChange(event) {
+	function handleStateChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setState(event.currentTarget.value);
 	}
 

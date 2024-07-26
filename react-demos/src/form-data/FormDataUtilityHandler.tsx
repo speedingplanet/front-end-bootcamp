@@ -7,7 +7,7 @@ function FormDataUtilityHandler() {
 	const [city, setCity] = useState('');
 	const [state, setState] = useState('');
 
-	function handleFormUpdate(field, value) {
+	function handleFormUpdate(field: string, value: string) {
 		switch (field) {
 			case 'firstName':
 				setFirstName(value);
