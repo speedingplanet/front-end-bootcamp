@@ -33,10 +33,10 @@ it('should access the component in several ways', () => {
 	expect(screen.getByText('Apples')).not.toBeNull();
 
 	// Inexact match, and case-insensitive
-	expect(screen.getByText('App', { exact: false })).not.toBeNull();
+	expect(screen.getByText('app', { exact: false,  })).not.toBeNull();
 
 	// Regular expression match (currently matching the behavior of exact)
-	expect(screen.getByText(/app/i));
+	expect(screen.getByText(/nan/i));
 });
 
 /*
@@ -64,7 +64,14 @@ it("should access a form field via the field's label", () => {
 	expect(formField).toBeVisible();
 });
 
+it('should compare snapshots', () => {
+	const {asFragment} = render(<BasicComponent />);
+	expect(asFragment()).toMatchSnapshot();
+})
+
 it('should respond to content typed into a form field', async () => {
+	const user = userEvent.setup();
+
 	const { container } = render(<BasicComponent />);
 	let formField = screen.getByLabelText(/favorite/i);
 	expect(formField).toHaveValue('');
@@ -73,7 +80,7 @@ it('should respond to content typed into a form field', async () => {
 	expect(lastItem).toHaveTextContent('');
 
 	let fruit = 'Lemons';
-	await userEvent.type(formField, fruit);
+	await user.type(formField, fruit);
 	expect(formField).toHaveValue(fruit);
 	expect(lastItem).toHaveTextContent(fruit);
 	expect(screen.getByText(fruit)).toBeInTheDocument();
