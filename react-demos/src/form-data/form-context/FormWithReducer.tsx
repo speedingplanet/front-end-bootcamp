@@ -46,7 +46,7 @@ function FormWithReducer() {
 
 	return (
 		<>
-			<h3>Form with context and reducer</h3>
+			<h3>Form a reducer</h3>
 			<div className="row">
 				<div className="col">
 					<form>

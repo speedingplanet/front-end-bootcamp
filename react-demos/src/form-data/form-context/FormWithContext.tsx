@@ -25,7 +25,7 @@ function FormWithContext() {
 
 	return (
 		<FormContext.Provider value={{}}>
-			<h3>Form with context and reducer</h3>
+			<h3>Form with context</h3>
 			<div className="row">
 				<div className="col">
 					<form>
