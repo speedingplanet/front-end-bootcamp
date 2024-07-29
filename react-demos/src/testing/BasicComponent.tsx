@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classes from './BasicComponent.module.css';
 
 function BasicComponent() {
 	const [favorite, setFavorite] = useState('');
@@ -21,7 +22,7 @@ function BasicComponent() {
 			</div>
 			<ul>
 				<li>Apples</li>
-				<li>Bananas</li>
+				<li className={classes.bananas}>Bananas</li>
 				<li>Peaches</li>
 				<li data-testid="oranges">Oranges</li>
 				<li>{favorite}</li>

@@ -33,7 +33,7 @@ it('should access the component in several ways', () => {
 	expect(screen.getByText('Apples')).not.toBeNull();
 
 	// Inexact match, and case-insensitive
-	expect(screen.getByText('app', { exact: false,  })).not.toBeNull();
+	expect(screen.getByText('app', { exact: false })).not.toBeNull();
 
 	// Regular expression match (currently matching the behavior of exact)
 	expect(screen.getByText(/nan/i));
@@ -65,9 +65,9 @@ it("should access a form field via the field's label", () => {
 });
 
 it('should compare snapshots', () => {
-	const {asFragment} = render(<BasicComponent />);
+	const { asFragment } = render(<BasicComponent />);
 	expect(asFragment()).toMatchSnapshot();
-})
+});
 
 it('should respond to content typed into a form field', async () => {
 	const user = userEvent.setup();
