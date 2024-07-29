@@ -16,19 +16,13 @@ exports[`should compare snapshots 1`] = `
         value=""
       />
     </div>
-    <div>
-      <label>
-        Uncontrolled component
-      </label>
-      <input
-        type="text"
-      />
-    </div>
     <ul>
       <li>
         Apples
       </li>
-      <li>
+      <li
+        class="_bananas_204563"
+      >
         Bananas
       </li>
       <li>
