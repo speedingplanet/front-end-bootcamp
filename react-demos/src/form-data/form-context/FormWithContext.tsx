@@ -2,10 +2,6 @@ import React, { useState, createContext } from 'react';
 import FormDataDisplay from '../FormDataDisplay';
 import TextInput from './TextInput';
 
-/*
-TODO: Reducer, is this the best solution, better example?
-*/
-
 interface FormState {
 	[field: string]: string;
 }

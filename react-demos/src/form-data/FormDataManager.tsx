@@ -6,6 +6,7 @@ import FormDataEventObject from './FormDataEventObject';
 import FormDataSingleStateObject from './FormDataSingleStateObject';
 import FormWithContext from './form-context/FormWithContext';
 import './form-data.css';
+import FormWithReducer from './form-context/FormWithReducer';
 
 function FormDataManager() {
 	return (
@@ -30,7 +31,10 @@ function FormDataManager() {
 							<NavLink to="/form-data/single-state-object">Single state object</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form-data/context-reducer">Context and reducer</NavLink>
+							<NavLink to="/form-data/plain-reducer">Just a Reducer</NavLink>
+						</li>
+						<li>
+							<NavLink to="/form-data/context-reducer">Context</NavLink>
 						</li>
 					</ul>
 				</div>
@@ -55,6 +59,10 @@ function FormDataManager() {
 						<Route
 							path="context-reducer"
 							element={<FormWithContext />}
+						/>
+						<Route
+							path="plain-reducer"
+							element={<FormWithReducer />}
 						/>
 					</Routes>
 				</div>
