@@ -38,7 +38,7 @@ function Calculator() {
 	const [state, setState] = useState(initialState);
 
 	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleFormUpdate(event: React.ChangeEventHandler<HTMLSelectElement>) {
+	function handleFormUpdate(event: React.ChangeEvent<HTMLSelectElement>) {
 		let field = event.currentTarget.name;
 		let value = event.currentTarget.value;
 		if (event.currentTarget.name !== 'operator') {
