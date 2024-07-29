@@ -17,7 +17,7 @@ function Calculator() {
 	const [operator, setOperator] = useState('');
 
 	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleSwitch(event) {
+	function handleSwitch(event: React.ChangeEventHandler<HTMLSelectElement>) {
 		setOperator(event.currentTarget.value);
 	}
 

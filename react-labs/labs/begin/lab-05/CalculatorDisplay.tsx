@@ -2,7 +2,7 @@ import React from 'react';
 import './CalculatorDisplay.css';
 
 function CalculatorDisplay({ lValue, rValue, operator }) {
-	let result = 0;
+	let result: string | number = 0;
 	switch (operator) {
 		case '+':
 			result = lValue + rValue;
