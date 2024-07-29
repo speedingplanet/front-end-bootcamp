@@ -13,12 +13,12 @@ function Calculator() {
 	}
 
 	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleLValue(event: React.ChangeEvent<HTMLSelectElement>) {
+	function handleLValue(event: React.ChangeEvent<HTMLInputElement>) {
 		setLValue(Number(event.currentTarget.value));
 	}
 
 	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleRValue(event: React.ChangeEvent<HTMLSelectElement>) {
+	function handleRValue(event: React.ChangeEvent<HTMLInputElement>) {
 		setRValue(Number(event.currentTarget.value));
 	}
 
@@ -71,7 +71,7 @@ function Calculator() {
 			<CalculatorDisplay
 				lValue={lValue}
 				rValue={rValue}
-				operator={operator}
+				operator={operator as MathOperators}
 			/>
 		</>
 	);
