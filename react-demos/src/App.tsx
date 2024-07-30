@@ -18,6 +18,7 @@ import ApolloManager from './apollo/ApolloManager';
 import './App.css';
 import EventHandling from './event-handling/EventHandling';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay';
+import TodosManager from './todos/TodosManager';
 
 function App() {
 	return (
@@ -82,6 +83,9 @@ function App() {
 							<li>
 								<NavLink to="redux-toolkit-counter">Redux Counter (using the toolkit)</NavLink>
 							</li>
+							<li>
+								<NavLink to="todos">To-dos (various implementations)</NavLink>
+							</li>
 						</ul>
 					</div>
 					<div className="col">
@@ -97,6 +101,10 @@ function App() {
 							<Route
 								path="/form-data/*"
 								element={<FormDataManager />}
+							/>
+							<Route
+								path="/todos/*"
+								element={<TodosManager />}
 							/>
 							<Route
 								path="/iterative-content/*"
