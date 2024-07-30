@@ -5,12 +5,14 @@ import SendPayment from './SendPayment';
 
 describe('SendPayment', () => {
 	test('Smoke test', () => {
-		const handler = (p: Payment) => 0;
+		const handler = () => 0;
 		render(<SendPayment onSavePayment={handler} />);
 	});
 
 	test('Should invoke the event handler', async () => {
 		const user = userEvent.setup();
+
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const handler = vi.fn((p: Payment) => 0);
 		render(<SendPayment onSavePayment={handler} />);
 
