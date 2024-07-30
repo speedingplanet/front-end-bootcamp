@@ -5,7 +5,7 @@ import TaskList from './TaskContextList';
 export const TasksContext = createContext<Array<Task> | null>(null);
 export const DispatchContext = createContext<React.Dispatch<TodoAction> | null>(null);
 
-let nextId = 3;
+let nextId = 4;
 const initialTasks: Array<Task> = [
 	{ id: 1, text: 'Groceries', done: false },
 	{ id: 2, text: 'Change oil', done: true },

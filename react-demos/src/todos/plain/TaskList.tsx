@@ -1,5 +1,5 @@
 import React from 'react';
-import { TaskDisplay, TaskDisplayProps } from './TaskDisplay';
+import TaskDisplay, { TaskDisplayProps } from './TaskDisplay';
 
 type TaskListProps = Omit<TaskDisplayProps, 'task'> & {
 	tasks: Array<Task>;

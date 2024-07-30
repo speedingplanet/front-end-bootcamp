@@ -7,7 +7,7 @@ export interface TaskDisplayProps {
 	onDeleteTask: (taskId: number) => void;
 }
 
-export function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayProps) {
+export default function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayProps) {
 	const [isEditing, setIsEditing] = useState(false);
 
 	// Either the label or the form field

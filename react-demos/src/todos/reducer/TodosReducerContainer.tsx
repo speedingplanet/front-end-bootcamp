@@ -2,7 +2,7 @@ import React, { Reducer, useReducer } from 'react';
 import AddTask from '../plain/AddTask';
 import TaskList from '../plain/TaskList';
 
-let nextId = 3;
+let nextId = 4;
 const initialTasks: Array<Task> = [
 	{ id: 1, text: 'Groceries', done: false },
 	{ id: 2, text: 'Change oil', done: true },

@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 
+let nextId = 4;
+const initialTasks: Array<Task> = [
+	{ id: 1, text: 'Groceries', done: false },
+	{ id: 2, text: 'Change oil', done: true },
+	{ id: 3, text: 'Clean kitchen table', done: false },
+];
+
 const TodosContainer = () => {
 	const [tasks, setTasks] = useState(initialTasks);
 
@@ -48,12 +55,5 @@ const TodosContainer = () => {
 		</section>
 	);
 };
-
-let nextId = 3;
-const initialTasks: Array<Task> = [
-	{ id: 1, text: 'Groceries', done: false },
-	{ id: 2, text: 'Change oil', done: true },
-	{ id: 3, text: 'Clean kitchen table', done: false },
-];
 
 export default TodosContainer;
