@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
-import { Task } from './TaskDisplay';
 
 const TodosContainer = () => {
 	const [tasks, setTasks] = useState(initialTasks);

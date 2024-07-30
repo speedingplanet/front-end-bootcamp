@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
-import './TaskDisplay.css';
+import React, { useContext, useState } from 'react';
+import '../plain/TaskDisplay.css';
+import { DispatchContext } from './TodosContextContainer';
+
+export interface Task {
+	id: number;
+	text: string;
+	done: boolean;
+}
 
 export interface TaskDisplayProps {
 	task: Task;
-	onChangeTask: (task: Task) => void;
-	onDeleteTask: (taskId: number) => void;
 }
 
-export function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayProps) {
+export default function TaskDisplay({ task }: TaskDisplayProps) {
 	const [isEditing, setIsEditing] = useState(false);
+	const dispatch = useContext(DispatchContext);
+
+	if (dispatch === null) throw Error('dispatch is null?!');
 
 	// Either the label or the form field
 	let taskContent;
@@ -23,9 +31,12 @@ export function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayPro
 					type="text"
 					value={task.text}
 					onChange={(e) => {
-						onChangeTask({
-							...task,
-							text: e.target.value,
+						dispatch({
+							type: 'todos/change',
+							task: {
+								...task,
+								text: e.target.value,
+							},
 						});
 					}}
 				/>
@@ -72,9 +83,12 @@ export function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayPro
 					className="form-check-input"
 					checked={task.done}
 					onChange={(e) => {
-						onChangeTask({
-							...task,
-							done: e.target.checked,
+						dispatch({
+							type: 'todos/change',
+							task: {
+								...task,
+								done: e.target.checked,
+							},
 						});
 					}}
 				/>
@@ -85,7 +99,7 @@ export function TaskDisplay({ task, onChangeTask, onDeleteTask }: TaskDisplayPro
 			<div>
 				<button
 					className="btn btn-danger btn-small btn-really-small"
-					onClick={() => onDeleteTask(task.id)}
+					onClick={() => dispatch({ type: 'todos/delete', taskId: task.id })}
 				>
 					Delete
 				</button>
