@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import TodosContainer from './plain/TodosContainer';
+import TodosReducerContainer from './reducer/TodosReducerContainer';
+import TodosContextContainer from './context-reducer/TodosContextContainer';
 
 const TodosManager = () => {
 	return (
@@ -30,11 +32,11 @@ const TodosManager = () => {
 						/>
 						<Route
 							path="reducer"
-							element={<p>Placeholder for reducer</p>}
+							element={<TodosReducerContainer />}
 						/>
 						<Route
 							path="context-reducer"
-							element={<p>Placeholder for context-redux</p>}
+							element={<TodosContextContainer />}
 						/>
 						<Route
 							path="redux"

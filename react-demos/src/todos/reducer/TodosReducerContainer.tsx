@@ -1,25 +1,6 @@
 import React, { Reducer, useReducer } from 'react';
 import AddTask from '../plain/AddTask';
 import TaskList from '../plain/TaskList';
-import { Task } from '../plain/TaskDisplay';
-
-interface AddAction {
-	type: 'todos/add';
-	text: string;
-}
-
-interface EditAction {
-	type: 'todos/change';
-	task: Task;
-}
-
-interface DeleteAction {
-	type: 'todos/delete';
-	taskId: number;
-}
-
-// Discriminated union: https://mkosir.github.io/typescript-style-guide/#discriminated-union
-type TodoAction = AddAction | EditAction | DeleteAction;
 
 let nextId = 3;
 const initialTasks: Array<Task> = [
@@ -54,7 +35,7 @@ const reducer: Reducer<Array<Task>, TodoAction> = (state, action) => {
 	}
 };
 
-const TodosContainer = () => {
+const TodosReducerContainer = () => {
 	const [state, dispatch] = useReducer(reducer, initialTasks);
 
 	return (
@@ -67,11 +48,11 @@ const TodosContainer = () => {
 			<AddTask onAddTask={(text) => dispatch({ type: 'todos/add', text })} />
 			<TaskList
 				tasks={state}
-				onChangeTask={(task) => dispatch({type: 'todos/change', task})}
-				onDeleteTask={(taskId) => dispatch({type: 'todos/delete', taskId})}
+				onChangeTask={(task) => dispatch({ type: 'todos/change', task })}
+				onDeleteTask={(taskId) => dispatch({ type: 'todos/delete', taskId })}
 			/>
 		</section>
 	);
 };
 
-export default TodosContainer;
+export default TodosReducerContainer;
