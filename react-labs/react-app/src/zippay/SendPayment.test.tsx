@@ -9,14 +9,14 @@ describe('SendPayment', () => {
 		render(<SendPayment onSavePayment={handler} />);
 	});
 
-	test('Should invoke the event handler', async () => {
+	test('whether onSavePayment is invoked correctly', async () => {
 		const user = userEvent.setup();
 
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		const handler = vi.fn((p: Payment) => 0);
+		const handler = vi.fn((p: InputPayment) => void 0);
 		render(<SendPayment onSavePayment={handler} />);
 
-		let testPayment: Payment = {
+		let testPayment: InputPayment = {
 			recipient: 'John',
 			amount: 5,
 			reason: 'Test reason',

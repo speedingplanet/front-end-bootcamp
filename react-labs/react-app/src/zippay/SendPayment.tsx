@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 interface SendPaymentProps {
-	onSavePayment: (payment: Payment) => void;
+	onSavePayment: (payment: InputPayment) => void;
 }
 
-const initialFormState: Payment = {
+const initialFormState: InputPayment  = {
 	recipient: '',
 	amount: 0,
 	reason: '',
