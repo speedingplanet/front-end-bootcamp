@@ -20,4 +20,5 @@ interface DeleteAction {
 }
 
 // Discriminated union: https://mkosir.github.io/typescript-style-guide/#discriminated-union
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type TodoAction = AddAction | EditAction | DeleteAction;
