@@ -7,14 +7,18 @@ function ZipPayManager() {
 	const [paymentMessage, setPaymentMessage] = useState('');
 
 	const handleOnSavePayment = (payment: Payment) => {
-		setPaymentMessage(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`)
-	}
+		setPaymentMessage(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`);
+	};
 
 	return (
 		<section className="zippay-main">
 			<Navbar></Navbar>
-			<SendPayment onSavePayment={handleOnSavePayment}/>
-			<p>{paymentMessage}</p>
+			<div className="container">
+				<SendPayment onSavePayment={handleOnSavePayment} />
+				<div>
+					<p style={{ paddingTop: '2.5em' }}>{paymentMessage}</p>
+				</div>
+			</div>
 		</section>
 	);
 }

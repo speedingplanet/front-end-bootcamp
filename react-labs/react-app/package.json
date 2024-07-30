@@ -6,6 +6,8 @@
 	"scripts": {
 		"dev": "node scripts/check-labs.js && vite",
 		"build": "tsc && vite build",
+		"format": "prettier . --write",
+		"format:check": "prettier . --check",
 		"lint": "eslint . --report-unused-disable-directives --max-warnings 0",
 		"setup": "node scripts/setup.js",
 		"begin": "node scripts/setup.js begin",

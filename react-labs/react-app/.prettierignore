@@ -1,0 +1,9 @@
+node_modules
+backups
+dist
+.vscode
+package.json
+package-lock.json
+*.code-workspace
+*.css
+tsconfig.*json
