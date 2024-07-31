@@ -13,7 +13,7 @@
 		"begin": "node scripts/setup.js begin",
 		"finish": "node scripts/setup.js finish",
 		"preview": "vite preview",
-		"rest-server": "json-server --port 8000 ./src/zippay/data/zippay.json",
+		"rest-server": "json-server --port 8001 ./src/zippay/data/zippay.json",
 		"test": "vitest",
 		"test:once": "vitest run",
 		"tsc": "tsc -p tsconfig.json"
