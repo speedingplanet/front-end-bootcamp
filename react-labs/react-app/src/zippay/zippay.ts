@@ -23,3 +23,8 @@ interface User {
 	country: 'United States' | 'Canada';
 	postalCode: string;
 }
+
+interface AddPaymentAction {
+	type: 'payments/add';
+	payment: InputPayment;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, Reducer, useReducer, useState } from 'react';
 import Navbar from './Navbar';
 import './zippay.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,37 +7,50 @@ import PaymentsGrid from './PaymentsGrid';
 import { toast, ToastContainer } from 'react-toastify';
 import zippayData from './data/zippay.json';
 
-let nextId = 1;
+let nextId = 2000;
 let selectedPayments = zippayData.payments.slice(0, 10) as Array<Payment>;
 
+export const PaymentsContext = createContext<Array<Payment> | null>(null);
+export const DispatchContext = createContext<React.Dispatch<AddPaymentAction> | null>(null);
+
+const reducer: Reducer<Array<Payment>, AddPaymentAction> = (state, action) => {
+	switch (action.type) {
+		case 'payments/add':
+			return [
+				{ ...action.payment, id: nextId++, sender: 'Unknown', datePaid: new Date().toISOString() },
+				...state,
+			];
+		default:
+			throw Error('Invalid action type');
+	}
+};
+
 function ZipPayManager() {
-	const [payments, setPayments] = useState<Array<Payment>>(selectedPayments);
+	const [payments, dispatch] = useReducer(reducer, selectedPayments);
 
 	const handleOnSavePayment = (payment: InputPayment) => {
-		let newPayment: Payment = {
-			...payment,
-			id: nextId++,
-			sender: 'Unknown',
-			datePaid: new Date().toISOString(),
-		};
-		setPayments([newPayment, ...payments]);
 		toast(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`);
 	};
 
 	return (
-		<section className="zippay-main">
-			<Navbar></Navbar>
-			<div className="container">
-				<div className="row">
-					<div className="col-5">
-						<SendPayment onSavePayment={handleOnSavePayment} />
-					</div>
-					<div className="col">
-						<PaymentsGrid payments={payments} />
-					</div>
-				</div>
-			</div>{' '}
-		</section>
+		<DispatchContext.Provider value={dispatch}>
+			<PaymentsContext.Provider value={payments}>
+				<section className="zippay-main">
+					<Navbar></Navbar>
+					<div className="container">
+						<div className="row">
+							<div className="col-5">
+								<SendPayment onSavePayment={handleOnSavePayment} />
+							</div>
+							<div className="col">
+								<PaymentsGrid />
+							</div>
+						</div>
+					</div>{' '}
+					<ToastContainer />
+				</section>
+			</PaymentsContext.Provider>
+		</DispatchContext.Provider>
 	);
 }
 

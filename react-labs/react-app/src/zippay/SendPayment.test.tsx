@@ -20,6 +20,7 @@ describe('SendPayment', () => {
 			recipient: 'John',
 			amount: 5,
 			reason: 'Test reason',
+			visibility: 'public',
 		};
 
 		let recipientField = screen.getByLabelText(/Recipient/);

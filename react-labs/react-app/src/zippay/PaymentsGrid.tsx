@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PaymentsContext } from './ZipPayManager';
 
-interface PaymentsGridProps {
-	payments: Array<Payment>;
-}
+const PaymentsGrid = () => {
+	const payments = useContext(PaymentsContext);
 
-const PaymentsGrid = ({ payments }: PaymentsGridProps) => {
+	if (payments === null) throw Error('no payments!');
+
 	return (
 		<table className="table table-striped">
 			<thead>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { DispatchContext } from './ZipPayManager';
 
 interface SendPaymentProps {
-	onSavePayment: (payment: InputPayment) => void;
+	onSavePayment?: (payment: InputPayment) => void;
 }
 
 const initialFormState: InputPayment = {
@@ -13,9 +14,20 @@ const initialFormState: InputPayment = {
 
 const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 	const [formState, setFormState] = useState(initialFormState);
+	const dispatch = useContext(DispatchContext);
 
 	const handleFormUpdates = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setFormState({ ...formState, [e.target.name]: e.target.value });
+	};
+
+	const handleSendPayment = () => {
+		if (dispatch !== null) {
+			dispatch({ type: 'payments/add', payment: formState });
+		}
+
+		if (onSavePayment) {
+			onSavePayment(formState);
+		}
 	};
 
 	return (
@@ -82,8 +94,7 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 					</div>
 					<div className="row">
 						<div className="col-sm-3">
-						<span>Visibility</span>
-
+							<span>Visibility</span>
 						</div>
 						<div className="col">
 							<div className="form-check form-check-inline">
@@ -127,7 +138,7 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 							<button
 								type="button"
 								className="btn btn-small btn-primary"
-								onClick={() => onSavePayment(formState)}
+								onClick={handleSendPayment}
 							>
 								Send
 							</button>
