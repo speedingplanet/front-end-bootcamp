@@ -28,3 +28,8 @@ interface AddPaymentAction {
 	type: 'payments/add';
 	payment: InputPayment;
 }
+
+interface EditPaymentAction {
+	type: 'payments/edit';
+	payment: Payment;
+}

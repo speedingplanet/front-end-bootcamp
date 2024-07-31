@@ -1,4 +1,4 @@
-import React, { createContext, Reducer, useReducer, useState } from 'react';
+import React, { createContext, Reducer, useReducer } from 'react';
 import Navbar from './Navbar';
 import './zippay.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,7 +29,9 @@ function ZipPayManager() {
 	const [payments, dispatch] = useReducer(reducer, selectedPayments);
 
 	const handleOnSavePayment = (payment: InputPayment) => {
-		toast(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`);
+		toast(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`, {
+			position: 'bottom-right',
+		});
 	};
 
 	return (
