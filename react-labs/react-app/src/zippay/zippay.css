@@ -98,11 +98,6 @@ a:visited {
 	text-align: center
 }
 
-.container {
-	display: flex;
-	column-gap: 2em;
-}
-
 .send-payment-form {
 	width: 25vw;
 	display: grid;
