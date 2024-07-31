@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+/* eslint-disable @typescript-eslint/no-unused-vars */
 interface Payment {
 	id: number;
 	recipient: string;
@@ -6,4 +6,5 @@ interface Payment {
 	reason: string;
 }
 
+// Omit<TargetType, 'list' | 'of' | 'props'>
 type InputPayment = Omit<Payment, 'id'>;

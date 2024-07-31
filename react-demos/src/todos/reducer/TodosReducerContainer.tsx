@@ -36,7 +36,7 @@ const reducer: Reducer<Array<Task>, TodoAction> = (state, action) => {
 };
 
 const TodosReducerContainer = () => {
-	const [state, dispatch] = useReducer(reducer, initialTasks);
+	const [tasks, dispatch] = useReducer(reducer, initialTasks);
 
 	return (
 		<section>
@@ -47,7 +47,7 @@ const TodosReducerContainer = () => {
 			</header>
 			<AddTask onAddTask={(text) => dispatch({ type: 'todos/add', text })} />
 			<TaskList
-				tasks={state}
+				tasks={tasks}
 				onChangeTask={(task) => dispatch({ type: 'todos/change', task })}
 				onDeleteTask={(taskId) => dispatch({ type: 'todos/delete', taskId })}
 			/>
