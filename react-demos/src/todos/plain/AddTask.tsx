@@ -20,8 +20,8 @@ export default function AddTask({ onAddTask }: AddTaskProps) {
 				<button
 					className="btn btn-primary btn-small"
 					onClick={() => {
-						setText('');
 						onAddTask(text);
+						setText('');
 					}}
 				>
 					Add
