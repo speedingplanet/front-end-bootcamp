@@ -10,7 +10,7 @@ interface Payment {
 }
 
 // Omit<TargetType, 'list' | 'of' | 'props'>
-type InputPayment = Omit<Payment, 'id' | 'sender'>;
+type InputPayment = Omit<Payment, 'id' | 'sender' | 'datePaid'>;
 
 interface User {
 	id: number;

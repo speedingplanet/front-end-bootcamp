@@ -1,19 +1,30 @@
-import React from 'react'
+import React from 'react';
 
 interface PaymentsGridProps {
 	payments: Array<Payment>;
 }
 
-const PaymentsGrid = ({payments}: PaymentsGridProps) => {
+const PaymentsGrid = ({ payments }: PaymentsGridProps) => {
 	return (
-		<ul>
-			{
-				payments.map(payment => (
-					<li key={payment.id}>You paid {payment.recipient} {payment.amount} for {payment.reason}</li>
-				))
-			}
-		</ul>
-	)
-}
+		<table className="table table-striped">
+			<thead>
+				<tr>
+					<th>Recipient</th>
+					<th>Amount</th>
+					<th>Reason</th>
+				</tr>
+			</thead>
+			<tbody>
+				{payments.map((payment) => (
+					<tr key={payment.id}>
+						<td>{payment.recipient}</td>
+						<td>{payment.amount}</td>
+						<td>{payment.reason}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	);
+};
 
-export default PaymentsGrid
+export default PaymentsGrid;

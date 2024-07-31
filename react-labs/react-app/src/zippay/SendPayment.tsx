@@ -8,7 +8,6 @@ const initialFormState: InputPayment = {
 	recipient: '',
 	amount: 0,
 	reason: '',
-	datePaid: '',
 	visibility: 'public',
 };
 
@@ -66,25 +65,6 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 					<div className="row mb-2">
 						<label
 							className="col-sm-3 col-form-label"
-							htmlFor="datePaid"
-						>
-							Date Paid:{' '}
-						</label>
-						<div className="col-sm">
-							<input
-								type="text"
-								id="datePaid"
-								name="datePaid"
-								className="form-control"
-								placeholder="YYYY-MM-DD"
-								onChange={handleFormUpdates}
-								value={formState.datePaid}
-							/>
-						</div>
-					</div>
-					<div className="row mb-2">
-						<label
-							className="col-sm-3 col-form-label"
 							htmlFor="reason"
 						>
 							Reason:{' '}
@@ -111,8 +91,10 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 									type="radio"
 									name="visibility"
 									id="visibility-public"
+									value="public"
 									className="form-check-input"
-									checked
+									onChange={handleFormUpdates}
+									checked={formState.visibility === 'public'}
 								/>
 								<label
 									className="form-check-label"
@@ -126,7 +108,10 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 									type="radio"
 									name="visibility"
 									id="visibility-private"
+									value="private"
 									className="form-check-input"
+									onChange={handleFormUpdates}
+									checked={formState.visibility === 'private'}
 								/>
 								<label
 									className="form-check-label"
