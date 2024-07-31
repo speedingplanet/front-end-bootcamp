@@ -19,6 +19,7 @@ import './App.css';
 import EventHandling from './event-handling/EventHandling';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay';
 import TodosManager from './todos/TodosManager';
+import RoutingManager from './routing/RoutingManager';
 
 function App() {
 	return (
@@ -50,6 +51,9 @@ function App() {
 							</li>
 							<li>
 								<NavLink to="iterative-content">Iterative content</NavLink>
+							</li>
+							<li>
+								<NavLink to="routing">Routing</NavLink>
 							</li>
 							<li>
 								<NavLink to="async-demos">Async Demos</NavLink>
@@ -109,6 +113,10 @@ function App() {
 							<Route
 								path="/iterative-content/*"
 								element={<IterativeContentManager />}
+							/>
+							<Route
+								path="/routing/*"
+								element={<RoutingManager />}
 							/>
 							<Route
 								path="/async-demos/*"
