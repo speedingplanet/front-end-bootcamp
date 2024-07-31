@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Country } from '..';
+import { Country } from '../demo-types';
 
 function AsyncAwait() {
 	const [countries, setCountries] = useState<Country[]>([]);
