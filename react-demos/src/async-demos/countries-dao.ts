@@ -30,7 +30,4 @@ async function fetchAllCountries() {
 	}
 }
 
-export {
-	fetchAllCountries,
-	fetchAllCountriesPromise
-}
+export { fetchAllCountries, fetchAllCountriesPromise };
