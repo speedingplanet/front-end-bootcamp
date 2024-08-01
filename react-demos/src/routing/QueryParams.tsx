@@ -2,7 +2,6 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const QueryParams = () => {
-
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [queryParams, setQueryParams] = useSearchParams();
 
@@ -30,7 +29,9 @@ const QueryParams = () => {
 					<p>The parameters passed in were</p>
 					<ul>
 						{paramsAsArray.map(([key, value], index) => (
-							<li key={index}>{key}: {value}</li>
+							<li key={index}>
+								{key}: {value}
+							</li>
 						))}
 					</ul>
 				</div>

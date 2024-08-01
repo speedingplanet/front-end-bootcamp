@@ -18,9 +18,30 @@ const ProgrammaticNavigation = () => {
 						<code>&lt;NavLink /&gt;</code> or <code>&lt;Link /&gt;</code>
 					</p>
 					<div className="d-flex justify-content-between">
-						<div><button onClick={() => go('../inline-element')} className="btn btn-success">In-line element</button></div>
-						<div><button onClick={() => go('../path-params/mcp')} className="btn btn-warning">Path Params</button></div>
-						<div><button onClick={() => go('../../event-handling')} className="btn btn-info">Event Handling</button></div>
+						<div>
+							<button
+								onClick={() => go('../inline-element')}
+								className="btn btn-success"
+							>
+								In-line element
+							</button>
+						</div>
+						<div>
+							<button
+								onClick={() => go('../path-params/mcp')}
+								className="btn btn-warning"
+							>
+								Path Params
+							</button>
+						</div>
+						<div>
+							<button
+								onClick={() => go('../../event-handling')}
+								className="btn btn-info"
+							>
+								Event Handling
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
