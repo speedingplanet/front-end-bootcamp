@@ -23,7 +23,6 @@ interface User {
 	country: 'United States' | 'Canada';
 	postalCode: string;
 }
-<<<<<<< HEAD
 
 interface AddPaymentAction {
 	type: 'payments/add';
@@ -34,5 +33,3 @@ interface EditPaymentAction {
 	type: 'payments/edit';
 	payment: Payment;
 }
-=======
->>>>>>> 2024-07
