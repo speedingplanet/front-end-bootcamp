@@ -5,5 +5,5 @@ dist
 package.json
 package-lock.json
 *.code-workspace
-*.css
+public/css
 tsconfig.*json

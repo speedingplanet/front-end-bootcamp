@@ -1,29 +1,15 @@
-import React, { createContext, Reducer, useReducer } from 'react';
-import Navbar from './Navbar';
+import React, { useReducer } from 'react';
+import Navbar from './BootstrapNavbar';
 import './zippay.css';
 import 'react-toastify/dist/ReactToastify.css';
-import SendPayment from './SendPayment';
-import PaymentsGrid from './PaymentsGrid';
+import { Route, Routes } from 'react-router-dom';
+import { DispatchContext, PaymentsContext, reducer } from './zippay-context';
 import { toast, ToastContainer } from 'react-toastify';
+import SendReceive from './SendReceive';
+import Balance from './Balance';
 import zippayData from './data/zippay.json';
 
-let nextId = 2000;
 let selectedPayments = zippayData.payments.slice(0, 10) as Array<Payment>;
-
-export const PaymentsContext = createContext<Array<Payment> | null>(null);
-export const DispatchContext = createContext<React.Dispatch<AddPaymentAction> | null>(null);
-
-const reducer: Reducer<Array<Payment>, AddPaymentAction> = (state, action) => {
-	switch (action.type) {
-		case 'payments/add':
-			return [
-				{ ...action.payment, id: nextId++, sender: 'Unknown', datePaid: new Date().toISOString() },
-				...state,
-			];
-		default:
-			throw Error('Invalid action type');
-	}
-};
 
 function ZipPayManager() {
 	const [payments, dispatch] = useReducer(reducer, selectedPayments);
@@ -35,24 +21,46 @@ function ZipPayManager() {
 	};
 
 	return (
-		<DispatchContext.Provider value={dispatch}>
-			<PaymentsContext.Provider value={payments}>
-				<section className="zippay-main">
-					<Navbar></Navbar>
+		<section className="zippay-main">
+			<Navbar></Navbar>
+			<DispatchContext.Provider value={dispatch}>
+				<PaymentsContext.Provider value={payments}>
 					<div className="container">
 						<div className="row">
-							<div className="col-5">
-								<SendPayment onSavePayment={handleOnSavePayment} />
-							</div>
 							<div className="col">
-								<PaymentsGrid />
+								<Routes>
+									<Route
+										path="/"
+										element={<h2>Content goes here</h2>}
+									/>
+									<Route
+										path="send-receive"
+										element={<SendReceive onSavePayment={handleOnSavePayment} />}
+									/>
+									<Route
+										path="split-the-bill"
+										element={<h2>Split-the-bill placeholder</h2>}
+									/>
+									<Route
+										path="balance"
+										element={<Balance />}
+									/>
+									<Route
+										path="account-settings"
+										element={<h2>Account Settings placeholder</h2>}
+									/>
+									<Route
+										path="search"
+										element={<h2>Search placeholder</h2>}
+									/>
+								</Routes>
 							</div>
 						</div>
-					</div>{' '}
-					<ToastContainer />
-				</section>
-			</PaymentsContext.Provider>
-		</DispatchContext.Provider>
+					</div>
+				</PaymentsContext.Provider>
+			</DispatchContext.Provider>
+			<ToastContainer />
+		</section>
 	);
 }
 

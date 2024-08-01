@@ -1,12 +1,12 @@
 import { describe, test, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import SendPayment from './SendPayment';
+import SendReceive from './SendReceive';
 
-describe('SendPayment', () => {
+describe('SendReceive', () => {
 	test('Smoke test', () => {
 		const handler = () => 0;
-		render(<SendPayment onSavePayment={handler} />);
+		render(<SendReceive onSavePayment={handler} />);
 	});
 
 	test('whether onSavePayment is invoked correctly', async () => {
@@ -14,7 +14,7 @@ describe('SendPayment', () => {
 
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const handler = vi.fn((p: InputPayment) => void 0);
-		render(<SendPayment onSavePayment={handler} />);
+		render(<SendReceive onSavePayment={handler} />);
 
 		let testPayment: InputPayment = {
 			recipient: 'John',

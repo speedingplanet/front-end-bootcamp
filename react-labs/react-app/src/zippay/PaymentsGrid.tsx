@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { PaymentsContext } from './ZipPayManager';
+import { PaymentsContext } from './zippay-context';
 
 const PaymentsGrid = () => {
 	const payments = useContext(PaymentsContext);

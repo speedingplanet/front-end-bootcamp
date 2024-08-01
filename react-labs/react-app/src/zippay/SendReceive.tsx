@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { DispatchContext } from './ZipPayManager';
+import { DispatchContext } from './zippay-context';
 
-interface SendPaymentProps {
+interface SendReceiveProps {
 	onSavePayment?: (payment: InputPayment) => void;
 }
 
@@ -12,7 +12,7 @@ const initialFormState: InputPayment = {
 	visibility: 'public',
 };
 
-const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
+const SendReceive = ({ onSavePayment }: SendReceiveProps) => {
 	const [formState, setFormState] = useState(initialFormState);
 	const dispatch = useContext(DispatchContext);
 
@@ -20,7 +20,7 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 		setFormState({ ...formState, [e.target.name]: e.target.value });
 	};
 
-	const handleSendPayment = () => {
+	const handleSendReceive = () => {
 		if (dispatch !== null) {
 			dispatch({ type: 'payments/add', payment: formState });
 		}
@@ -138,7 +138,7 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 							<button
 								type="button"
 								className="btn btn-small btn-primary"
-								onClick={handleSendPayment}
+								onClick={handleSendReceive}
 							>
 								Send
 							</button>
@@ -150,4 +150,4 @@ const SendPayment = ({ onSavePayment }: SendPaymentProps) => {
 	);
 };
 
-export default SendPayment;
+export default SendReceive;
