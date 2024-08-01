@@ -5,11 +5,7 @@ const BootstrapNavbar = () => {
 	return (
 		<nav className="navbar btn-group">
 			<NavLink
-				className={({ isActive }) => {
-					let c = 'btn ';
-					c += isActive ? 'btn-primary text-white' : 'btn-outline-primary';
-					return c;
-				}}
+				className="btn btn-outline-primary"
 				to="send-receive"
 			>
 				<span className="material-icons">currency_exchange</span>
@@ -17,11 +13,7 @@ const BootstrapNavbar = () => {
 				Send-Receive
 			</NavLink>
 			<NavLink
-				className={({ isActive }) => {
-					let c = 'btn ';
-					c += isActive ? 'btn-primary text-white' : 'btn-outline-primary';
-					return c;
-				}}
+				className="btn btn-outline-primary"
 				to="split-the-bill"
 			>
 				<span className="material-icons">call_split</span>

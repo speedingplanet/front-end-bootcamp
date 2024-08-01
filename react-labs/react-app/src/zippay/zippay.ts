@@ -33,3 +33,17 @@ interface EditPaymentAction {
 	type: 'payments/edit';
 	payment: Payment;
 }
+
+interface PopulatePaymentsAction {
+	type: 'payments/populate';
+	payments: Array<Payment>;
+}
+
+interface AddAllPaymentsAction {
+	type: 'payments/appendAll';
+	payments: Array<Payment>;
+}
+
+// Discriminated union: uses the 'type' property to tell the difference between types
+// Nothing magical about the word 'type', just the property we happen to be using
+type ZipPayAction = AddPaymentAction | AddAllPaymentsAction | PopulatePaymentsAction;

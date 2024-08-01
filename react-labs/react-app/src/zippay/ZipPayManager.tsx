@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import Navbar from './BootstrapNavbar';
 import './zippay.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,12 +7,30 @@ import { DispatchContext, PaymentsContext, reducer } from './zippay-context';
 import { toast, ToastContainer } from 'react-toastify';
 import SendReceive from './SendReceive';
 import Balance from './Balance';
-import zippayData from './data/zippay.json';
-
-let selectedPayments = zippayData.payments.slice(0, 10) as Array<Payment>;
+// import zippayData from './data/zippay.json';
+// let selectedPayments = zippayData.payments.slice(0, 10) as Array<Payment>;
 
 function ZipPayManager() {
-	const [payments, dispatch] = useReducer(reducer, selectedPayments);
+	const [payments, dispatch] = useReducer(reducer, []);
+
+	useEffect(() => {
+		async function getData() {
+			let url = 'http://localhost:8001/payments?_start=1&_limit=10';
+			let response = await fetch(url);
+
+			if (response.ok) {
+				let results = await response.json();
+				dispatch({ type: 'payments/populate', payments: results });
+			} else {
+				throw new Error(`Bad response: ${response.status}`);
+			}
+		}
+
+		// Errors are handled here
+		getData().catch((error) => {
+			console.error('fetching payments: Could not fetch data:', error);
+		});
+	}, []);
 
 	const handleOnSavePayment = (payment: InputPayment) => {
 		toast(`You paid ${payment.recipient} ${payment.amount} for ${payment.reason}`, {
