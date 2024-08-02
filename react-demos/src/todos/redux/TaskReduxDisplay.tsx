@@ -5,6 +5,7 @@ import { changeTodo, deleteTodo } from './todos-slice';
 
 export default function TaskDisplay({ task }: { task: Task }) {
 	const [isEditing, setIsEditing] = useState(false);
+	const [localTaskText, setLocalTaskText] = useState(task.text);
 	const dispatch = useDispatch();
 
 	// Either the label or the form field
@@ -18,14 +19,9 @@ export default function TaskDisplay({ task }: { task: Task }) {
 			<div className="me-2">
 				<input
 					type="text"
-					value={task.text}
+					value={localTaskText}
 					onChange={(e) => {
-						dispatch(
-							changeTodo({
-								...task,
-								text: e.target.value,
-							})
-						);
+						setLocalTaskText(e.target.value);
 					}}
 				/>
 			</div>
@@ -34,7 +30,10 @@ export default function TaskDisplay({ task }: { task: Task }) {
 			<div>
 				<button
 					className="btn btn-secondary btn-small btn-really-small"
-					onClick={() => setIsEditing(false)}
+					onClick={() => {
+						setIsEditing(false);
+						dispatch(changeTodo({ ...task, text: localTaskText }));
+					}}
 				>
 					Save
 				</button>
@@ -86,7 +85,7 @@ export default function TaskDisplay({ task }: { task: Task }) {
 			<div>
 				<button
 					className="btn btn-danger btn-small btn-really-small"
-					onClick={() => deleteTodo(task.id)}
+					onClick={() => dispatch(deleteTodo(task.id))}
 				>
 					Delete
 				</button>
