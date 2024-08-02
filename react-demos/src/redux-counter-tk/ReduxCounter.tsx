@@ -5,11 +5,11 @@ import { increment, decrement, CounterState } from './counter-slice';
 
 const BetterReduxCounter = () => {
 	const dispatch = useDispatch();
-	const count = useSelector((state: CounterState) => state.counter)
+	const count = useSelector((state: CounterState) => state.counter);
 
 	const dispatchIncrement = () => {
 		dispatch(increment());
-	}
+	};
 
 	return (
 		<Counter

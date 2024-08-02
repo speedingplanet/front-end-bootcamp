@@ -26,7 +26,7 @@ const { actions } = counterSlice;
 export const { increment, decrement } = actions;
 
 export const store = configureStore({
-	reducer: combineReducers({ 
+	reducer: combineReducers({
 		counter: counterSlice.reducer,
 	}),
 });

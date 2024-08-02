@@ -9,8 +9,8 @@ const QueryParams = () => {
 	for (let entry of queryParams.entries()) {
 		console.log(`Key: ${entry[0]} | Value: ${entry[1]}`);
 	}
-	
-	// Array.from runs through the iterator, converting all values to 
+
+	// Array.from runs through the iterator, converting all values to
 	// an array of arrays [[key, value], [key, value], ...]
 	const paramsAsArray = Array.from(queryParams.entries());
 
@@ -39,7 +39,12 @@ const QueryParams = () => {
 						))}
 					</ul>
 					{/* <button className="btn btn-primary" onClick={() => setQueryParams("a=b&c=d")}>Change params</button> */}
-					<button className="btn btn-primary" onClick={() => setQueryParams({a:'two words',c:'d'})}>Change params</button>
+					<button
+						className="btn btn-primary"
+						onClick={() => setQueryParams({ a: 'two words', c: 'd' })}
+					>
+						Change params
+					</button>
 				</div>
 			</div>
 		</>

@@ -30,9 +30,9 @@ function AsyncAwait() {
 			console.error('async-await: Could not fetch data:', error);
 		});
 
-		return function() {
-			console.log('useEffect finished')
-		}
+		return function () {
+			console.log('useEffect finished');
+		};
 	}, [refresh]);
 
 	return (
