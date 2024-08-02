@@ -3,7 +3,7 @@ import { orderBy } from 'lodash';
 import '../GridExample.css';
 import GridHeaderRow from '../grid-sorted/GridHeaderRowSorted';
 import GridBody from '../grid-sorted/GridBodySorted';
-import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../..';
+import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../../demo-types';
 
 let columns: GridColumn<Country>[] = [
 	{

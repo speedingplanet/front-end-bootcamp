@@ -3,7 +3,7 @@ import { countries } from '../../data/countries-table.json';
 import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRow';
 import GridBody from './GridBody';
-import { Country, GridColumn, CSSProperties } from '../..';
+import { Country, GridColumn, CSSProperties } from '../../demo-types';
 
 let columns: GridColumn<Country>[] = [
 	{

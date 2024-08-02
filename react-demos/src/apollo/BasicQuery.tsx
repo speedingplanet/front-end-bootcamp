@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { Country } from '..';
+import { Country } from '../demo-types';
 
 /*
 query NAME_OF_QUERY {

@@ -4,7 +4,7 @@ import { countries } from '../../data/countries-table.json';
 import '../GridExample.css';
 import GridHeaderRow from './GridHeaderRowSorted';
 import GridBody from './GridBodySorted';
-import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../..';
+import { Country, CSSProperties, GridColumn, SortConfig, SortDirection } from '../../demo-types';
 
 let columns: GridColumn<Country>[] = [
 	{

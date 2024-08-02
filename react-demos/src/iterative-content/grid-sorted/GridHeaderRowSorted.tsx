@@ -1,6 +1,6 @@
 import React from 'react';
 import SortIndicator from './SortIndicator';
-import { Country, GridColumn, SortConfig } from '../..';
+import { Country, GridColumn, SortConfig } from '../../demo-types';
 
 interface GridHeaderRowProps {
 	columns: GridColumn<Country>[];

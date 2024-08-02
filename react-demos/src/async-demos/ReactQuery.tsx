@@ -15,10 +15,10 @@ const ReactQuery = () => {
 
 const RenderQuery = () => {
 	const {
-		isPending,
-		isError,
-		data: countries,
-		error,
+		isPending, // is the request still in flight?
+		isError, // did the request fail?
+		error, // Failure information
+		data, // Actual data retrieved by the request
 	} = useQuery({ queryKey: ['countries'], queryFn: fetchAllCountries });
 
 	if (isPending) {
@@ -47,7 +47,7 @@ const RenderQuery = () => {
 							</tr>
 						</thead>
 						<tbody>
-							{countries.map((country: Country) => (
+							{data.map((country: Country) => (
 								<tr key={country.id}>
 									<td>{country.country}</td>
 									<td>{country.pop2022}</td>

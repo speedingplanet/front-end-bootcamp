@@ -1,5 +1,5 @@
 import React from 'react';
-import { SortConfig } from '../..';
+import { SortConfig } from '../../demo-types';
 
 interface SortIndicatorProps {
 	sortConfig: SortConfig;
