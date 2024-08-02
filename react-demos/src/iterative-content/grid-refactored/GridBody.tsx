@@ -1,6 +1,6 @@
 import React from 'react';
 import GridBodyRow from './GridBodyRow';
-import { Country, GridColumn } from '../..';
+import { Country, GridColumn } from '../../demo-types';
 
 export interface GridBodyProps {
 	countries: Country[];

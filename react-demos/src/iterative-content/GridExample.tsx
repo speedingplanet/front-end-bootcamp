@@ -1,7 +1,7 @@
 import React from 'react';
 import { countries } from '../data/countries-table.json';
 import './GridExample.css';
-import { Country, CSSProperties, GridColumn } from '..';
+import { Country, CSSProperties, GridColumn } from '../demo-types';
 
 let columns: GridColumn<Country>[] = [
 	{
