@@ -9,8 +9,11 @@
 		<title>Derived Custom Properties</title>
 		<style>
 			:root {
-				--bg-initial: 255, 0, 0;
+				/* This works because the numbers have no units */
+				--bg-initial: 0, 127, 0;
 				--bg-initial-transparent: var(--bg-initial), 0.5;
+
+				/* This doesn't seem to have a solution, alas. */
 				--bg-hex-initial: FF0000;
 				--bg-hex-initial-transparent: var(--bg-hex-initial)AA;
 			}
@@ -27,8 +30,7 @@
 			}
 
 			.initial {
-				/* background-color: rgb(var(--bg-initial)); */
-				background-color: var(--bg-hex-initial);
+				background-color: rgba(var(--bg-initial));
 			}
 
 			.derived {
