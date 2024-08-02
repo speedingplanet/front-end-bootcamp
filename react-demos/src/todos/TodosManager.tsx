@@ -3,6 +3,7 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import TodosContainer from './plain/TodosContainer';
 import TodosReducerContainer from './reducer/TodosReducerContainer';
 import TodosContextContainer from './context-reducer/TodosContextContainer';
+import TodosReduxContainer from './redux/TodosReduxContainer';
 
 const TodosManager = () => {
 	return (
@@ -40,7 +41,7 @@ const TodosManager = () => {
 						/>
 						<Route
 							path="redux"
-							element={<p>Placeholder for redux</p>}
+							element={<TodosReduxContainer />}
 						/>
 					</Routes>
 				</div>
