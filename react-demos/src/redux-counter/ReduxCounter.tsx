@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { connect, Provider } from 'react-redux';
-import { CounterProps, CounterState } from '..';
+import { CounterProps, CounterState } from '../demo-types';
 import { Action, Dispatch } from '@reduxjs/toolkit';
 
 const initialState = { counter: 1 };

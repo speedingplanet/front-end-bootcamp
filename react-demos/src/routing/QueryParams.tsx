@@ -5,10 +5,14 @@ const QueryParams = () => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [queryParams, setQueryParams] = useSearchParams();
 
+	// Regular JavaScript, but we can't use this in JSX (no for iterators allowed)
+	for (let entry of queryParams.entries()) {
+		console.log(`Key: ${entry[0]} | Value: ${entry[1]}`);
+	}
+	
+	// Array.from runs through the iterator, converting all values to 
+	// an array of arrays [[key, value], [key, value], ...]
 	const paramsAsArray = Array.from(queryParams.entries());
-	paramsAsArray.map((entry) => {
-		console.log('entry:', entry);
-	});
 
 	return (
 		<>
@@ -34,6 +38,8 @@ const QueryParams = () => {
 							</li>
 						))}
 					</ul>
+					{/* <button className="btn btn-primary" onClick={() => setQueryParams("a=b&c=d")}>Change params</button> */}
+					<button className="btn btn-primary" onClick={() => setQueryParams({a:'two words',c:'d'})}>Change params</button>
 				</div>
 			</div>
 		</>

@@ -3,7 +3,10 @@ import { Country } from '../demo-types';
 
 function AsyncAwait() {
 	const [countries, setCountries] = useState<Country[]>([]);
+	const [refresh, setRefresh] = useState(0);
 
+	// useEffect(function, dependencies[])
+	// Pass it a function to run and a list of dependencies
 	// One-time data request
 	useEffect(() => {
 		async function getData() {
@@ -13,6 +16,7 @@ function AsyncAwait() {
 			catch any errors externally to this function.
 			*/
 			let response = await fetch(url);
+
 			if (response.ok) {
 				let results = await response.json();
 				setCountries(results);
@@ -25,12 +29,22 @@ function AsyncAwait() {
 		getData().catch((error) => {
 			console.error('async-await: Could not fetch data:', error);
 		});
-	}, []);
+
+		return function() {
+			console.log('useEffect finished')
+		}
+	}, [refresh]);
 
 	return (
 		<div className="row">
 			<div className="col">
 				<h3>Async with async-await</h3>
+				<button
+					className="btn btn-danger"
+					onClick={() => setRefresh(refresh + 1)}
+				>
+					Refresh Data
+				</button>
 				<table className="table table-striped">
 					<thead>
 						<tr>

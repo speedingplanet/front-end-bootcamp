@@ -1,5 +1,5 @@
 import React from 'react';
-import { Country, GridColumn } from '../..';
+import { Country, GridColumn } from '../../demo-types';
 
 function GridHeaderRow({ columns }: { columns: GridColumn<Country>[] }) {
 	return (
