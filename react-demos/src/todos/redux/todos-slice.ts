@@ -1,11 +1,18 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { dao } from './todos-dao';
 
 let nextId = 10;
-const initialState: Array<Task> = [
-	{ id: 1, text: 'Groceries', done: false },
-	{ id: 2, text: 'Change oil', done: true },
-	{ id: 3, text: 'Clean kitchen table', done: false },
-];
+const initialState: Array<Task> = [];
+
+export const fetchAllTodos = createAsyncThunk('todos/fetchAllTodos', async () => {
+	const todos = await dao.fetchTodos();
+	return todos;
+});
+
+export const saveTodo = createAsyncThunk('todos/saveTodo', async (text: string) => {
+	const insertedTodo = await dao.saveTodo({ text, done: false });
+	return insertedTodo;
+});
 
 const todosSlice = createSlice({
 	name: 'todos',
@@ -30,9 +37,20 @@ const todosSlice = createSlice({
 		deleteTodo: (state, action: PayloadAction<number>) => {
 			return state.filter((t) => t.id !== action.payload);
 		},
+		populateTodos: (state, action: PayloadAction<Array<Task>>) => {
+			return [...action.payload];
+		},
+	},
+	extraReducers: (builder) => {
+		builder.addCase(fetchAllTodos.fulfilled, (state, action) => {
+			return [...action.payload];
+		});
+		builder.addCase(saveTodo.fulfilled, (state, action) => {
+			state.push(action.payload);
+		});
 	},
 });
 
 const { actions } = todosSlice;
-export const { addTodo, changeTodo, deleteTodo } = actions;
+export const { addTodo, changeTodo, deleteTodo, populateTodos } = actions;
 export const reducer = todosSlice.reducer;

@@ -4,6 +4,8 @@ interface Task {
 	done: boolean;
 }
 
+type InputTask = Omit<Task, 'id'>;
+
 interface AddAction {
 	type: 'todos/add';
 	text: string;

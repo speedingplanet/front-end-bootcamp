@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from './todos-slice';
+import { useTodosDispatch } from './todos-hooks';
+import { addTodo, saveTodo } from './todos-slice';
 
 export default function AddTask() {
 	const [text, setText] = useState('');
-	const dispatch = useDispatch();
+	const dispatch = useTodosDispatch();
 
 	return (
 		<div className="row mb-4">
@@ -21,7 +21,7 @@ export default function AddTask() {
 					className="btn btn-primary btn-small"
 					onClick={() => {
 						setText('');
-						dispatch(addTodo(text));
+						dispatch(saveTodo(text));
 					}}
 				>
 					Add

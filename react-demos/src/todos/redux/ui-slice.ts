@@ -59,6 +59,11 @@ let uiSlice = createSlice({
 			state.sortDirection = nextSortDirection;
 		},
 	},
+	selectors: {
+		selectSortConfig: (state) => state,
+		selectSortDirection: (state) => state.sortDirection,
+		selectSortColumn: (state) => state.sortColumn,
+	},
 });
 
 export const uiReducer = uiSlice.reducer;
