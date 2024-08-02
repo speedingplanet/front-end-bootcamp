@@ -71,11 +71,12 @@ export default function TaskDisplay({ task }: { task: Task }) {
 					className="form-check-input"
 					checked={task.done}
 					onChange={(e) => {
-						console.log('toggling')
-						changeTodo({
-							...task,
-							done: e.target.checked,
-						});
+						dispatch(
+							changeTodo({
+								...task,
+								done: e.target.checked,
+							})
+						);
 					}}
 				/>
 				{taskContent}
