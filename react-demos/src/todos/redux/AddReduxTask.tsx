@@ -20,6 +20,7 @@ export default function AddTask() {
 				<button
 					className="btn btn-primary btn-small"
 					onClick={() => {
+						setText('');
 						dispatch(addTodo(text))
 					}}
 				>
