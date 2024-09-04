@@ -52,6 +52,7 @@ function BasicQuery() {
 						<tr>
 							<th>Country</th>
 							<th>Population</th>
+							<th>Area</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,6 +61,7 @@ function BasicQuery() {
 							<tr key={country.id}>
 								<td>{country.country}</td>
 								<td>{country.pop2022}</td>
+								<td>{country.area}</td>
 							</tr>
 						))}
 					</tbody>

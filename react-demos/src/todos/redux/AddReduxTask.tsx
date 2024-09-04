@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTodosDispatch } from './todos-hooks';
-import { addTodo, saveTodo } from './todos-slice';
+import { saveTodo } from './todos-slice';
 
 export default function AddTask() {
 	const [text, setText] = useState('');

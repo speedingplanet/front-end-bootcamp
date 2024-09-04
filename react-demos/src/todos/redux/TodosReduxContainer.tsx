@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { store } from './todos-store';
 import AddTask from './AddReduxTask';
 import TaskList from './TaskReduxList';
-import { dao } from './todos-dao';
 
 const TodosReduxContainer = () => {
 	return (
