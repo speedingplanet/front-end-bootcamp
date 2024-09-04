@@ -21,7 +21,11 @@ export default function AddTask() {
 					className="btn btn-primary btn-small"
 					onClick={() => {
 						setText('');
+<<<<<<< HEAD
 						dispatch(saveTodo(text));
+=======
+						dispatch(addTodo(text))
+>>>>>>> main
 					}}
 				>
 					Add

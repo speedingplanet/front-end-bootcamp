@@ -21,6 +21,7 @@ export default function TaskList() {
 	return (
 		<>
 			<h4>Tasks</h4>
+<<<<<<< HEAD
 			<ul className="list-inline">
 				<li className="list-inline-item">
 					<button
@@ -49,6 +50,10 @@ export default function TaskList() {
 			</ul>
 			<ul>
 				{displayTasks.map((task) => (
+=======
+			<ul>
+				{tasks.map((task) => (
+>>>>>>> main
 					<li key={task.id}>
 						<TaskDisplay task={task} />
 					</li>

@@ -1,5 +1,5 @@
 import { combineReducers, configureStore, createSelector } from '@reduxjs/toolkit';
-import { fetchAllTodos, populateTodos, reducer as todosReducer } from './todos-slice';
+import { fetchAllTodos, reducer as todosReducer } from './todos-slice';
 import { uiReducer } from './ui-slice';
 
 export const store = configureStore({

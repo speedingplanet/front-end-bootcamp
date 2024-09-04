@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { dao } from './todos-dao';
 
@@ -13,6 +14,16 @@ export const saveTodo = createAsyncThunk('todos/saveTodo', async (text: string) 
 	const insertedTodo = await dao.saveTodo({ text, done: false });
 	return insertedTodo;
 });
+=======
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+let nextId = 10;
+const initialState: Array<Task> = [
+	{ id: 1, text: 'Groceries', done: false },
+	{ id: 2, text: 'Change oil', done: true },
+	{ id: 3, text: 'Clean kitchen table', done: false },
+];
+>>>>>>> main
 
 const todosSlice = createSlice({
 	name: 'todos',
@@ -52,5 +63,9 @@ const todosSlice = createSlice({
 });
 
 const { actions } = todosSlice;
+<<<<<<< HEAD
 export const { addTodo, changeTodo, deleteTodo, populateTodos } = actions;
+=======
+export const { addTodo, changeTodo, deleteTodo } = actions;
+>>>>>>> main
 export const reducer = todosSlice.reducer;
