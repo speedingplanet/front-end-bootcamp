@@ -39,16 +39,12 @@ const QueryParams = () => {
 						))}
 					</ul>
 					{/* <button className="btn btn-primary" onClick={() => setQueryParams("a=b&c=d")}>Change params</button> */}
-<<<<<<< HEAD
 					<button
 						className="btn btn-primary"
 						onClick={() => setQueryParams({ a: 'two words', c: 'd' })}
 					>
 						Change params
 					</button>
-=======
-					<button className="btn btn-primary" onClick={() => setQueryParams({a:'two words',c:'d'})}>Change params</button>
->>>>>>> main
 				</div>
 			</div>
 		</>
